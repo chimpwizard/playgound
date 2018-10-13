@@ -215,7 +215,7 @@ echo $command|sh -
 - install npm
 - install vagrant
 
-### Start the cluster
+### to start the cluster
 
 ```shell
 npm run up
