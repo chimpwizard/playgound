@@ -10,7 +10,7 @@ I want to be able to scale the number of master and worker nodes using the swarm
 
 ## Proposed Architecture
 
-Assuming you arelady read [DGraph Get Started Guide](https://docs.dgraph.io/get-started/).
+Assuming you already read [DGraph Get Started Guide](https://docs.dgraph.io/get-started/).
 
 The dgraph architecture requries some zero and server nodes. What is important to notice  is that by design each instance in the cluster needs to be fully identitied, meaning fully accesble by hostname name. This is what makes difficult the scalling.
 
