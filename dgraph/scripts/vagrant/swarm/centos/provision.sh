@@ -17,9 +17,9 @@ yum makecache fast
 yum -y install docker-ce
 
 echo "*********************************************************************"
-echo "Give docekr access to pwc"
+echo "Give docekr access to cw"
 echo "*********************************************************************"
-usermod -aG docker pwc
+usermod -aG docker cw
 
 chmod 777 /var/run/docker.sock
 
