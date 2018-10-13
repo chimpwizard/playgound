@@ -210,18 +210,22 @@ echo $command|sh -
 
 ```
 
-
-
 ## Prerequisites to run the code
 
+- install npm
 - install vagrant
-
 
 ### Start the cluster
 
 ```shell
 npm run up
 npm run deploy
+```
+
+### to clean up your machine
+
+```shell
+npm run destroy
 ```
 
 ... then go to [http://172.10.10.20:8000](http://172.10.10.20:8000)
