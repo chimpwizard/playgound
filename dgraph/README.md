@@ -223,14 +223,14 @@ npm run up
 npm run deploy
 ```
 
+... then go to [http://172.10.10.20:8000](http://172.10.10.20:8000) and update the connection to
+172.10.10.20:8080 to point to the database api. The portainer console can be located at [http://172.10.10.20:9000](http://172.10.10.20:9000) for this use user "admin" and password "password".
+
 ### to clean up your machine
 
 ```shell
 npm run destroy
 ```
-
-... then go to [http://172.10.10.20:8000](http://172.10.10.20:8000) and update the connection to
-172.10.10.20:8080 to point to the database api. The portainer console can be located at [http://172.10.10.20:9000](http://172.10.10.20:9000) for this use user "admin" and password "password".
 
 ## Some references while doing this
 
