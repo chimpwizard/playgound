@@ -10,7 +10,7 @@ date: 10.13.2018
 
 The goal of this POC is to get the DGRAPH database on a docker swarm cluster where we can scale the database dynamically.
 
-When checking how to run dgraph on a container using the DGRAPH documentation  you notice that the defined HA configuration is very static becase the number of instances of the cluster are individual services declared in the  docker-compose or kubernetes files.
+When checking how to run dgraph on a container using the DGRAPH documentation  you notice that the defined HA configuration is very static becase the number of instances of the cluster are individual services declared in the  docker-compose YAML files.
 
 I want to present an alternative that is more flexible, dynamic and easirer to scale.
 
