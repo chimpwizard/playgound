@@ -107,12 +107,7 @@ do
         eval "export $key2=\"$2\""
 
         if [ "$key2" == "peer" ]; then
-            if [ "$TASK_SLOT" != "1" ]; then
-                #newargs=$newargs" $key $2"
-                echo "*** OTHER ZERO NODE"
-            else    
-                echo "*** FIRST ZERO NODE"
-            fi;
+            echo "*** ZERO NODE"
         else
             if [ "$key2" == "zero" ]; then
                 echo "*** SERVER NODE"
@@ -157,8 +152,6 @@ if [ "$command" == "zero" ]; then
     if [ "$TASK_SLOT" = "1" ]; then
         echo "FIRST ZERO";
         port=$(echo  "$peer"|awk '{split($0,p1,":")system("echo "p1[2]) }')
-        #echo "$peer" | /dgraph/redi.sh -H redis -P 6379 -s zero
-        #echo "$HOSTNAME:$port" | /dgraph/redi.sh -H redis -P 6379 -s zero
         echo "$(hostname -i):$port" | /dgraph/redi.sh -H redis -P 6379 -s zero
     else
         echo "OTHER ZERO";
