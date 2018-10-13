@@ -1,6 +1,10 @@
 version: "3.0"
+
 networks:
   dgraph:
+
+volumes:
+  data-volume:
 
 services:
 
@@ -68,5 +72,4 @@ services:
       # deploy portainer using default password as "password"
       command: "-H tcp://172.10.10.20:4243 --admin-password '$$2y$$05$$/SVcW3.dRcqFP61JCNgj9.L0BnTre7OnOL3E3dSHIUX0uKLp5aR/e'"
 
-volumes:
-  data-volume:
+
