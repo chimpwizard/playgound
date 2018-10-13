@@ -215,14 +215,31 @@ echo $command|sh -
 ### to start the cluster
 
 ```shell
-npm run up
-npm run deploy
+npm run up      # To create the servers
+npm run deploy  # To deploy the stack in the cluster
 ```
 
 ... then go to [http://172.10.10.20:8000](http://172.10.10.20:8000) and update the connection to
 **172.10.10.20:8080** to point to the database api. The portainer console can be located at [http://172.10.10.20:9000](http://172.10.10.20:9000) for this use user **"admin"** and password **"password"**.
 
 All server instances listen on port 8080, this takes advantage of the embeded load balancer that comes with docker swarm.
+
+### how to scale up
+
+If you notice the docker-compose code already is making use of the replicas property in both services zero and server.
+
+```yaml
+    deploy:
+      replicas: 3
+```
+
+This small snippet illustrates how to scale the servers to 5 nodes.
+
+```bash
+npm run console                     # To get into the console box
+docker service scale dg_server=5    # To scale to 5 server dgraoh instacnes
+docker service ls                   # To verify the instances running
+```
 
 ### to clean up your machine
 
