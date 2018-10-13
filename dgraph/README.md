@@ -213,8 +213,8 @@ echo $command|sh -
 
 ## Prerequisites to run the code
 
-- install npm
-- install vagrant
+- install [npm](https://docs.npmjs.com/getting-started/what-is-npm)
+- install [vagrant](https://www.vagrantup.com/intro/index.html)
 
 ### to start the cluster
 
