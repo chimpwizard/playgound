@@ -1,5 +1,10 @@
 # Provision DGraph in a cluster for HA
 
+```card
+by иÐгü
+ndru@chimpwizard.com
+```
+
 The goal of this POC is to get the DGRAPH database on a docker swarm cluster where we can scale the database dynamically.
 
 When checking how to run dgraph on a container using the DGRAPH documentation  you notice that the defined HA configuration is very static becase the number of instances of the cluster are individual services declared in the  docker-compose or kubernetes files.
@@ -243,7 +248,3 @@ npm run destroy
 ## Additional improvements
 
 - Cover what would be the code to support a kubernetes cluster.
-
-## Credits
-
-иÐгü: ndru@chimpwizard.com
