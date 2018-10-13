@@ -24,11 +24,7 @@ The dgraph architecture requries some zero and server nodes. What is important t
 
 The proposed architecture is as follows.
 
-
-**SOME IMAGE TBD**
-
-
-
+(**SOME IMAGE TBD**)
 
 ## The implementation
 
