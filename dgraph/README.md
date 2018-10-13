@@ -1,8 +1,9 @@
 # Provision DGraph in a cluster for HA
 
 ```yaml
-by иÐгü
-ndru@chimpwizard.com
+by: иÐгü
+email: ndru@chimpwizard.com
+date: 10.13.2018
 ```
 
 ****
