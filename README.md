@@ -1,4 +1,4 @@
-# NDRU's PLAYGROUND
+# иÐгü PLAYGROUND
 
 This repo contains usefull samples/use cases to get you started with different technologies.
 
