@@ -237,7 +237,7 @@ This small snippet illustrates how to scale the servers to 5 nodes.
 
 ```bash
 npm run console                     # To get into the console box
-docker service scale dg_server=5    # To scale to 5 server dgraoh instacnes
+docker service scale dg_server=5    # To scale to 5 server dgraph instacnes
 docker service ls                   # To verify the instances running
 ```
 
