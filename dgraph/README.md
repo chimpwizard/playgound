@@ -238,6 +238,7 @@ npm run destroy
 - https://portainer.readthedocs.io/en/stable/configuration.html
 - https://docs.docker.com/engine/reference/commandline/service_create/#create-services-using-templates
 - https://github.com/crypt1d/redi.sh
+- https://github.com/dgraph-io/dgraph-js-http
 
 ## Additional improvements
 
