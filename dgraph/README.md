@@ -1,12 +1,12 @@
 # Use DGraph on a HA Cluster
 
-The goal of this POC is to run DGRAPH database on a cluster (swarm or kubernetes) where we can scale the database dynamically.
+The goal of this POC is to deploy the DGRAPH database on a docker swarm cluster where we can scale the database dynamically.
 
-When checking how to run dgraph on a container using the DGRAPH documentation  you notice that there is not a real HA configuration defined int he docker-compose or kubernetes files, instead is a very static configuration because there is a specific number of nodes declared on the files.
+When checking how to run dgraph on a container using the DGRAPH documentation  you notice that the defined HA configuration is very static becase the number of instances of the cluster are individual services declared in the  docker-compose or kubernetes files.
 
-I want to present an alternative that is more flexible, dynamic and easirer to scale. 
+I want to present an alternative that is more flexible, dynamic and easirer to scale.
 
-I want to be able to scale the number of master and worker nodes using docker swarm or kubernetes capabilities and make the cluster to addapt to that instead of reconfiguring the YAML files to achieve that. I hope the DGraph core team include something like this in the core docker image.
+I want to be able to scale the number of master and worker nodes using the swarm or kubernetes capabilities and make the cluster to addapt to that instead of reconfiguring the YAML files to achieve that. I hope the DGraph core team include something like this its core components.
 
 The code for this POC can be found [Here](http://github.com/chimpwizard/playground/dgraph/README.md)
 
@@ -14,21 +14,19 @@ The code for this POC can be found [Here](http://github.com/chimpwizard/playgrou
 
 Assuming you arelady read [DGraph Get Started Guide](https://docs.dgraph.io/get-started/).
 
-The dgraph architecture requries some masters (aka zero servers) and workers (aka server nodes). What is important to notice  is that by design each instance in the cluster needs to be fully identitied, meaning fully accesble by server name. This is what makes difficult the dynamic scalling.
+The dgraph architecture requries some zero and server nodes. What is important to notice  is that by design each instance in the cluster needs to be fully identitied, meaning fully accesble by hostname name. This is what makes difficult the scalling.
 
 The proposed architecture is as follows.
 
 
-**SOME IMAGE
+**SOME IMAGE TBD**
 
 
 
 
 ## The implementation
 
-The first thing we need to do is to extend the dgraph docker image, the reson is that the current implementation doesnt provide a way to change the servername at start up command, this is what is going to allow us to configure dgraph accorly.
-
-The dockefile extends the  dgraph image and add basic capabilities and some scripts to override the default behaviour.
+The first thing we need to do is to extend the dgraph docker image, the reson is that the current implementation doesnt provide a way to change the servername at start up command, this is what is going to allow us to configure dgraph accorly to add additional capabilities to override the default behaviour.
 
 ```dockerfile
 FROM dgraph/dgraph:latest
@@ -47,19 +45,19 @@ ADD redi.sh .
 ENTRYPOINT ["/dgraph/run.sh"]
 ```
 
-The magic happens on the run.sh file where basically the trick is to change the --peer and --zero params supported by the capabilities of a redis in memory database.
+The magic happens on the run.sh file where basically the trick is to change the --peer and --zero params before launching the service.
 
 Lets go over the most important pieces
 
-Initially all is does its to cature the incoming parameters.. the idea here is to keep the commandd as close as possible to the proposed solution in the dgraph documentation.
+Initially all is does its to cature the incoming parameters and identify what type of service is oging to be launched (zero or server), the idea here is to keep the commandd as close as possible to the proposed solution in the dgraph documentation.
 
-This piece of the code does two things;. First capture in the type or service needs to be executed (zero or server), then capture the additional standrar parameters.
-
-The idea is to be able to process this piece of the start command
+The command looks like this.
 
 ```bash
 command: --command zero --my $$HOSTNAME:508$$TASK_SLOT --replicas 3 --idx $$TASK_SLOT  -o $$TASK_SLOT --peer zero:5081  -v 2
 ```
+
+$$HOSTNAME, $$TASK_SLOT  are place holders automatically updated by docker swarm command, the double dollar symbol prevent docker cli to replace those values with environment variables.
 
 ```bash
 #!/bin/bash
@@ -138,16 +136,16 @@ if [ "$help" == "true" ]; then
 fi
 ```
 
-Then the code relies on redis to be able to store what node is the first zero instace which becomes the leader, additionally to that in order to be resilent it checks that redis is up.
+Then the code relies on the in-memory redis database to be able to store what node is the first zero instace which becomes the leader. This piece of code just makes sure that the redis instance is already up before proceding.
 
 ```bash
 echo "*** Wait for redis to be up"
 /dgraph/wait-for-it.sh redis:6379 -t 60
 ```
 
-If the container  is the master or zero instance. It checks if that is the first one or the other ones, here is where the first instacne makes sure it get registered in redis so the following containers can use its ip as the zero master or peer server.
+If the container  correspond to a zero instance. It checks if that is the first one, the first instacne makes sure it get registered in redis so the following containers can use its ip as the zero master or peer server.
 
-Since all container can start in parallel it is important to check if redis record is already stored, if record is found the --zero or the --peer parameters we overriden.
+Since all container can start in parallel it is important to check if redis record is already stored, if record is found the --zero or the --peer parameters get overriden.
 
 ```bash
 if [ "$command" == "zero" ]; then
@@ -179,7 +177,7 @@ if [ "$command" == "zero" ]; then
 fi;
 ```
 
-The server containers follow similar rules and checksthat redis and the master/zero node is up.
+The server containers follow similar rules and checks that redis and the zero node is up.
 
 ```bash
 if [ "$command" == "server" ]; then
@@ -200,7 +198,7 @@ if [ "$command" == "server" ]; then
 fi;
 ```
 
-Then the final command is rewrited and the container can be started.
+Then the final command is rewritten and the container can be launched.
 
 ```bash
 command="dgraph $command $newargs"
@@ -234,6 +232,10 @@ npm run deploy
 - https://www.calebwoods.com/2015/05/05/vagrant-guest-commands/
 - https://portainer.readthedocs.io/en/stable/configuration.html
 - https://docs.docker.com/engine/reference/commandline/service_create/#create-services-using-templates
+
+## Additional improvements
+
+- Cover what would be the code to support a kubernetes cluster.
 
 ## Credits
 
