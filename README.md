@@ -1,6 +1,6 @@
 # иÐгü PLAYGROUND
 
-This repo contains usefull samples/use cases to get you started with different technologies.
+This repo contains usefull samples to get you started with different technologies.
 
 ## INDEX
 
