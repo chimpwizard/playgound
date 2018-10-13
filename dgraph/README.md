@@ -1,9 +1,11 @@
 # Provision DGraph in a cluster for HA
 
-```card
+```yaml
 by иÐгü
 ndru@chimpwizard.com
 ```
+
+****
 
 The goal of this POC is to get the DGRAPH database on a docker swarm cluster where we can scale the database dynamically.
 
