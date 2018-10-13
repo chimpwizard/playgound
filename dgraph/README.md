@@ -237,6 +237,7 @@ npm run destroy
 - https://www.calebwoods.com/2015/05/05/vagrant-guest-commands/
 - https://portainer.readthedocs.io/en/stable/configuration.html
 - https://docs.docker.com/engine/reference/commandline/service_create/#create-services-using-templates
+- https://github.com/crypt1d/redi.sh
 
 ## Additional improvements
 
