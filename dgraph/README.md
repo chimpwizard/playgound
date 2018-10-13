@@ -239,6 +239,9 @@ This small snippet illustrates how to scale the servers to 5 nodes.
 npm run console                     # To get into the console box
 docker service scale dg_server=5    # To scale to 5 server dgraph instacnes
 docker service ls                   # To verify the instances running
+
+# To check dgraph metrics
+curl http://172.10.10.20:8080/debug/vars | python -m json.tool | less
 ```
 
 ### to clean up your machine

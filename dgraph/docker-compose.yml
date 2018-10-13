@@ -1,4 +1,4 @@
-version: "3.0"
+version: "3.2"
 
 networks:
   dgraph:
@@ -19,7 +19,10 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-
+      # labels:
+      #   version: "10.13.2018"
+      #   com.chimpwizard.is-beta: "yes" 
+      #   com.chimpwizard.is-production: "no" 
     image: chimpwizard/dgraph:latest
     environment:
       - 'TASK_SLOT={{.Task.Slot}}'
@@ -33,6 +36,10 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      # labels:
+      #   version: "10.13.2018"
+      #   com.chimpwizard.is-beta: "yes" 
+      #   com.chimpwizard.is-production: "no" 
     image: chimpwizard/dgraph:latest
     ports:
       - 8080:8080
