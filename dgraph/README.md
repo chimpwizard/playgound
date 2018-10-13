@@ -228,7 +228,8 @@ npm run deploy
 npm run destroy
 ```
 
-... then go to [http://172.10.10.20:8000](http://172.10.10.20:8000)
+... then go to [http://172.10.10.20:8000](http://172.10.10.20:8000) and update the connection to
+172.10.10.20:8080 to point to the database api.
 
 ## Some references while doing this
 
