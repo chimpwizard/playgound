@@ -15,7 +15,6 @@ services:
     networks:
       - dgraph
 
-
   zero:
     build:
       context: .
@@ -30,7 +29,6 @@ services:
       replicas: 3
     command: --command zero --my $$HOSTNAME:508$$TASK_SLOT --replicas 3 --idx $$TASK_SLOT  -o $$TASK_SLOT --peer zero:5081  -v 2
 
-
   server:
     build:
       context: .
@@ -40,12 +38,6 @@ services:
       - 8080:8080
       - 9080:9080
     environment:
-      - 'SOMENAME1={{.Service.ID}}'
-      - 'SOMENAME2={{.Service.Name}}'
-      - 'SOMENAME3={{.Service.Labels}}'
-      - 'SOMENAME4={{.Node.ID}}'
-      - 'SOMENAME5={{.Task.ID}}'
-      - 'SOMENAME6={{.Task.Name}}'
       - 'TASK_SLOT={{.Task.Slot}}'
     networks:
       - dgraph
