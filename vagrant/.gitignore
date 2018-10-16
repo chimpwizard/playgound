@@ -1,0 +1,4 @@
+.vagrant
+swarm-token
+k8s-token
+kube.config
