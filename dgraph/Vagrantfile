@@ -7,10 +7,9 @@ VAGRANTFILE_API_VERSION = "2"
 Vagrant.require_version ">= 1.8.1"
 ENV['VAGRANT_DEFAULT_PROVIDER'] = 'virtualbox'
 
-
 servers=[
-  { :hostname => "console", :ip => "172.10.10.10" },
   { :hostname => "master1", :ip => "172.10.10.20" },
+  { :hostname => "console", :ip => "172.10.10.10" },
   { :hostname => "node1",   :ip => "172.10.10.30" },
   { :hostname => "node2",   :ip => "172.10.10.40" }
 ]
@@ -20,6 +19,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   servers.each do |machine|
     config.vm.define machine[:hostname] do |node|
       node.vm.box = "bento/ubuntu-16.04"
+
+      #node.vm.box = "ubuntu/xenial64"
+      #node.vm.box = "centos/7"
+      #node.vm.box = "debian/jessie64"
+      #node.vm.box = "generic/rhel7"
+      #node.vm.box = "mrlunar/windows-server-2016-containers"
       #node.vm.box = "https://cloud-images.ubuntu.com/xenial/current/xenial-server-cloudimg-amd64-vagrant.box"
 
       node.vm.hostname = machine[:hostname]
@@ -33,22 +38,14 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
       if node.vm.hostname == "console"
         node.vm.synced_folder ".", "/home/app", owner: "vagrant", group: "vagrant"
-        #node.vm.synced_folder "~/.ssh", "/home/vagrant/.ssh", owner: "vagrant", group: "vagrant", create: true
-
-        node.vm.provision "shell", privileged:false, path:"./scripts/vagrant/swarm/ubuntu/provision.sh", args:["#{servers[1][:ip]}"]
+        node.vm.provision "file", source: "./scripts", destination: "$HOME/scripts"
+        node.vm.provision "shell", privileged:false, path:"./scripts/vagrant/provision.sh", args:["#{servers[0][:ip]}","#{ENV['PLATFORM']}"]
       end
 
       if node.vm.hostname != "console"
-        #node.vm.provision "shell", privileged:false, path:"./scripts/vagrant/swarm/ubuntu/provision.sh", args:["#{servers[0][:ip]}"], run: "always"
-        node.vm.provision "shell", privileged:false, path:"./scripts/vagrant/swarm/ubuntu/provision.sh", args:["#{servers[1][:ip]}"]
+        node.vm.provision "file", source: "./scripts", destination: "$HOME/scripts"
+        node.vm.provision "shell", privileged:false, path:"./scripts/vagrant/provision.sh", args:["#{servers[0][:ip]}","#{ENV['PLATFORM']}"]
       end
-
-      
-      #config.vm.provision "docker"
-      #config.vm.provision "shell", privileged:false,path:"./scripts/vagrant/install-swarm.sh", args:["#{$master1}"]
-      #node.vm.provision "shell", privileged:false,path:"./scripts/vagrant/swarm/provision.sh", args:["#{servers[0][:ip]}"], run: "always"
-      
-      
     end
   end
 

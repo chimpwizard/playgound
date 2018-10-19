@@ -21,7 +21,8 @@ case "$lsb_dist" in
 
     ubuntu)
         echo "UBUNTU"
-        /vagrant/scripts/vagrant/swarm/ubuntu/provision.sh $1
+        chmod +x ./scripts/vagrant/swarm/ubuntu/provision.sh 
+        ./scripts/vagrant/swarm/ubuntu/provision.sh $1
     ;;
 
     debian|raspbian)
@@ -30,17 +31,20 @@ case "$lsb_dist" in
 
     centos)
         echo "CENTOS"
-        /vagrant/scripts/vagrant/swarm/centos/provision.sh $1
+        chmod +x ./scripts/vagrant/swarm/centos/provision.sh
+        ./scripts/vagrant/swarm/centos/provision.sh $1
     ;;
 
     rhel|ol|sles)
         echo "RHEL"
-        /vagrant/scripts/vagrant/rhel/centos/provision.sh $1
+        chmod +x ./scripts/vagrant/swarm/rhel/provision.sh
+        ./scripts/vagrant/swarm/rhel/provision.sh $1
     ;;
 
     *)
         echo "OTHER"
-        /vagrant/scripts/vagrant/swarm/other/provision.sh $1
+        chmod +x ./scripts/vagrant/swarm/other/provision.sh
+        ./scripts/vagrant/swarm/other/provision.sh $1
     ;;
 
 esac

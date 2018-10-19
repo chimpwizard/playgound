@@ -4,6 +4,7 @@
 by: иÐгü
 email: ndru@chimpwizard.com
 date: 10.13.2018
+version: draft
 ```
 
 ****
@@ -258,6 +259,7 @@ npm run destroy
 - https://docs.docker.com/engine/reference/commandline/service_create/#create-services-using-templates
 - https://github.com/crypt1d/redi.sh
 - https://github.com/dgraph-io/dgraph-js-http
+- https://github.com/helm/helm/blob/master/docs/charts.md
 
 ## Additional improvements
 

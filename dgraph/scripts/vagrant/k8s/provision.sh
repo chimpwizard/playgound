@@ -17,11 +17,13 @@ lsb_dist=$( get_distribution )
 lsb_dist="$(echo "$lsb_dist" | tr '[:upper:]' '[:lower:]')"
 
 echo "FOLDER: $PWD"
+ls -la 
 case "$lsb_dist" in
 
     ubuntu)
         echo "UBUNTU"
-        /vagrant/scripts/vagrant/k8ts/ubuntu/provision.sh $1
+        chmod +x ./scripts/vagrant/k8s/ubuntu/provision.sh
+        ./scripts/vagrant/k8s/ubuntu/provision.sh $1
     ;;
 
     debian|raspbian)
@@ -30,17 +32,20 @@ case "$lsb_dist" in
 
     centos)
         echo "CENTOS"
-        /vagrant/scripts/vagrant/k8ts/centos/provision.sh $1
+        chmod +x ./scripts/vagrant/k8s/centos/provision.sh
+        ./scripts/vagrant/k8s/centos/provision.sh $1
     ;;
 
     rhel|ol|sles)
         echo "RHEL"
-        /vagrant/scripts/vagrant/rhel/centos/provision.sh $1
+        chmod +x ./scripts/vagrant/rhel/centos/provision.sh 
+        ./scripts/vagrant/k8s/cenrheltos/provision.sh $1
     ;;
 
     *)
         echo "OTHER"
-        /vagrant/scripts/vagrant/k8ts/other/provision.sh $1
+        chmod +x ./scripts/vagrant/k8s/other/provision.sh
+        ./scripts/vagrant/k8s/other/provision.sh $1
     ;;
 
 esac

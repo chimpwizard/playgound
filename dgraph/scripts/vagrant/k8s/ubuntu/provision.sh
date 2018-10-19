@@ -57,16 +57,22 @@ sudo apt-get update
 sudo apt-get install -y golang-go kubelet kubeadm kubectl
 #sudo go get github.com/kubernetes-incubator/cri-tools/cmd/crictl
 
-
+echo "*********************************************************************"
+echo "Install snap and helm"
+echo "*********************************************************************"
+sudo apt install -y snapd
+sudo snap install helm --classic
+#curl https://raw.githubusercontent.com/helm/helm/master/scripts/get | sudo -
 
 if [[ "$HOSTNAME" == master* ]]
 then
 
  echo "*********************************************************************"
- echo "Configure Docker and Init Swarm @ $1 "
+ echo "Configure Kubernetes and Init Cluster @ $1 "
  echo "*********************************************************************"
- 
- sudo  kubeadm init --apiserver-advertise-address=$1 --pod-network-cidr=10.244.0.0/16| tee | awk '/--token/ {print $0}' > /vagrant/k8ts-token
+ sudo swapoff -a
+ sudo sed -i '/swap/d' /etc/fstab
+ sudo  kubeadm init --ignore-preflight-errors=Swap --apiserver-advertise-address=$1 --pod-network-cidr=10.244.0.0/16| tee | awk '/--token/ {print $0}' > /vagrant/k8s-token
 
  sudo chmod 777 /var/run/docker.sock
 
@@ -115,12 +121,49 @@ then
  sudo chmod 777 /var/run/docker.sock
 
  echo "*********************************************************************"
- echo "Join Swarm"
+ echo "Join cluster"
  echo "*********************************************************************"
  #kubeadm join --token <token> <master-ip>:<master-port> --discovery-token-ca-cert-hash sha256:<hash>
- sudo `cat /vagrant/k8ts-token`
+ sudo swapoff -a
+ sudo sed -i '/swap/d' /etc/fstab
+ sudo `cat /vagrant/k8s-token`
 
  #sudo docker swarm join --token `cat /vagrant/swarm-token` $1:2377
+fi
+
+if [[ "$HOSTNAME" == console* ]]
+then
+
+
+ #Install docker compose and start weave scope
+ echo "*********************************************************************"
+ echo "Installing docker compose"
+ echo "*********************************************************************"
+ #sudo apt install -y docker-compose
+ export DOCKER_COMPOSE_VERSION=1.13.0
+ sudo curl --insecure -L https://github.com/docker/compose/releases/download/$DOCKER_COMPOSE_VERSION/docker-compose-`uname -s`-`uname -m` > ./dc
+ sudo cp ./dc //usr/local/bin/docker-compose 
+ sudo chmod +x /usr/local/bin/docker-compose
+
+ #Install developer tools
+ echo "*********************************************************************"
+ echo "Installing developer tools"
+ echo "*********************************************************************"
+ sudo apt-get install -y git
+ curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+ sudo apt-get install -y nodejs
+ sudo apt-get install -y build-essential
+ sudo apt-get install -y npm
+ sudo npm install npm --global
+ sudo apt-get install dos2unix
+
+ echo "*********************************************************************"
+ echo "Copy kube.config to user home"
+ echo "*********************************************************************"
+ sudo cp /vagrant/kube.config $HOME/.kube/config
+ sudo chown vagrant:vagrant $HOME/.kube/config
+ sudo echo "export KUBECONFIG=/home/app/kube.config" >> /home/vagrant/.bashrc
+
 fi
 
 echo "*********************************************************************"
