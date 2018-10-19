@@ -29,10 +29,9 @@ sudo add-apt-repository \
    $(lsb_release -cs) \
    stable"
 
-sudo apt-get update
-
-#sudo apt-get install -y docker-ce
 sudo apt-get install -y docker.io
+
+
 
 echo "*********************************************************************"
 echo "Give docekr access to vagrant"
@@ -41,22 +40,6 @@ sudo usermod -aG docker vagrant
 
 sudo chmod 777 /var/run/docker.sock
 
-# sudo mkdir -p /etc/docker
-# sudo echo "{ \"insecure-registries\":[\"$1:5000\"] }" | sudo tee /etc/docker/daemon.json
-# sudo service docker restart && echo "docker service restarted"
-
-echo "*********************************************************************"
-echo "Install kubeadmin"
-echo "*********************************************************************"
-curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
-sudo echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" > ./tmp
-#sudo echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" > /etc/apt/sources.list.d/kubernetes.list
-sudo cp ./tmp /etc/apt/sources.list.d/kubernetes.list
-
-sudo apt-get update
-sudo apt-get install -y golang-go kubelet kubeadm kubectl
-#sudo go get github.com/kubernetes-incubator/cri-tools/cmd/crictl
-
 echo "*********************************************************************"
 echo "Install snap and helm"
 echo "*********************************************************************"
@@ -64,15 +47,38 @@ sudo apt install -y snapd
 sudo snap install helm --classic
 #curl https://raw.githubusercontent.com/helm/helm/master/scripts/get | sudo -
 
+
+echo "*********************************************************************"
+echo "Install kubeadmin"
+echo "*********************************************************************"
+sudo curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+sudo echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" > ./tmp
+sudo cp ./tmp /etc/apt/sources.list.d/kubernetes.list
+sudo apt-get update
+
+#sudo apt-get install -qy kubelet=1.10.0 kubeadm=1.10.0 kubectl=1.10.0 kubernetes-cni=0.6.0
+sudo apt install -y kubeadm  kubelet kubectl
+
+#sudo apt install -y kubelet=1.8.4-00 kubernetes-cni=0.5.1-00 kubectl=1.8.4-00 kubeadm=1.8.4-00
+
+echo "*********************************************************************"
+echo "Turn Off swap"
+echo "*********************************************************************"
+sudo sed -i '/swap/d' /etc/fstab
+sudo swapoff -a
+
 if [[ "$HOSTNAME" == master* ]]
 then
 
  echo "*********************************************************************"
  echo "Configure Kubernetes and Init Cluster @ $1 "
  echo "*********************************************************************"
- sudo swapoff -a
- sudo sed -i '/swap/d' /etc/fstab
- sudo  kubeadm init --ignore-preflight-errors=Swap --apiserver-advertise-address=$1 --pod-network-cidr=10.244.0.0/16| tee | awk '/--token/ {print $0}' > /vagrant/k8s-token
+
+ #sudo 'kubeadm init --kubernetes-version=v1.8.4 --apiserver-advertise-address $(hostname -i) --pod-network-cidr 10.244.0.0/16'
+ #sudo  kubeadm init --ignore-preflight-errors=Swap --apiserver-advertise-address=$1 --pod-network-cidr=10.244.0.0/16 --kubernetes-version=1.8.4| tee | awk '/--token/ {print $0}' > /vagrant/k8s-token
+ #sudo  kubeadm init --apiserver-advertise-address=$1 --pod-network-cidr=10.244.0.0/16 --kubernetes-version=1.8.4| tee | awk '/kubeadm join --token/ {print $0}' > /vagrant/k8s-token
+ sudo  kubeadm init --apiserver-advertise-address=$1 --pod-network-cidr=10.244.0.0/16 | tee | awk '/kubeadm join --token/ {print $0}' > /vagrant/k8s-token
+ 
 
  sudo chmod 777 /var/run/docker.sock
 
@@ -81,9 +87,9 @@ then
  echo "*********************************************************************"
 
  mkdir -p $HOME/.kube
- sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+ sudo cp /etc/kubernetes/admin.conf $HOME/.kube/config
  sudo chown vagrant:vagrant $HOME/.kube/config
- sudo cp -i /etc/kubernetes/admin.conf /vagrant/kube.config
+ sudo cp /etc/kubernetes/admin.conf /vagrant/kube.config
  sudo chmod 777 /vagrant/kube.config
 
 
@@ -93,7 +99,12 @@ then
  sudo sysctl net.bridge.bridge-nf-call-iptables=1
  
  #sudo kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/v0.9.1/Documentation/kube-flannel.yml
- sudo kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/bc79dd1505b0c8681ece4de4c0d86c5cd2643275/Documentation/kube-flannel.yml
+ #sudo kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/v0.10.0/Documentation/kube-flannel.yml
+
+ #kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+ #kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/k8s-manifests/kube-flannel-rbac.yml
+
+ sudo kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
 
  sudo kubectl get pods --all-namespaces
 
@@ -127,7 +138,6 @@ then
  echo "Join cluster"
  echo "*********************************************************************"
  #kubeadm join --token <token> <master-ip>:<master-port> --discovery-token-ca-cert-hash sha256:<hash>
- sudo swapoff -a
  sudo sed -i '/swap/d' /etc/fstab
  sudo `cat /vagrant/k8s-token`
 
@@ -160,11 +170,18 @@ then
  sudo npm install npm --global
  sudo apt-get install dos2unix
 
- sudo echo "export KUBECONFIG=/home/app/kube.config" >> /home/vagrant/.bashrc
+ echo "*********************************************************************"
+ echo "Copy kube.config to user home"
+ echo "*********************************************************************"
+ sudo mkdir -p $HOME/.kube
+ sudo cp /vagrant/kube.config $HOME/.kube/config
+ sudo chown vagrant:vagrant $HOME/.kube/config
+ sudo echo "export KUBECONFIG=/home/vagrant/kube.config" >> /home/vagrant/.bashrc
 
 fi
 
 echo "*********************************************************************"
 echo "DONE $HOSTNAME"
 echo "*********************************************************************"
+
 

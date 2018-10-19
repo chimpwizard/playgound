@@ -55,6 +55,8 @@ npm run destroy
 - https://stackoverflow.com/questions/48556971/unable-to-install-kubernetes-charts-on-specified-namespace
 - https://github.com/kubernetes/dashboard/wiki/Installation
 - https://letsencrypt.org/getting-started/
+- https://github.crookster.org/Kubernetes-Ubuntu-18.04-Bare-Metal-Single-Host/
+- https://mherman.org/blog/setting-up-a-kubernetes-cluster-on-ubuntu/
 
 ## Additional improvements
 

@@ -7,9 +7,12 @@ VAGRANTFILE_API_VERSION = "2"
 Vagrant.require_version ">= 1.8.1"
 ENV['VAGRANT_DEFAULT_PROVIDER'] = 'virtualbox'
 
+#
+# Order matters b/c we need master kube.config on console
+#
 servers=[
-  { :hostname => "console", :ip => "172.10.10.10" },
   { :hostname => "master1", :ip => "172.10.10.20" },
+  { :hostname => "console", :ip => "172.10.10.10" },
   { :hostname => "node1",   :ip => "172.10.10.30" },
   { :hostname => "node2",   :ip => "172.10.10.40" }
 ]
@@ -39,12 +42,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       if node.vm.hostname == "console"
         node.vm.synced_folder ".", "/home/app", owner: "vagrant", group: "vagrant"
         node.vm.provision "file", source: "./scripts", destination: "$HOME/scripts"
-        node.vm.provision "shell", privileged:false, path:"./scripts/vagrant/provision.sh", args:["#{servers[1][:ip]}","#{ENV['PLATFORM']}"]
+        node.vm.provision "file", source: "./samples", destination: "$HOME/samples"
+        node.vm.provision "shell", privileged:false, path:"./scripts/vagrant/provision.sh", args:["#{servers[0][:ip]}","#{ENV['PLATFORM']}"]
       end
 
       if node.vm.hostname != "console"
         node.vm.provision "file", source: "./scripts", destination: "$HOME/scripts"
-        node.vm.provision "shell", privileged:false, path:"./scripts/vagrant/provision.sh", args:["#{servers[1][:ip]}","#{ENV['PLATFORM']}"]
+        node.vm.provision "shell", privileged:false, path:"./scripts/vagrant/provision.sh", args:["#{servers[0][:ip]}","#{ENV['PLATFORM']}"]
       end
     end
   end
