@@ -72,17 +72,6 @@ then
  
  sudo chmod 777 /var/run/docker.sock
 
- #Install docker compose and start weave scope
- echo "*********************************************************************"
- echo "Installing docker compose"
- echo "*********************************************************************"
- #sudo apt install -y docker-compose
- export DOCKER_COMPOSE_VERSION=1.22.0
- sudo curl --insecure -L https://github.com/docker/compose/releases/download/$DOCKER_COMPOSE_VERSION/docker-compose-`uname -s`-`uname -m` > ./dc
- sudo cp ./dc //usr/local/bin/docker-compose 
- sudo chmod +x /usr/local/bin/docker-compose
-
-
 fi
 
 if [[ "$HOSTNAME" == node* ]]
