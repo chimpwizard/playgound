@@ -73,6 +73,7 @@ relationship OneToMany {
 }
 ```
 
+
 ## Prerequisites to run the code
 
 - install [npm](https://docs.npmjs.com/getting-started/what-is-npm)
@@ -80,12 +81,189 @@ relationship OneToMany {
 ### to run
 
 ```shell
+rm -rf ./build
+ng new jison --directory "./build"
 node ./src/parser/parser.js --model ./src/model/model.m3 --output ./build/metadata.yaml
-node ./src/generator/generator.js --metadata ./build/metadata.yaml --template ./src/templates/variables.ts.hbs --output ./build/src/model
-node ./src/generator/generator.js --metadata ./build/metadata.yaml --template ./src/templates/types.ts.hbs --output ./build/src/types
-node ./src/generator/generator.js --metadata ./build/metadata.yaml --template ./src/templates/enums.ts.hbs --output ./build/src/types
-node ./src/generator/generator.js --metadata ./build/metadata.yaml --template ./src/templates/model.ts.hbs --output ./build/src/model
+node ./src/generator/generator.js --metadata ./build/metadata.yaml --template ./src/templates/variables.ts.hbs --output ./build/src/app/model
+node ./src/generator/generator.js --metadata ./build/metadata.yaml --template ./src/templates/types.ts.hbs --output ./build/src/app/types
+node ./src/generator/generator.js --metadata ./build/metadata.yaml --template ./src/templates/enums.ts.hbs --output ./build/src/app/types
+node ./src/generator/generator.js --metadata ./build/metadata.yaml --template ./src/templates/model.ts.hbs --output ./build/src/app/model
 
+```
+
+### The parser
+
+The parser will use JISON engine to create a metamodel which is basically translate the domain language into a YAML file that can ge understood by a program.. In this case the generator.
+
+The output of the model will look like this
+
+```yaml
+variables:
+    DEFAULT_MIN:
+        name: DEFAULT_MIN
+        value: '1'
+    DEFAULT_MAX:
+        name: DEFAULT_MAX
+        value: '100'
+    EMAIL_MASK:
+        name: EMAIL_MASK
+        value: '([a-z]*@[a-z].[a-z])'
+enumertions:
+    Status:
+        name: Status
+        values:
+            - DRAFT
+            - INREVIEW
+            - PUBLISHED
+types:
+    Address:
+        name: Address
+        attributes:
+            address1:
+                name: address1
+                type: string
+            address2:
+                name: address2
+                type: string
+            city:
+                name: city
+                type: string
+            state:
+                name: state
+                type: string
+            country:
+                name: country
+                type: string
+entities:
+    Book:
+        name: Book
+        is: IEntity
+        attributes:
+            title:
+                name: title
+                type: string
+                required: true
+            pages:
+                name: pages
+                type: number
+                min: '1'
+                max: '1000'
+            status:
+                name: status
+                type: Status
+        anotations:
+            Auth:
+                name: Auth
+                attributes:
+                    properties:
+                        name: access
+                        value: restrict
+            Route:
+                name: Route
+                attributes:
+                    properties:
+                        name: handler
+                        value: CRUD
+        relationships:
+            Author-Book:
+                from:
+                    entity: Author
+                    attribute:
+                        name: book
+                        show: title
+                to:
+                    entity: Book
+                    attribute:
+                        name: editor
+                type: OneToMany
+    Author:
+        name: Author
+        is: IEntity
+        attributes:
+            name:
+                name: name
+                type: string
+                required: true
+            email:
+                name: email
+                type: string
+                mask: '${EMAIL_MASK}'
+            address:
+                name: address
+                type: Address
+        anotations:
+            Auth:
+                name: Auth
+                attributes:
+                    properties:
+                        name: access
+                        value: restrict
+            Route:
+                name: Route
+                attributes:
+                    properties:
+                        name: handler
+                        value: CRUD
+        relationships:
+            Author-Book:
+                from:
+                    entity: Author
+                    attribute:
+                        name: book
+                        show: title
+                to:
+                    entity: Book
+                    attribute:
+                        name: editor
+                type: OneToMany
+relationships:
+    Author-Book:
+        from:
+            entity: Author
+            attribute:
+                name: book
+                show: title
+        to:
+            entity: Book
+            attribute:
+                name: editor
+        type: OneToMany
+
+```
+
+### The generator
+
+At this point we have the model translated into YAML, then the generator will read that model, and create a javascript object from it, then using [Handlebars](https://handlebarsjs.com/) templates will create the code.
+
+In our POC we selected to generate nodejs code and merge that into an angular7 project.
+
+A template to create the enums will look like this
+
+```hbs
+{{!-- for each element onthe model --}}
+{{#each model.enumertions}}
+    {{#if this.name}}
+export enum {{this.name}} {
+        {{#each this.values}}
+            {{#if @last}}
+    {{this}}
+            {{else}}
+    {{this}},
+            {{/if}}
+        {{/each}}
+}
+    {{/if}}
+{{/each}}
+```
+
+and the output of this template + the metadata will be a typescript code like this:
+
+```ts
+export enum Status {
+    DRAFT,
+    INREVIEW,
+    PUBLISHED
+}
 ```
 
 

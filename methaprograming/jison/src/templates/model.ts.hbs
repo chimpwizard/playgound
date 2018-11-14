@@ -5,6 +5,12 @@
         {{~#remember-add this.name type="enum" key="type"}}{{/remember-add}}
     {{~/if}}
 {{/each}}
+{{!-- collect types --}}
+{{#each model.types ~}}
+    {{~#if this.name ~}}
+        {{~#remember-add this.name type="type" key="type"}}{{/remember-add}}
+    {{~/if}}
+{{/each}}
 {{!-- collect entities --}}
 {{#each model.entities}}
     {{~#if this.name}}

@@ -11,10 +11,6 @@ enum Status {
 }
 
 //Types
-type Entity {
-  id string;
-}
-
 type Address {
   address1 string;
   address2 string;
@@ -26,7 +22,7 @@ type Address {
 @Auth(roles="*", action="*", access="restrict")
 @Route(path="/books", handler="CRUD")
 @Route(path="/authors/:author/books/:book", handler="CRUD")
-entity Book is Entity {
+entity Book is IEntity {
   title string required;
   pages number min(1) max(1000);
   status Status;
@@ -34,7 +30,7 @@ entity Book is Entity {
 
 @Auth(roles="*", action="*", access="restrict")
 @Route(path="/authors", handler="CRUD")
-entity Author is Entity {
+entity Author is IEntity {
   name string required;
   email string "${EMAIL_MASK}";
   address Address;
