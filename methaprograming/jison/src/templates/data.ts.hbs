@@ -1,0 +1,21 @@
+{{#each model.entities}}
+import { {{this.name}} } from '../model/model';
+{{/each}}
+
+{{#each model.entities}}
+export const {{this.name}}s: {{this.name}}[] = [
+    {{#if this.attributes}}
+    {
+        id: 1,
+        {{#each this.attributes}}
+        {{this.name}}: {{#data-random this.name name=this.name type=this.type }}{{~/data-random}}
+            {{~#if @last}}
+            {{~else}}
+,
+            {{~/if}}
+
+        {{/each}}
+    {{/if}}
+    }
+];
+{{/each}}

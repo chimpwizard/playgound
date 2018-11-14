@@ -43,6 +43,7 @@ Handlebars.registerHelper('remember-add', require('./helpers/Remember.Add'));
 Handlebars.registerHelper('remember-scope', require('./helpers/Remember.Scope'));
 Handlebars.registerHelper('remember-import-from', require('./helpers/Remember.Import.From'));
 Handlebars.registerHelper('remember-import-check', require('./helpers/Remember.Import.Check'));
+Handlebars.registerHelper('data-random', require('./helpers/Data.Random'));
 
 var template = Handlebars.compile(source);
 var result = template(context);

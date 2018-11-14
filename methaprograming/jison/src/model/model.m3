@@ -31,6 +31,7 @@ entity Book is IEntity {
 @Auth(roles="*", action="*", access="restrict")
 @Route(path="/authors", handler="CRUD")
 entity Author is IEntity {
+  
   name string required;
   email string "${EMAIL_MASK}";
   address Address;
