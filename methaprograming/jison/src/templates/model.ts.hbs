@@ -1,0 +1,50 @@
+{{#remember-scope}}
+{{!-- collect enumerations --}}
+{{#each model.enumertions ~}}
+    {{~#if this.name ~}}
+        {{~#remember-add this.name type="enum" key="type"}}{{/remember-add}}
+    {{~/if}}
+{{/each}}
+{{!-- collect entities --}}
+{{#each model.entities}}
+    {{~#if this.name}}
+        {{~#remember-add this.name type="type" key="type"}}{{/remember-add}}
+    {{~/if}}
+{{/each}}
+{{!-- check ineritance and import --}}
+{{#each model.entities}}
+    {{#if this.is}}
+        {{~#remember-import-check this.is}}
+import { {{this.is}} } from {{#remember-import-from this.is}}{{/remember-import-from}} ;
+        {{~#remember-add this.is type="import" key="import"}}{{~/remember-add}}
+        {{/remember-import-check}}
+    {{/if}}
+{{/each}}
+{{!-- check attributes  and import if necesary --}}
+{{#each model.entities}}
+    {{#if this.attributes}}
+        {{#each this.attributes}}
+            {{#remember-import-check this.type}}
+import { {{this.type}} } from {{#remember-import-from this.type}}{{/remember-import-from}} ;
+            {{~#remember-add this.type type="import" key="import"}}{{~/remember-add}}
+            {{/remember-import-check}}
+        {{/each}}
+    {{/if}}
+{{/each}}
+{{!-- for each element onthe model --}}
+
+{{#each model.entities}}
+    {{!-- VARIABLES --}}
+    {{#if this.name}}
+        {{#if this.is}}
+export class {{this.name}} extends {{this.is}} {
+        {{else}}
+export class {{this.name}} {
+        {{/if}}
+            {{#each this.attributes}}
+    {{this.name}}: {{this.type}};
+            {{/each}}
+}
+    {{/if}}
+{{/each}}
+{{/remember-scope}}

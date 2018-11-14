@@ -1,0 +1,15 @@
+{{!-- for each element onthe model --}}
+{{#each model.enumertions}}
+    {{#if this.name}}
+export enum {{this.name}} {
+        {{#each this.values}}
+            {{#if @last}}
+    {{this}}
+            {{else}}
+    {{this}},
+            {{/if}}
+        {{/each}}
+}
+    {{/if}}
+{{/each}}
+

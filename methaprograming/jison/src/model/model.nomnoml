@@ -1,0 +1,17 @@
+[<abstract>Entity||save(); delete()]
+
+[Author|name: string;email: string|getBooks(); addBook(); deleteBook()
+
+]
+
+[Book|title: string;pages: number|
+
+  [Status]->[DRAFT]
+  [Status]->[INREVIEW]
+  [Status]->[PUBLISHED]
+]
+
+[<abstract>Entity]<:--[Author]
+[<abstract>Entity]<:--[Book]
+
+[Author] -> 0..* [Book]

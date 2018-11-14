@@ -1,0 +1,10 @@
+{{!-- for each element onthe model --}}
+{{#each model.types}}
+    {{#if this.name}}
+export abstract class {{this.name}} {
+        {{#each this.attributes}}
+    {{this.name}}: {{this.type}};
+        {{/each}}
+}
+    {{/if}}
+{{/each}}

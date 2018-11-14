@@ -1,0 +1,105 @@
+
+# Code generation with JISON using DDD techniques
+
+```yaml
+by: иÐгü
+email: ndru@chimpwizard.com
+date: 11.11.2018
+version: draft
+```
+
+****
+
+The goal of this POC is to define a grammar to create a model definition language that will allow latter on to generate code.
+
+## Proposed Design
+
+The domain definition language will allow to define domain entities and its relationships, as well as some additional behaviour then that will be paerser and translated into a JSON file that can be use as a metadata to a generator code. 
+
+![""](images/flow.png)
+
+## The implementation
+
+The implementation will ne in nodejs and as a core dependency we will use [jison](https://github.com/zaach/jison) package a great package created by [Zach Carter](https://github.com/zaach). People who is familiar with linux [lex anc yacc](https://www.epaperpress.com/lexandyacc/) this is the nodejs version of those legacy frameworks used to define lexicons and create code compilers.
+
+The model will be parsered into a YAML document that can be latter easy to use by a generator to create nodejs code.
+
+### The model
+
+The idea is to be able to create a model that is understandable and easy to maintain.
+This model is based on [DDD](https://en.wikipedia.org/wiki/Domain-driven_design) principles also using annotations techniques to enrich the model.
+
+We well use this model as a sample:
+
+![""](images/model.png)
+
+Here we degine that an **Author** can have several **Books**, both are defined  as **Entity** which is an abstract that define the basic functionality of every **Entity** and a **Book** can also has an **Status** defined by the Book creation lifecycle.
+
+This conceptual model is represented in a languaged that we defined which is the purpose of the parser to translate into a YAML/data that can be understud easily by a generator as well as for a human.
+
+In the language we can enrish the model adding annotations that will be helful to define what things we would like to generate. For example we want that the two entities expose a REST API as well define some role base authorization to define who and how the entities can be used.
+
+```m3d
+
+//Constants
+var EMAIL_MASK = "([a-z]*@[a-z].[a-z])";
+
+//Enumeratins
+enum Status {
+  DRAFT,
+  INREVIEW,
+  PUBLISHED
+}
+
+@Auth(roles="*", action="*", access="restrict")
+@Route(path="/books", type="CRUD")
+@Route(path="/authors/:author/books/:book", type="CRUD")
+entity Book {
+  title String required;
+  pages Number min(1) max(1000);
+  status Status;
+}
+
+@Auth(roles="*", action="*", access="restrict")
+@Route(path="/authors", type="CRUD")
+entity Author {
+  name String required;
+  email String "${EMAIL_MASK}";
+}
+
+@Route(path="/authors/:author/books", type="CRUD")
+relationship OneToMany {
+  Author{book(title)} to Book{editor}
+}
+```
+
+## Prerequisites to run the code
+
+- install [npm](https://docs.npmjs.com/getting-started/what-is-npm)
+
+### to run
+
+```shell
+node ./src/parser/parser.js --model ./src/model/model.m3 --output ./build/metadata.yaml
+node ./src/generator/generator.js --metadata ./build/metadata.yaml --template ./src/templates/variables.ts.hbs --output ./build/src/model
+node ./src/generator/generator.js --metadata ./build/metadata.yaml --template ./src/templates/types.ts.hbs --output ./build/src/types
+node ./src/generator/generator.js --metadata ./build/metadata.yaml --template ./src/templates/enums.ts.hbs --output ./build/src/types
+node ./src/generator/generator.js --metadata ./build/metadata.yaml --template ./src/templates/model.ts.hbs --output ./build/src/model
+
+```
+
+
+## Some references while doing this
+
+- https://github.com/zaach/jison
+- https://github.com/antlr/grammars-v4/blob/master/java/Java.g4
+- https://docs.oracle.com/javase/specs/jls/se7/html/jls-2.html
+- https://www.sitepoint.com/a-beginners-guide-to-handlebars/
+- http://khaidoan.wikidot.com/handlebars-helper-advance
+
+## Additional improvements
+
+- Annotatins at attribute level
+- Atributes type CUSTOMTYPE
+- Anontations @Required, @Range, @Max, @Min, @Mask
+- Create domain diagrams using a tool like http://www.nomnoml.com and generate code from its language.

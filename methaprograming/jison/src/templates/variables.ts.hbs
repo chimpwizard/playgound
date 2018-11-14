@@ -1,0 +1,11 @@
+{{!-- for each element onthe model --}}
+{{#each model.variables}}
+    {{!-- VARIABLES --}}
+    {{#if this.name}}
+        {{#typeof this.value type="string"}}
+const {{this.name}} = '{{this.value}}';
+        {{else}}
+const {{this.name}} = {{this.value}};
+        {{/typeof}}
+    {{~/if}}
+{{/each}}
