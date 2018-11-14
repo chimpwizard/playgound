@@ -1,0 +1,2181 @@
+Bringing machine 'master1' up with 'virtualbox' provider...
+Bringing machine 'console' up with 'virtualbox' provider...
+Bringing machine 'node1' up with 'virtualbox' provider...
+Bringing machine 'node2' up with 'virtualbox' provider...
+==> master1: Importing base box 'bento/ubuntu-16.04'...
+[KProgress: 10%[KProgress: 20%[KProgress: 30%[KProgress: 40%[KProgress: 60%[KProgress: 70%[KProgress: 90%[K==> master1: Matching MAC address for NAT networking...
+==> master1: Checking if box 'bento/ubuntu-16.04' is up to date...
+==> master1: There was a problem while downloading the metadata for your box
+==> master1: to check for updates. This is not an error, since it is usually due
+==> master1: to temporary network problems. This is just a warning. The problem
+==> master1: encountered was:
+==> master1: 
+==> master1: The requested URL returned error: 404 Not Found
+==> master1: 
+==> master1: If you want to check for box updates, verify your network connection
+==> master1: is valid and try again.
+==> master1: Setting the name of the VM: vagrant_master1_1540460117113_86918
+==> master1: Clearing any previously set network interfaces...
+==> master1: Preparing network interfaces based on configuration...
+    master1: Adapter 1: nat
+    master1: Adapter 2: hostonly
+==> master1: Forwarding ports...
+    master1: 22 (guest) => 2222 (host) (adapter 1)
+==> master1: Running 'pre-boot' VM customizations...
+==> master1: Booting VM...
+==> master1: Waiting for machine to boot. This may take a few minutes...
+    master1: SSH address: 127.0.0.1:2222
+    master1: SSH username: vagrant
+    master1: SSH auth method: private key
+    master1: Warning: Connection reset. Retrying...
+    master1: 
+    master1: Vagrant insecure key detected. Vagrant will automatically replace
+    master1: this with a newly generated keypair for better security.
+    master1: 
+    master1: Inserting generated public key within guest...
+    master1: Removing insecure key from the guest if it's present...
+    master1: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> master1: Machine booted and ready!
+==> master1: Checking for guest additions in VM...
+    master1: The guest additions on this VM do not match the installed version of
+    master1: VirtualBox! In most cases this is fine, but in rare cases it can
+    master1: prevent things such as shared folders from working properly. If you see
+    master1: shared folder errors, please make sure the guest additions within the
+    master1: virtual machine match the version of VirtualBox you have installed on
+    master1: your host and reload your VM.
+    master1: 
+    master1: Guest Additions Version: 5.1.6
+    master1: VirtualBox Version: 5.2
+==> master1: Setting hostname...
+==> master1: Configuring and enabling network interfaces...
+==> master1: Mounting shared folders...
+    master1: /vagrant => /Volumes/MyData/MyCode/ChimpWizard/playgound/vagrant
+==> master1: Running provisioner: file...
+==> master1: Running provisioner: shell...
+    master1: Running: /var/folders/tw/640sz8rn33q2mgpy1m115fh80000gn/T/vagrant-shell20181025-58246-1bcihti.sh
+    master1: ******************
+    master1: MASTER: 172.10.10.20
+    master1: PLATFORM: k8s
+    master1: ******************
+    master1: FOLDER: /home/vagrant
+    master1: total 40
+    master1: drwxr-xr-x 5 vagrant vagrant 4096 Oct 25 09:35 .
+    master1: drwxr-xr-x 3 root    root    4096 Oct  1  2016 ..
+    master1: -rw-r--r-- 1 vagrant vagrant  220 Oct  1  2016 .bash_logout
+    master1: -rw-r--r-- 1 vagrant vagrant 3771 Oct  1  2016 .bashrc
+    master1: drwx------ 2 vagrant vagrant 4096 Oct  1  2016 .cache
+    master1: -rw-r--r-- 1 vagrant vagrant  655 Oct  1  2016 .profile
+    master1: drwxrwxr-x 3 vagrant vagrant 4096 Oct 25 09:35 scripts
+    master1: drwx------ 2 vagrant root    4096 Oct 25 09:35 .ssh
+    master1: -rw-r--r-- 1 vagrant vagrant    0 Oct  1  2016 .sudo_as_admin_successful
+    master1: -rw-r--r-- 1 vagrant vagrant    5 Oct  1  2016 .vbox_version
+    master1: -rw-r--r-- 1 root    root     182 Oct  1  2016 .wget-hsts
+    master1: K8s
+    master1: FOLDER: /home/vagrant
+    master1: total 40
+    master1: drwxr-xr-x 5 vagrant vagrant 4096 Oct 25 09:35 .
+    master1: drwxr-xr-x 3 root    root    4096 Oct  1  2016 ..
+    master1: -rw-r--r-- 1 vagrant vagrant  220 Oct  1  2016 .bash_logout
+    master1: -rw-r--r-- 1 vagrant vagrant 3771 Oct  1  2016 .bashrc
+    master1: drwx------ 2 vagrant vagrant 4096 Oct  1  2016 .cache
+    master1: -rw-r--r-- 1 vagrant vagrant  655 Oct  1  2016 .profile
+    master1: drwxrwxr-x 3 vagrant vagrant 4096 Oct 25 09:35 scripts
+    master1: drwx------ 2 vagrant root    4096 Oct 25 09:35 .ssh
+    master1: -rw-r--r-- 1 vagrant vagrant    0 Oct  1  2016 .sudo_as_admin_successful
+    master1: -rw-r--r-- 1 vagrant vagrant    5 Oct  1  2016 .vbox_version
+    master1: -rw-r--r-- 1 root    root     182 Oct  1  2016 .wget-hsts
+    master1: UBUNTU
+    master1: *********************************************************************
+    master1: PARAMS: 
+    master1:    IP: 172.10.10.20
+    master1: *********************************************************************
+    master1: *********************************************************************
+    master1: Update system
+    master1: *********************************************************************
+    master1: Hit:1 http://us.archive.ubuntu.com/ubuntu xenial InRelease
+    master1: Get:2 http://security.ubuntu.com/ubuntu xenial-security InRelease [107 kB]
+    master1: Get:3 http://us.archive.ubuntu.com/ubuntu xenial-updates InRelease [109 kB]
+    master1: Get:4 http://us.archive.ubuntu.com/ubuntu xenial-backports InRelease [107 kB]
+    master1: Get:5 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 Packages [868 kB]
+    master1: Get:6 http://security.ubuntu.com/ubuntu xenial-security/main amd64 Packages [573 kB]
+    master1: Get:7 http://us.archive.ubuntu.com/ubuntu xenial-updates/main i386 Packages [776 kB]
+    master1: Get:8 http://us.archive.ubuntu.com/ubuntu xenial-updates/main Translation-en [353 kB]
+    master1: Get:9 http://us.archive.ubuntu.com/ubuntu xenial-updates/restricted amd64 Packages [7,556 B]
+    master1: Get:10 http://us.archive.ubuntu.com/ubuntu xenial-updates/restricted i386 Packages [7,524 B]
+    master1: Get:11 http://us.archive.ubuntu.com/ubuntu xenial-updates/restricted Translation-en [2,272 B]
+    master1: Get:12 http://us.archive.ubuntu.com/ubuntu xenial-updates/universe amd64 Packages [697 kB]
+    master1: Get:13 http://us.archive.ubuntu.com/ubuntu xenial-updates/universe i386 Packages [639 kB]
+    master1: Get:14 http://security.ubuntu.com/ubuntu xenial-security/main i386 Packages [493 kB]
+    master1: Get:15 http://us.archive.ubuntu.com/ubuntu xenial-updates/universe Translation-en [282 kB]
+    master1: Get:16 http://us.archive.ubuntu.com/ubuntu xenial-updates/multiverse amd64 Packages [16.4 kB]
+    master1: Get:17 http://us.archive.ubuntu.com/ubuntu xenial-updates/multiverse i386 Packages [15.5 kB]
+    master1: Get:18 http://us.archive.ubuntu.com/ubuntu xenial-updates/multiverse Translation-en [8,344 B]
+    master1: Get:19 http://us.archive.ubuntu.com/ubuntu xenial-backports/main amd64 Packages [7,304 B]
+    master1: Get:20 http://us.archive.ubuntu.com/ubuntu xenial-backports/main i386 Packages [7,300 B]
+    master1: Get:21 http://us.archive.ubuntu.com/ubuntu xenial-backports/main Translation-en [4,456 B]
+    master1: Get:22 http://us.archive.ubuntu.com/ubuntu xenial-backports/universe amd64 Packages [7,804 B]
+    master1: Get:23 http://us.archive.ubuntu.com/ubuntu xenial-backports/universe i386 Packages [7,488 B]
+    master1: Get:24 http://us.archive.ubuntu.com/ubuntu xenial-backports/universe Translation-en [4,184 B]
+    master1: Get:25 http://security.ubuntu.com/ubuntu xenial-security/main Translation-en [240 kB]
+    master1: Get:26 http://security.ubuntu.com/ubuntu xenial-security/restricted amd64 Packages [7,204 B]
+    master1: Get:27 http://security.ubuntu.com/ubuntu xenial-security/restricted i386 Packages [7,224 B]
+    master1: Get:28 http://security.ubuntu.com/ubuntu xenial-security/restricted Translation-en [2,152 B]
+    master1: Get:29 http://security.ubuntu.com/ubuntu xenial-security/universe amd64 Packages [392 kB]
+    master1: Get:30 http://security.ubuntu.com/ubuntu xenial-security/universe i386 Packages [340 kB]
+    master1: Get:31 http://security.ubuntu.com/ubuntu xenial-security/universe Translation-en [150 kB]
+    master1: Get:32 http://security.ubuntu.com/ubuntu xenial-security/multiverse amd64 Packages [3,460 B]
+    master1: Get:33 http://security.ubuntu.com/ubuntu xenial-security/multiverse i386 Packages [3,632 B]
+    master1: Get:34 http://security.ubuntu.com/ubuntu xenial-security/multiverse Translation-en [1,744 B]
+    master1: Fetched 6,247 kB in 3s (1,649 kB/s)
+    master1: Reading package lists...
+    master1: *********************************************************************
+    master1: Installing dependencies
+    master1: *********************************************************************
+    master1: Reading package lists...
+    master1: Building dependency tree...
+    master1: Reading state information...
+    master1: The following additional packages will be installed:
+    master1:   libcurl3-gnutls python3-software-properties
+    master1: The following packages will be upgraded:
+    master1:   apt-transport-https ca-certificates curl libcurl3-gnutls
+    master1:   python3-software-properties software-properties-common
+    master1: 6 upgraded, 0 newly installed, 0 to remove and 254 not upgraded.
+    master1: Need to get 546 kB of archives.
+    master1: After this operation, 48.1 kB disk space will be freed.
+    master1: Get:1 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 curl amd64 7.47.0-1ubuntu2.9 [138 kB]
+    master1: Get:2 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libcurl3-gnutls amd64 7.47.0-1ubuntu2.9 [184 kB]
+    master1: Get:3 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 apt-transport-https amd64 1.2.27 [26.1 kB]
+    master1: Get:4 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 ca-certificates all 20170717~16.04.1 [168 kB]
+    master1: Get:5 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 software-properties-common all 0.96.20.7 [9,452 B]
+    master1: Get:6 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 python3-software-properties all 0.96.20.7 [20.3 kB]
+    master1: dpkg-preconfigure: unable to re-open stdin: No such file or directory
+    master1: Fetched 546 kB in 0s (802 kB/s)
+    master1: (Reading database ... 
+    master1: (Reading database ... 5%
+    master1: (Reading database ... 10%
+    master1: (Reading database ... 15%
+    master1: (Reading database ... 20%
+    master1: (Reading database ... 25%
+    master1: (Reading database ... 30%
+    master1: (Reading database ... 35%
+    master1: (Reading database ... 40%
+    master1: (Reading database ... 45%
+    master1: (Reading database ... 50%
+    master1: (Reading database ... 55%
+    master1: (Reading database ... 60%(Reading database ... 65%
+    master1: (Reading database ... 70%
+    master1: (Reading database ... 75%
+    master1: (Reading database ... 80%
+    master1: (Reading database ... 85%
+    master1: (Reading database ... 90%
+    master1: (Reading database ... 95%
+    master1: (Reading database ... 100%
+    master1: (Reading database ... 
+    master1: 44936 files and directories currently installed.)
+    master1: Preparing to unpack .../curl_7.47.0-1ubuntu2.9_amd64.deb ...
+    master1: Unpacking curl (7.47.0-1ubuntu2.9) over (7.47.0-1ubuntu2.1) ...
+    master1: Preparing to unpack .../libcurl3-gnutls_7.47.0-1ubuntu2.9_amd64.deb ...
+    master1: Unpacking libcurl3-gnutls:amd64 (7.47.0-1ubuntu2.9) over (7.47.0-1ubuntu2.1) ...
+    master1: Preparing to unpack .../apt-transport-https_1.2.27_amd64.deb ...
+    master1: Unpacking apt-transport-https (1.2.27) over (1.2.12~ubuntu16.04.1) ...
+    master1: Preparing to unpack .../ca-certificates_20170717~16.04.1_all.deb ...
+    master1: Unpacking ca-certificates (20170717~16.04.1) over (20160104ubuntu1) ...
+    master1: Preparing to unpack .../software-properties-common_0.96.20.7_all.deb ...
+    master1: Unpacking software-properties-common (0.96.20.7) over (0.96.20.4) ...
+    master1: Preparing to unpack .../python3-software-properties_0.96.20.7_all.deb ...
+    master1: Unpacking python3-software-properties (0.96.20.7) over (0.96.20.4) ...
+    master1: Processing triggers for man-db (2.7.5-1) ...
+    master1: Processing triggers for libc-bin (2.23-0ubuntu3) ...
+    master1: Processing triggers for dbus (1.10.6-1ubuntu3) ...
+    master1: Setting up libcurl3-gnutls:amd64 (7.47.0-1ubuntu2.9) ...
+    master1: Setting up curl (7.47.0-1ubuntu2.9) ...
+    master1: Setting up apt-transport-https (1.2.27) ...
+    master1: Setting up ca-certificates (20170717~16.04.1) ...
+    master1: Setting up python3-software-properties (0.96.20.7) ...
+    master1: Setting up software-properties-common (0.96.20.7) ...
+    master1: Processing triggers for libc-bin (2.23-0ubuntu3) ...
+    master1: Processing triggers for ca-certificates (20170717~16.04.1) ...
+    master1: Updating certificates in /etc/ssl/certs...
+    master1: 17 added, 42 removed; done.
+    master1: 
+    master1: Running hooks in /etc/ca-certificates/update.d...
+    master1: done.
+    master1: *********************************************************************
+    master1: Installing docker
+    master1: *********************************************************************
+    master1: OK
+    master1: pub   4096R/0EBFCD88 2017-02-22
+    master1:       Key fingerprint = 9DC8 5822 9FC7 DD38 854A  E2D8 8D81 803C 0EBF CD88
+    master1: uid                  Docker Release (CE deb) <docker@docker.com>
+    master1: sub   4096R/F273FCD8 2017-02-22
+    master1: Reading package lists...
+    master1: Building dependency tree...
+    master1: Reading state information...
+    master1: The following additional packages will be installed:
+    master1:   bridge-utils cgroupfs-mount ubuntu-fan
+    master1: Suggested packages:
+    master1:   mountall aufs-tools debootstrap docker-doc rinse zfs-fuse | zfsutils
+    master1: The following NEW packages will be installed:
+    master1:   bridge-utils cgroupfs-mount docker.io ubuntu-fan
+    master1: 0 upgraded, 4 newly installed, 0 to remove and 254 not upgraded.
+    master1: Need to get 17.1 MB of archives.
+    master1: After this operation, 90.5 MB of additional disk space will be used.
+    master1: Get:1 http://us.archive.ubuntu.com/ubuntu xenial/main amd64 bridge-utils amd64 1.5-9ubuntu1 [28.6 kB]
+    master1: Get:2 http://us.archive.ubuntu.com/ubuntu xenial/universe amd64 cgroupfs-mount all 1.2 [4,970 B]
+    master1: Get:3 http://us.archive.ubuntu.com/ubuntu xenial-updates/universe amd64 docker.io amd64 17.03.2-0ubuntu2~16.04.1 [17.1 MB]
+    master1: Get:4 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 ubuntu-fan all 0.12.8~16.04.2 [35.6 kB]
+    master1: dpkg-preconfigure: unable to re-open stdin: No such file or directory
+    master1: Fetched 17.1 MB in 4s (3,539 kB/s)
+    master1: Selecting previously unselected package bridge-utils.
+    master1: (Reading database ... 
+    master1: (Reading database ... 5%
+    master1: (Reading database ... 10%
+    master1: (Reading database ... 15%
+    master1: (Reading database ... 20%
+    master1: (Reading database ... 25%
+    master1: (Reading database ... 30%
+    master1: (Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%
+    master1: (Reading database ... 70%
+    master1: (Reading database ... 75%
+    master1: (Reading database ... 80%
+    master1: (Reading database ... 85%
+    master1: (Reading database ... 90%
+    master1: (Reading database ... 95%
+    master1: (Reading database ... 100%
+    master1: (Reading database ... 
+    master1: 44910 files and directories currently installed.)
+    master1: Preparing to unpack .../bridge-utils_1.5-9ubuntu1_amd64.deb ...
+    master1: Unpacking bridge-utils (1.5-9ubuntu1) ...
+    master1: Selecting previously unselected package cgroupfs-mount.
+    master1: Preparing to unpack .../cgroupfs-mount_1.2_all.deb ...
+    master1: Unpacking cgroupfs-mount (1.2) ...
+    master1: Selecting previously unselected package docker.io.
+    master1: Preparing to unpack .../docker.io_17.03.2-0ubuntu2~16.04.1_amd64.deb ...
+    master1: Unpacking docker.io (17.03.2-0ubuntu2~16.04.1) ...
+    master1: Selecting previously unselected package ubuntu-fan.
+    master1: Preparing to unpack .../ubuntu-fan_0.12.8~16.04.2_all.deb ...
+    master1: Unpacking ubuntu-fan (0.12.8~16.04.2) ...
+    master1: Processing triggers for man-db (2.7.5-1) ...
+    master1: Processing triggers for ureadahead (0.100.0-19) ...
+    master1: Processing triggers for systemd (229-4ubuntu10) ...
+    master1: Setting up bridge-utils (1.5-9ubuntu1) ...
+    master1: Setting up cgroupfs-mount (1.2) ...
+    master1: Setting up docker.io (17.03.2-0ubuntu2~16.04.1) ...
+    master1: Adding group `docker' (GID 117) ...
+    master1: Done.
+    master1: Setting up ubuntu-fan (0.12.8~16.04.2) ...
+    master1: Processing triggers for systemd (229-4ubuntu10) ...
+    master1: Processing triggers for ureadahead (0.100.0-19) ...
+    master1: *********************************************************************
+    master1: Give docekr access to vagrant
+    master1: *********************************************************************
+    master1: *********************************************************************
+    master1: Install kubeadmin
+    master1: *********************************************************************
+    master1: OK
+    master1: Hit:1 http://security.ubuntu.com/ubuntu xenial-security InRelease
+    master1: Hit:2 http://us.archive.ubuntu.com/ubuntu xenial InRelease
+    master1: Get:3 https://download.docker.com/linux/ubuntu xenial InRelease [66.2 kB]
+    master1: Hit:4 http://us.archive.ubuntu.com/ubuntu xenial-updates InRelease
+    master1: Hit:6 http://us.archive.ubuntu.com/ubuntu xenial-backports InRelease
+    master1: Get:7 https://download.docker.com/linux/ubuntu xenial/stable amd64 Packages [4,810 B]
+    master1: Get:5 https://packages.cloud.google.com/apt kubernetes-xenial InRelease [8,993 B]
+    master1: Get:8 https://packages.cloud.google.com/apt kubernetes-xenial/main amd64 Packages [20.4 kB]
+    master1: Fetched 100 kB in 1s (94.7 kB/s)
+    master1: Reading package lists...
+    master1: Reading package lists...
+    master1: Building dependency tree...
+    master1: Reading state information...
+    master1: The following additional packages will be installed:
+    master1:   ebtables kubernetes-cni socat
+    master1: The following NEW packages will be installed:
+    master1:   ebtables kubeadm kubectl kubelet kubernetes-cni socat
+    master1: 0 upgraded, 6 newly installed, 0 to remove and 254 not upgraded.
+    master1: Need to get 57.3 MB of archives.
+    master1: After this operation, 413 MB of additional disk space will be used.
+    master1: Get:1 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 ebtables amd64 2.0.10.4-3.4ubuntu2.16.04.2 [79.9 kB]
+    master1: Get:6 http://us.archive.ubuntu.com/ubuntu xenial/universe amd64 socat amd64 1.7.3.1-1 [321 kB]
+    master1: Get:2 https://packages.cloud.google.com/apt kubernetes-xenial/main amd64 kubernetes-cni amd64 0.6.0-00 [5,910 kB]
+    master1: Get:3 https://packages.cloud.google.com/apt kubernetes-xenial/main amd64 kubelet amd64 1.9.0-00 [20.5 MB]
+    master1: Get:4 https://packages.cloud.google.com/apt kubernetes-xenial/main amd64 kubectl amd64 1.9.0-00 [10.5 MB]
+    master1: Get:5 https://packages.cloud.google.com/apt kubernetes-xenial/main amd64 kubeadm amd64 1.9.0-00 [20.0 MB]
+    master1: dpkg-preconfigure: unable to re-open stdin: No such file or directory
+    master1: Fetched 57.3 MB in 12s (4,461 kB/s)
+    master1: Selecting previously unselected package ebtables.
+    master1: (Reading database ... 
+    master1: (Reading database ... 5%
+    master1: (Reading database ... 10%
+    master1: (Reading database ... 15%
+    master1: (Reading database ... 20%
+    master1: (Reading database ... 25%
+    master1: (Reading database ... 30%
+    master1: (Reading database ... 35%
+    master1: (Reading database ... 40%
+    master1: (Reading database ... 45%
+    master1: (Reading database ... 50%
+    master1: (Reading database ... 55%
+    master1: (Reading database ... 60%
+    master1: (Reading database ... 65%
+    master1: (Reading database ... 70%
+    master1: (Reading database ... 75%
+    master1: (Reading database ... 80%
+    master1: (Reading database ... 85%
+    master1: (Reading database ... 90%
+    master1: (Reading database ... 95%
+    master1: (Reading database ... 100%
+    master1: (Reading database ... 
+    master1: 45070 files and directories currently installed.)
+    master1: Preparing to unpack .../ebtables_2.0.10.4-3.4ubuntu2.16.04.2_amd64.deb ...
+    master1: Unpacking ebtables (2.0.10.4-3.4ubuntu2.16.04.2) ...
+    master1: Selecting previously unselected package kubernetes-cni.
+    master1: Preparing to unpack .../kubernetes-cni_0.6.0-00_amd64.deb ...
+    master1: Unpacking kubernetes-cni (0.6.0-00) ...
+    master1: Selecting previously unselected package socat.
+    master1: Preparing to unpack .../socat_1.7.3.1-1_amd64.deb ...
+    master1: Unpacking socat (1.7.3.1-1) ...
+    master1: Selecting previously unselected package kubelet.
+    master1: Preparing to unpack .../kubelet_1.9.0-00_amd64.deb ...
+    master1: Unpacking kubelet (1.9.0-00) ...
+    master1: Selecting previously unselected package kubectl.
+    master1: Preparing to unpack .../kubectl_1.9.0-00_amd64.deb ...
+    master1: Unpacking kubectl (1.9.0-00) ...
+    master1: Selecting previously unselected package kubeadm.
+    master1: Preparing to unpack .../kubeadm_1.9.0-00_amd64.deb ...
+    master1: Unpacking kubeadm (1.9.0-00) ...
+    master1: Processing triggers for man-db (2.7.5-1) ...
+    master1: Processing triggers for systemd (229-4ubuntu10) ...
+    master1: Processing triggers for ureadahead (0.100.0-19) ...
+    master1: Setting up ebtables (2.0.10.4-3.4ubuntu2.16.04.2) ...
+    master1: update-rc.d: warning: start and stop actions are no longer supported; falling back to defaults
+    master1: Setting up kubernetes-cni (0.6.0-00) ...
+    master1: Setting up socat (1.7.3.1-1) ...
+    master1: Setting up kubelet (1.9.0-00) ...
+    master1: Setting up kubectl (1.9.0-00) ...
+    master1: Setting up kubeadm (1.9.0-00) ...
+    master1: Processing triggers for systemd (229-4ubuntu10) ...
+    master1: Processing triggers for ureadahead (0.100.0-19) ...
+    master1: *********************************************************************
+    master1: Set host name resolution
+    master1: *********************************************************************
+    master1: set host name resolution
+    master1: 127.0.0.1	master1	master1
+    master1: 127.0.0.1	localhost
+    master1: 127.0.1.1	vagrant.vm	vagrant
+    master1: 
+    master1: # The following lines are desirable for IPv6 capable hosts
+    master1: ::1     localhost ip6-localhost ip6-loopback
+    master1: ff02::1 ip6-allnodes
+    master1: ff02::2 ip6-allrouters
+    master1: 
+    master1: 172.10.10.20 master1
+    master1: 172.10.10.30 node1
+    master1: 172.10.10.40 node2
+    master1: *********************************************************************
+    master1: Turn Off swap
+    master1: *********************************************************************
+    master1: *********************************************************************
+    master1: Configure Kubernetes ( node: master1 ) and Init Cluster @ 172.10.10.20 IPADDR=127.0.0.1 172.10.10.20
+    master1: *********************************************************************
+    master1: 	[WARNING FileExisting-crictl]: crictl not found in system path
+    master1: *********************************************************************
+    master1: Bind on all interfaces and accept connections from any hosts
+    master1: *********************************************************************
+    master1: *********************************************************************
+    master1: Copy kube.config to to vagrant home
+    master1: *********************************************************************
+    master1: *********************************************************************
+    master1: Allow run PODs on master
+    master1: *********************************************************************
+    master1: node "master1" untainted
+    master1: *** CHECK TAINTS
+    master1: *********************************************************************
+    master1: Install POD network
+    master1: *********************************************************************
+    master1: net.bridge.bridge-nf-call-iptables = 1
+    master1: clusterrole "flannel" created
+    master1: clusterrolebinding "flannel" created
+    master1: serviceaccount "flannel" created
+    master1: configmap "kube-flannel-cfg" created
+    master1: daemonset "kube-flannel-ds-amd64" created
+    master1: daemonset "kube-flannel-ds-arm64" created
+    master1: daemonset "kube-flannel-ds-arm" created
+    master1: daemonset "kube-flannel-ds-ppc64le" created
+    master1: daemonset "kube-flannel-ds-s390x" created
+    master1:  
+    master1:  
+    master1: %
+    master1:  
+    master1: T
+    master1: o
+    master1: t
+    master1: a
+    master1: l
+    master1:     % Received % Xferd  Average Speed   Time    Time     Time  Current
+    master1:                                  Dload  Upload   Total   Spent    Left  Speed
+    master1:   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+    master1:  
+    master1:  
+    master1: 0
+    master1:  
+    master1:  
+    master1:  
+    master1:  
+    master1:  
+    master1: 0
+    master1:     0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+    master1: 100 10599  100 10599    0     0  15530      0 --:--:-- --:--:-- --:--:-- 15518
+    master1: clusterrole "flannel" configured
+    master1: clusterrolebinding "flannel" configured
+    master1: serviceaccount "flannel" unchanged
+    master1: configmap "kube-flannel-cfg" unchanged
+    master1: daemonset "kube-flannel-ds-amd64" unchanged
+    master1: daemonset "kube-flannel-ds-arm64" unchanged
+    master1: daemonset "kube-flannel-ds-arm" unchanged
+    master1: daemonset "kube-flannel-ds-ppc64le" unchanged
+    master1: daemonset "kube-flannel-ds-s390x" unchanged
+    master1: NAMESPACE
+    master1:      
+    master1: NAME
+    master1:         
+    master1:         
+    master1:         
+    master1:       
+    master1: READY
+    master1:      STATUS    RESTARTS   AGE
+    master1: kube-system   kube-controller-manager-master1   0/1       Pending   0          8s
+    master1: *********************************************************************
+    master1: Show Nodes
+    master1: *********************************************************************
+    master1: NAME
+    master1:       
+    master1: STATUS
+    master1:      
+    master1: ROLES
+    master1:      
+    master1: AGE
+    master1:        
+    master1: VERSION
+    master1: master1   NotReady   master    12s       v1.9.0
+    master1: *********************************************************************
+    master1: DONE master1
+    master1: *********************************************************************
+==> console: Importing base box 'bento/ubuntu-16.04'...
+[KProgress: 10%[KProgress: 20%[KProgress: 30%[KProgress: 40%[KProgress: 60%[KProgress: 70%[KProgress: 80%[KProgress: 90%[K==> console: Matching MAC address for NAT networking...
+==> console: Checking if box 'bento/ubuntu-16.04' is up to date...
+==> console: There was a problem while downloading the metadata for your box
+==> console: to check for updates. This is not an error, since it is usually due
+==> console: to temporary network problems. This is just a warning. The problem
+==> console: encountered was:
+==> console: 
+==> console: The requested URL returned error: 404 Not Found
+==> console: 
+==> console: If you want to check for box updates, verify your network connection
+==> console: is valid and try again.
+==> console: Setting the name of the VM: vagrant_console_1540460325939_83239
+==> console: Fixed port collision for 22 => 2222. Now on port 2200.
+==> console: Clearing any previously set network interfaces...
+==> console: Preparing network interfaces based on configuration...
+    console: Adapter 1: nat
+    console: Adapter 2: hostonly
+==> console: Forwarding ports...
+    console: 22 (guest) => 2200 (host) (adapter 1)
+==> console: Running 'pre-boot' VM customizations...
+==> console: Booting VM...
+==> console: Waiting for machine to boot. This may take a few minutes...
+    console: SSH address: 127.0.0.1:2200
+    console: SSH username: vagrant
+    console: SSH auth method: private key
+    console: Warning: Connection reset. Retrying...
+    console: Warning: Remote connection disconnect. Retrying...
+    console: 
+    console: Vagrant insecure key detected. Vagrant will automatically replace
+    console: this with a newly generated keypair for better security.
+    console: 
+    console: Inserting generated public key within guest...
+    console: Removing insecure key from the guest if it's present...
+    console: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> console: Machine booted and ready!
+==> console: Checking for guest additions in VM...
+    console: The guest additions on this VM do not match the installed version of
+    console: VirtualBox! In most cases this is fine, but in rare cases it can
+    console: prevent things such as shared folders from working properly. If you see
+    console: shared folder errors, please make sure the guest additions within the
+    console: virtual machine match the version of VirtualBox you have installed on
+    console: your host and reload your VM.
+    console: 
+    console: Guest Additions Version: 5.1.6
+    console: VirtualBox Version: 5.2
+==> console: Setting hostname...
+==> console: Configuring and enabling network interfaces...
+==> console: Mounting shared folders...
+    console: /home/app => /Volumes/MyData/MyCode/ChimpWizard/playgound/vagrant
+==> console: Running provisioner: file...
+==> console: Running provisioner: file...
+==> console: Running provisioner: shell...
+    console: Running: /var/folders/tw/640sz8rn33q2mgpy1m115fh80000gn/T/vagrant-shell20181025-58246-1cvaxin.sh
+    console: ******************
+    console: MASTER: 172.10.10.20
+    console: PLATFORM: k8s
+    console: ******************
+    console: FOLDER: /home/vagrant
+    console: total 44
+    console: drwxr-xr-x 6 vagrant vagrant 4096 Oct 25 09:39 .
+    console: drwxr-xr-x 4 root    root    4096 Oct 25 09:39 ..
+    console: -rw-r--r-- 1 vagrant vagrant  220 Oct  1  2016 .bash_logout
+    console: -rw-r--r-- 1 vagrant vagrant 3771 Oct  1  2016 .bashrc
+    console: drwx------ 2 vagrant vagrant 4096 Oct  1  2016 .cache
+    console: -rw-r--r-- 1 vagrant vagrant  655 Oct  1  2016 .profile
+    console: drwxrwxr-x 4 vagrant vagrant 4096 Oct 25 09:39 samples
+    console: drwxrwxr-x 3 vagrant vagrant 4096 Oct 25 09:39 scripts
+    console: drwx------ 2 vagrant root    4096 Oct 25 09:39 .ssh
+    console: -rw-r--r-- 1 vagrant vagrant    0 Oct  1  2016 .sudo_as_admin_successful
+    console: -rw-r--r-- 1 vagrant vagrant    5 Oct  1  2016 .vbox_version
+    console: -rw-r--r-- 1 root    root     182 Oct  1  2016 .wget-hsts
+    console: K8s
+    console: FOLDER: /home/vagrant
+    console: total 44
+    console: drwxr-xr-x 6 vagrant vagrant 4096 Oct 25 09:39 .
+    console: drwxr-xr-x 4 root    root    4096 Oct 25 09:39 ..
+    console: -rw-r--r-- 1 vagrant vagrant  220 Oct  1  2016 .bash_logout
+    console: -rw-r--r-- 1 vagrant vagrant 3771 Oct  1  2016 .bashrc
+    console: drwx------ 2 vagrant vagrant 4096 Oct  1  2016 .cache
+    console: -rw-r--r-- 1 vagrant vagrant  655 Oct  1  2016 .profile
+    console: drwxrwxr-x 4 vagrant vagrant 4096 Oct 25 09:39 samples
+    console: drwxrwxr-x 3 vagrant vagrant 4096 Oct 25 09:39 scripts
+    console: drwx------ 2 vagrant root    4096 Oct 25 09:39 .ssh
+    console: -rw-r--r-- 1 vagrant vagrant    0 Oct  1  2016 .sudo_as_admin_successful
+    console: -rw-r--r-- 1 vagrant vagrant    5 Oct  1  2016 .vbox_version
+    console: -rw-r--r-- 1 root    root     182 Oct  1  2016 .wget-hsts
+    console: UBUNTU
+    console: *********************************************************************
+    console: PARAMS: 
+    console:    IP: 172.10.10.20
+    console: *********************************************************************
+    console: *********************************************************************
+    console: Update system
+    console: *********************************************************************
+    console: Hit:1 http://us.archive.ubuntu.com/ubuntu xenial InRelease
+    console: Get:2 http://us.archive.ubuntu.com/ubuntu xenial-updates InRelease [109 kB]
+    console: Get:3 http://security.ubuntu.com/ubuntu xenial-security InRelease [107 kB]
+    console: Get:4 http://us.archive.ubuntu.com/ubuntu xenial-backports InRelease [107 kB]
+    console: Get:5 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 Packages [868 kB]
+    console: Get:6 http://us.archive.ubuntu.com/ubuntu xenial-updates/main i386 Packages [776 kB]
+    console: Get:7 http://us.archive.ubuntu.com/ubuntu xenial-updates/main Translation-en [353 kB]
+    console: Get:8 http://us.archive.ubuntu.com/ubuntu xenial-updates/restricted amd64 Packages [7,556 B]
+    console: Get:9 http://us.archive.ubuntu.com/ubuntu xenial-updates/restricted i386 Packages [7,524 B]
+    console: Get:10 http://security.ubuntu.com/ubuntu xenial-security/main amd64 Packages [573 kB]
+    console: Get:11 http://us.archive.ubuntu.com/ubuntu xenial-updates/restricted Translation-en [2,272 B]
+    console: Get:12 http://us.archive.ubuntu.com/ubuntu xenial-updates/universe amd64 Packages [697 kB]
+    console: Get:13 http://us.archive.ubuntu.com/ubuntu xenial-updates/universe i386 Packages [639 kB]
+    console: Get:14 http://us.archive.ubuntu.com/ubuntu xenial-updates/universe Translation-en [282 kB]
+    console: Get:15 http://us.archive.ubuntu.com/ubuntu xenial-updates/multiverse amd64 Packages [16.4 kB]
+    console: Get:16 http://us.archive.ubuntu.com/ubuntu xenial-updates/multiverse i386 Packages [15.5 kB]
+    console: Get:17 http://us.archive.ubuntu.com/ubuntu xenial-updates/multiverse Translation-en [8,344 B]
+    console: Get:18 http://us.archive.ubuntu.com/ubuntu xenial-backports/main amd64 Packages [7,304 B]
+    console: Get:19 http://us.archive.ubuntu.com/ubuntu xenial-backports/main i386 Packages [7,300 B]
+    console: Get:20 http://us.archive.ubuntu.com/ubuntu xenial-backports/main Translation-en [4,456 B]
+    console: Get:21 http://us.archive.ubuntu.com/ubuntu xenial-backports/universe amd64 Packages [7,804 B]
+    console: Get:22 http://us.archive.ubuntu.com/ubuntu xenial-backports/universe i386 Packages [7,488 B]
+    console: Get:23 http://us.archive.ubuntu.com/ubuntu xenial-backports/universe Translation-en [4,184 B]
+    console: Get:24 http://security.ubuntu.com/ubuntu xenial-security/main i386 Packages [493 kB]
+    console: Get:25 http://security.ubuntu.com/ubuntu xenial-security/main Translation-en [240 kB]
+    console: Get:26 http://security.ubuntu.com/ubuntu xenial-security/restricted amd64 Packages [7,204 B]
+    console: Get:27 http://security.ubuntu.com/ubuntu xenial-security/restricted i386 Packages [7,224 B]
+    console: Get:28 http://security.ubuntu.com/ubuntu xenial-security/restricted Translation-en [2,152 B]
+    console: Get:29 http://security.ubuntu.com/ubuntu xenial-security/universe amd64 Packages [392 kB]
+    console: Get:30 http://security.ubuntu.com/ubuntu xenial-security/universe i386 Packages [340 kB]
+    console: Get:31 http://security.ubuntu.com/ubuntu xenial-security/universe Translation-en [150 kB]
+    console: Get:32 http://security.ubuntu.com/ubuntu xenial-security/multiverse amd64 Packages [3,460 B]
+    console: Get:33 http://security.ubuntu.com/ubuntu xenial-security/multiverse i386 Packages [3,632 B]
+    console: Get:34 http://security.ubuntu.com/ubuntu xenial-security/multiverse Translation-en [1,744 B]
+    console: Fetched 6,247 kB in 4s (1,489 kB/s)
+    console: Reading package lists...
+    console: *********************************************************************
+    console: Installing dependencies
+    console: *********************************************************************
+    console: Reading package lists...
+    console: Building dependency tree...
+    console: Reading state information...
+    console: The following additional packages will be installed:
+    console:   libcurl3-gnutls python3-software-properties
+    console: The following packages will be upgraded:
+    console:   apt-transport-https ca-certificates curl libcurl3-gnutls
+    console:   python3-software-properties software-properties-common
+    console: 6 upgraded, 0 newly installed, 0 to remove and 254 not upgraded.
+    console: Need to get 546 kB of archives.
+    console: After this operation, 48.1 kB disk space will be freed.
+    console: Get:1 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 curl amd64 7.47.0-1ubuntu2.9 [138 kB]
+    console: Get:2 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libcurl3-gnutls amd64 7.47.0-1ubuntu2.9 [184 kB]
+    console: Get:3 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 apt-transport-https amd64 1.2.27 [26.1 kB]
+    console: Get:4 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 ca-certificates all 20170717~16.04.1 [168 kB]
+    console: Get:5 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 software-properties-common all 0.96.20.7 [9,452 B]
+    console: Get:6 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 python3-software-properties all 0.96.20.7 [20.3 kB]
+    console: dpkg-preconfigure: unable to re-open stdin: No such file or directory
+    console: Fetched 546 kB in 0s (756 kB/s)
+    console: (Reading database ... 
+    console: (Reading database ... 5%
+    console: (Reading database ... 10%
+    console: (Reading database ... 15%
+    console: (Reading database ... 20%
+    console: (Reading database ... 25%
+    console: (Reading database ... 30%
+    console: (Reading database ... 35%
+    console: (Reading database ... 40%
+    console: (Reading database ... 45%
+    console: (Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%
+    console: (Reading database ... 70%
+    console: (Reading database ... 75%
+    console: (Reading database ... 80%
+    console: (Reading database ... 85%
+    console: (Reading database ... 90%
+    console: (Reading database ... 95%
+    console: (Reading database ... 100%
+    console: (Reading database ... 
+    console: 44936 files and directories currently installed.)
+    console: Preparing to unpack .../curl_7.47.0-1ubuntu2.9_amd64.deb ...
+    console: Unpacking curl (7.47.0-1ubuntu2.9) over (7.47.0-1ubuntu2.1) ...
+    console: Preparing to unpack .../libcurl3-gnutls_7.47.0-1ubuntu2.9_amd64.deb ...
+    console: Unpacking libcurl3-gnutls:amd64 (7.47.0-1ubuntu2.9) over (7.47.0-1ubuntu2.1) ...
+    console: Preparing to unpack .../apt-transport-https_1.2.27_amd64.deb ...
+    console: Unpacking apt-transport-https (1.2.27) over (1.2.12~ubuntu16.04.1) ...
+    console: Preparing to unpack .../ca-certificates_20170717~16.04.1_all.deb ...
+    console: Unpacking ca-certificates (20170717~16.04.1) over (20160104ubuntu1) ...
+    console: Preparing to unpack .../software-properties-common_0.96.20.7_all.deb ...
+    console: Unpacking software-properties-common (0.96.20.7) over (0.96.20.4) ...
+    console: Preparing to unpack .../python3-software-properties_0.96.20.7_all.deb ...
+    console: Unpacking python3-software-properties (0.96.20.7) over (0.96.20.4) ...
+    console: Processing triggers for man-db (2.7.5-1) ...
+    console: Processing triggers for libc-bin (2.23-0ubuntu3) ...
+    console: Processing triggers for dbus (1.10.6-1ubuntu3) ...
+    console: Setting up libcurl3-gnutls:amd64 (7.47.0-1ubuntu2.9) ...
+    console: Setting up curl (7.47.0-1ubuntu2.9) ...
+    console: Setting up apt-transport-https (1.2.27) ...
+    console: Setting up ca-certificates (20170717~16.04.1) ...
+    console: Setting up python3-software-properties (0.96.20.7) ...
+    console: Setting up software-properties-common (0.96.20.7) ...
+    console: Processing triggers for libc-bin (2.23-0ubuntu3) ...
+    console: Processing triggers for ca-certificates (20170717~16.04.1) ...
+    console: Updating certificates in /etc/ssl/certs...
+    console: 17 added, 42 removed; done.
+    console: 
+    console: Running hooks in /etc/ca-certificates/update.d...
+    console: done.
+    console: *********************************************************************
+    console: Installing docker
+    console: *********************************************************************
+    console: OK
+    console: pub   4096R/0EBFCD88 2017-02-22
+    console:       Key fingerprint = 9DC8 5822 9FC7 DD38 854A  E2D8 8D81 803C 0EBF CD88
+    console: uid                  Docker Release (CE deb) <docker@docker.com>
+    console: sub   4096R/F273FCD8 2017-02-22
+    console: Reading package lists...
+    console: Building dependency tree...
+    console: Reading state information...
+    console: The following additional packages will be installed:
+    console:   bridge-utils cgroupfs-mount ubuntu-fan
+    console: Suggested packages:
+    console:   mountall aufs-tools debootstrap docker-doc rinse zfs-fuse | zfsutils
+    console: The following NEW packages will be installed:
+    console:   bridge-utils cgroupfs-mount docker.io ubuntu-fan
+    console: 0 upgraded, 4 newly installed, 0 to remove and 254 not upgraded.
+    console: Need to get 17.1 MB of archives.
+    console: After this operation, 90.5 MB of additional disk space will be used.
+    console: Get:1 http://us.archive.ubuntu.com/ubuntu xenial/main amd64 bridge-utils amd64 1.5-9ubuntu1 [28.6 kB]
+    console: Get:2 http://us.archive.ubuntu.com/ubuntu xenial/universe amd64 cgroupfs-mount all 1.2 [4,970 B]
+    console: Get:3 http://us.archive.ubuntu.com/ubuntu xenial-updates/universe amd64 docker.io amd64 17.03.2-0ubuntu2~16.04.1 [17.1 MB]
+    console: Get:4 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 ubuntu-fan all 0.12.8~16.04.2 [35.6 kB]
+    console: dpkg-preconfigure: unable to re-open stdin: No such file or directory
+    console: Fetched 17.1 MB in 3s (4,363 kB/s)
+    console: Selecting previously unselected package bridge-utils.
+    console: (Reading database ... 
+    console: (Reading database ... 5%
+    console: (Reading database ... 10%
+    console: (Reading database ... 15%
+    console: (Reading database ... 20%
+    console: (Reading database ... 25%
+    console: (Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%
+    console: (Reading database ... 70%
+    console: (Reading database ... 75%
+    console: (Reading database ... 80%
+    console: (Reading database ... 85%
+    console: (Reading database ... 90%
+    console: (Reading database ... 95%
+    console: (Reading database ... 100%
+    console: (Reading database ... 
+    console: 44910 files and directories currently installed.)
+    console: Preparing to unpack .../bridge-utils_1.5-9ubuntu1_amd64.deb ...
+    console: Unpacking bridge-utils (1.5-9ubuntu1) ...
+    console: Selecting previously unselected package cgroupfs-mount.
+    console: Preparing to unpack .../cgroupfs-mount_1.2_all.deb ...
+    console: Unpacking cgroupfs-mount (1.2) ...
+    console: Selecting previously unselected package docker.io.
+    console: Preparing to unpack .../docker.io_17.03.2-0ubuntu2~16.04.1_amd64.deb ...
+    console: Unpacking docker.io (17.03.2-0ubuntu2~16.04.1) ...
+    console: Selecting previously unselected package ubuntu-fan.
+    console: Preparing to unpack .../ubuntu-fan_0.12.8~16.04.2_all.deb ...
+    console: Unpacking ubuntu-fan (0.12.8~16.04.2) ...
+    console: Processing triggers for man-db (2.7.5-1) ...
+    console: Processing triggers for ureadahead (0.100.0-19) ...
+    console: Processing triggers for systemd (229-4ubuntu10) ...
+    console: Setting up bridge-utils (1.5-9ubuntu1) ...
+    console: Setting up cgroupfs-mount (1.2) ...
+    console: Setting up docker.io (17.03.2-0ubuntu2~16.04.1) ...
+    console: Adding group `docker' (GID 117) ...
+    console: Done.
+    console: Setting up ubuntu-fan (0.12.8~16.04.2) ...
+    console: Processing triggers for systemd (229-4ubuntu10) ...
+    console: Processing triggers for ureadahead (0.100.0-19) ...
+    console: *********************************************************************
+    console: Give docekr access to vagrant
+    console: *********************************************************************
+    console: *********************************************************************
+    console: Install kubeadmin
+    console: *********************************************************************
+    console: OK
+    console: Get:1 https://download.docker.com/linux/ubuntu xenial InRelease [66.2 kB]
+    console: Hit:2 http://us.archive.ubuntu.com/ubuntu xenial InRelease
+    console: Hit:3 http://us.archive.ubuntu.com/ubuntu xenial-updates InRelease
+    console: Hit:4 http://security.ubuntu.com/ubuntu xenial-security InRelease
+    console: Hit:5 http://us.archive.ubuntu.com/ubuntu xenial-backports InRelease
+    console: Get:7 https://download.docker.com/linux/ubuntu xenial/stable amd64 Packages [4,810 B]
+    console: Get:6 https://packages.cloud.google.com/apt kubernetes-xenial InRelease [8,993 B]
+    console: Get:8 https://packages.cloud.google.com/apt kubernetes-xenial/main amd64 Packages [20.4 kB]
+    console: Fetched 100 kB in 1s (88.9 kB/s)
+    console: Reading package lists...
+    console: Reading package lists...
+    console: Building dependency tree...
+    console: Reading state information...
+    console: The following additional packages will be installed:
+    console:   ebtables kubernetes-cni socat
+    console: The following NEW packages will be installed:
+    console:   ebtables kubeadm kubectl kubelet kubernetes-cni socat
+    console: 0 upgraded, 6 newly installed, 0 to remove and 254 not upgraded.
+    console: Need to get 57.3 MB of archives.
+    console: After this operation, 413 MB of additional disk space will be used.
+    console: Get:1 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 ebtables amd64 2.0.10.4-3.4ubuntu2.16.04.2 [79.9 kB]
+    console: Get:6 http://us.archive.ubuntu.com/ubuntu xenial/universe amd64 socat amd64 1.7.3.1-1 [321 kB]
+    console: Get:2 https://packages.cloud.google.com/apt kubernetes-xenial/main amd64 kubernetes-cni amd64 0.6.0-00 [5,910 kB]
+    console: Get:3 https://packages.cloud.google.com/apt kubernetes-xenial/main amd64 kubelet amd64 1.9.0-00 [20.5 MB]
+    console: Get:4 https://packages.cloud.google.com/apt kubernetes-xenial/main amd64 kubectl amd64 1.9.0-00 [10.5 MB]
+    console: Get:5 https://packages.cloud.google.com/apt kubernetes-xenial/main amd64 kubeadm amd64 1.9.0-00 [20.0 MB]
+    console: dpkg-preconfigure: unable to re-open stdin: No such file or directory
+    console: Fetched 57.3 MB in 12s (4,664 kB/s)
+    console: Selecting previously unselected package ebtables.
+    console: (Reading database ... 
+    console: (Reading database ... 5%
+    console: (Reading database ... 10%
+    console: (Reading database ... 15%
+    console: (Reading database ... 20%
+    console: (Reading database ... 25%
+    console: (Reading database ... 30%
+    console: (Reading database ... 35%
+    console: (Reading database ... 40%
+    console: (Reading database ... 45%
+    console: (Reading database ... 50%
+    console: (Reading database ... 55%
+    console: (Reading database ... 60%
+    console: (Reading database ... 65%
+    console: (Reading database ... 70%
+    console: (Reading database ... 75%
+    console: (Reading database ... 80%
+    console: (Reading database ... 85%
+    console: (Reading database ... 90%
+    console: (Reading database ... 95%
+    console: (Reading database ... 100%
+    console: (Reading database ... 
+    console: 45070 files and directories currently installed.)
+    console: Preparing to unpack .../ebtables_2.0.10.4-3.4ubuntu2.16.04.2_amd64.deb ...
+    console: Unpacking ebtables (2.0.10.4-3.4ubuntu2.16.04.2) ...
+    console: Selecting previously unselected package kubernetes-cni.
+    console: Preparing to unpack .../kubernetes-cni_0.6.0-00_amd64.deb ...
+    console: Unpacking kubernetes-cni (0.6.0-00) ...
+    console: Selecting previously unselected package socat.
+    console: Preparing to unpack .../socat_1.7.3.1-1_amd64.deb ...
+    console: Unpacking socat (1.7.3.1-1) ...
+    console: Selecting previously unselected package kubelet.
+    console: Preparing to unpack .../kubelet_1.9.0-00_amd64.deb ...
+    console: Unpacking kubelet (1.9.0-00) ...
+    console: Selecting previously unselected package kubectl.
+    console: Preparing to unpack .../kubectl_1.9.0-00_amd64.deb ...
+    console: Unpacking kubectl (1.9.0-00) ...
+    console: Selecting previously unselected package kubeadm.
+    console: Preparing to unpack .../kubeadm_1.9.0-00_amd64.deb ...
+    console: Unpacking kubeadm (1.9.0-00) ...
+    console: Processing triggers for man-db (2.7.5-1) ...
+    console: Processing triggers for systemd (229-4ubuntu10) ...
+    console: Processing triggers for ureadahead (0.100.0-19) ...
+    console: Setting up ebtables (2.0.10.4-3.4ubuntu2.16.04.2) ...
+    console: update-rc.d: warning: start and stop actions are no longer supported; falling back to defaults
+    console: Setting up kubernetes-cni (0.6.0-00) ...
+    console: Setting up socat (1.7.3.1-1) ...
+    console: Setting up kubelet (1.9.0-00) ...
+    console: Setting up kubectl (1.9.0-00) ...
+    console: Setting up kubeadm (1.9.0-00) ...
+    console: Processing triggers for systemd (229-4ubuntu10) ...
+    console: Processing triggers for ureadahead (0.100.0-19) ...
+    console: *********************************************************************
+    console: Set host name resolution
+    console: *********************************************************************
+    console: set host name resolution
+    console: 127.0.0.1	console	console
+    console: 127.0.0.1	localhost
+    console: 127.0.1.1	vagrant.vm	vagrant
+    console: 
+    console: # The following lines are desirable for IPv6 capable hosts
+    console: ::1     localhost ip6-localhost ip6-loopback
+    console: ff02::1 ip6-allnodes
+    console: ff02::2 ip6-allrouters
+    console: 
+    console: 172.10.10.20 master1
+    console: 172.10.10.30 node1
+    console: 172.10.10.40 node2
+    console: *********************************************************************
+    console: Turn Off swap
+    console: *********************************************************************
+    console: *********************************************************************
+    console: Installing docker compose
+    console: *********************************************************************
+    console:  
+    console:  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+    console:                                  Dload  Upload   Total   Spent    Left  Speed
+    console:   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+    console:  
+    console:  
+    console: 0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+    console: 1
+    console: 0
+    console: 0   617    0   617    0     0   1040      0 --:--:-- --:--:-- --:--:--  1040
+    console:  
+    console:  
+    console: 0
+    console:  
+    console:  
+    console:  
+    console:  
+    console:  
+    console: 0
+    console:  
+    console:    0     0    0     0      0      0 --:--:--  0:00:02 --:--:--     0
+    console:   0     0    0     0    0     0      0      0 --:--:--  0:00:02 --:--:--     0
+    console:  
+    console: 1
+    console: 3
+    console:  
+    console: 8
+    console: 0
+    console: 7
+    console: 9
+    console: k
+    console:  
+    console:   13 1086k    0     0   336k      0  0:00:24  0:00:03  0:00:21  976k
+    console:  
+    console: 3
+    console: 9
+    console:  
+    console: 8
+    console: 0
+    console: 79k   39 3229k    0     0   762k      0  0:00:10  0:00:04  0:00:06 1526k
+    console:  
+    console: 6
+    console: 8
+    console:  
+    console: 8
+    console: 0
+    console: 7
+    console: 9
+    console: k
+    console:  
+    console:   68 5540k    0     0  1055k      0  0:00:07  0:00:05  0:00:02 1770k
+    console:  
+    console: 9
+    console: 1
+    console:  
+    console: 8
+    console: 079k   91 7393k    0     0  1186k      0  0:00:06  0:00:06 --:--:-- 1796k
+    console: 1
+    console: 0
+    console: 0
+    console:  
+    console: 8
+    console: 0
+    console: 7
+    console: 9
+    console: k
+    console:  
+    console:  
+    console: 100 8079k    0     0  1228k      0  0:00:06  0:00:06 --:--:-- 1879k
+    console: *********************************************************************
+    console: Installing developer tools
+    console: *********************************************************************
+    console: Reading package lists...
+    console: Building dependency tree...
+    console: Reading state information...
+    console: Suggested packages:
+    console:   git-daemon-run | git-daemon-sysvinit git-doc git-el git-email git-gui gitk
+    console:   gitweb git-arch git-cvs git-mediawiki git-svn
+    console: The following packages will be upgraded:
+    console:   git
+    console: 1 upgraded, 0 newly installed, 0 to remove and 256 not upgraded.
+    console: Need to get 2,714 kB of archives.
+    console: After this operation, 73.7 kB of additional disk space will be used.
+    console: Get:1 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 git amd64 1:2.7.4-0ubuntu1.5 [2,714 kB]
+    console: dpkg-preconfigure: unable to re-open stdin: No such file or directory
+    console: Fetched 2,714 kB in 1s (1,986 kB/s)
+    console: (Reading database ... 
+    console: (Reading database ... 5%
+    console: (Reading database ... 10%
+    console: (Reading database ... 15%
+    console: (Reading database ... 20%
+    console: (Reading database ... 25%
+    console: (Reading database ... 30%(Reading database ... 35%(Reading database ... 40%
+    console: (Reading database ... 45%
+    console: (Reading database ... 50%(Reading database ... 55%(Reading database ... 60%
+    console: (Reading database ... 65%
+    console: (Reading database ... 70%
+    console: (Reading database ... 75%
+    console: (Reading database ... 80%
+    console: (Reading database ... 85%
+    console: (Reading database ... 90%
+    console: (Reading database ... 95%
+    console: (Reading database ... 100%
+    console: (Reading database ... 
+    console: 45165 files and directories currently installed.)
+    console: Preparing to unpack .../git_1%3a2.7.4-0ubuntu1.5_amd64.deb ...
+    console: Unpacking git (1:2.7.4-0ubuntu1.5) over (1:2.7.4-0ubuntu1) ...
+    console: Setting up git (1:2.7.4-0ubuntu1.5) ...
+    console: ## Installing the NodeSource Node.js 10.x repo...
+    console: 
+    console: ## Populating apt-get cache...
+    console: 
+    console: + apt-get update
+    console: Hit:1 http://us.archive.ubuntu.com/ubuntu xenial InRelease
+    console: Hit:3 http://us.archive.ubuntu.com/ubuntu xenial-updates InRelease
+    console: Hit:4 http://security.ubuntu.com/ubuntu xenial-security InRelease
+    console: Hit:5 http://us.archive.ubuntu.com/ubuntu xenial-backports InRelease
+    console: Hit:6 https://download.docker.com/linux/ubuntu xenial InRelease
+    console: Hit:2 https://packages.cloud.google.com/apt kubernetes-xenial InRelease
+    console: Reading package lists...
+    console: 
+    console: ## Confirming "xenial" is supported...
+    console: 
+    console: + curl -sLf -o /dev/null 'https://deb.nodesource.com/node_10.x/dists/xenial/Release'
+    console: 
+    console: ## Adding the NodeSource signing key to your keyring...
+    console: 
+    console: + curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -
+    console: OK
+    console: 
+    console: ## Creating apt sources list file for the NodeSource Node.js 10.x repo...
+    console: 
+    console: + echo 'deb https://deb.nodesource.com/node_10.x xenial main' > /etc/apt/sources.list.d/nodesource.list
+    console: + echo 'deb-src https://deb.nodesource.com/node_10.x xenial main' >> /etc/apt/sources.list.d/nodesource.list
+    console: 
+    console: ## Running `apt-get update` for you...
+    console: 
+    console: + apt-get update
+    console: Hit:1 http://us.archive.ubuntu.com/ubuntu xenial InRelease
+    console: Hit:2 http://us.archive.ubuntu.com/ubuntu xenial-updates InRelease
+    console: Hit:3 https://download.docker.com/linux/ubuntu xenial InRelease
+    console: Hit:4 http://security.ubuntu.com/ubuntu xenial-security InRelease
+    console: Get:5 https://deb.nodesource.com/node_10.x xenial InRelease [4,611 B]
+    console: Hit:7 http://us.archive.ubuntu.com/ubuntu xenial-backports InRelease
+    console: Hit:6 https://packages.cloud.google.com/apt kubernetes-xenial InRelease
+    console: Get:8 https://deb.nodesource.com/node_10.x xenial/main amd64 Packages [768 B]
+    console: Fetched 5,379 B in 0s (5,766 B/s)
+    console: Reading package lists...
+    console: 
+    console: ## Run `sudo apt-get install -y nodejs` to install Node.js 10.x and npm
+    console: ## You may also need development tools to build native addons:
+    console:      sudo apt-get install gcc g++ make
+    console: ## To install the Yarn package manager, run:
+    console:      curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+    console:      echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+    console:      sudo apt-get update && sudo apt-get install yarn
+    console: Reading package lists...
+    console: Building dependency tree...
+    console: Reading state information...
+    console: The following NEW packages will be installed:
+    console:   nodejs
+    console: 0 upgraded, 1 newly installed, 0 to remove and 256 not upgraded.
+    console: Need to get 15.0 MB of archives.
+    console: After this operation, 71.7 MB of additional disk space will be used.
+    console: Get:1 https://deb.nodesource.com/node_10.x xenial/main amd64 nodejs amd64 10.12.0-1nodesource1 [15.0 MB]
+    console: dpkg-preconfigure: unable to re-open stdin: No such file or directory
+    console: Fetched 15.0 MB in 3s (3,993 kB/s)
+    console: Selecting previously unselected package nodejs.
+    console: (Reading database ... 
+    console: (Reading database ... 5%
+    console: (Reading database ... 10%
+    console: (Reading database ... 15%
+    console: (Reading database ... 20%
+    console: (Reading database ... 25%
+    console: (Reading database ... 30%
+    console: (Reading database ... 35%
+    console: (Reading database ... 40%
+    console: (Reading database ... 45%
+    console: (Reading database ... 50%
+    console: (Reading database ... 55%
+    console: (Reading database ... 60%
+    console: (Reading database ... 65%
+    console: (Reading database ... 70%
+    console: (Reading database ... 75%
+    console: (Reading database ... 80%
+    console: (Reading database ... 85%
+    console: (Reading database ... 90%
+    console: (Reading database ... 95%
+    console: (Reading database ... 100%
+    console: (Reading database ... 
+    console: 45166 files and directories currently installed.)
+    console: Preparing to unpack .../nodejs_10.12.0-1nodesource1_amd64.deb ...
+    console: Unpacking nodejs (10.12.0-1nodesource1) ...
+    console: Processing triggers for man-db (2.7.5-1) ...
+    console: Setting up nodejs (10.12.0-1nodesource1) ...
+    console: Reading package lists...
+    console: Building dependency tree...
+    console: Reading state information...
+    console: The following additional packages will be installed:
+    console:   cpp-5 dpkg-dev g++ g++-5 gcc-5 gcc-5-base libalgorithm-diff-perl
+    console:   libalgorithm-diff-xs-perl libalgorithm-merge-perl libasan2 libatomic1
+    console:   libcc1-0 libcilkrts5 libdpkg-perl libgcc-5-dev libgomp1 libitm1 liblsan0
+    console:   libmpx0 libquadmath0 libstdc++-5-dev libstdc++6 libtsan0 libubsan0
+    console: Suggested packages:
+    console:   gcc-5-locales debian-keyring g++-multilib g++-5-multilib gcc-5-doc
+    console:   libstdc++6-5-dbg gcc-5-multilib libgcc1-dbg libgomp1-dbg libitm1-dbg
+    console:   libatomic1-dbg libasan2-dbg liblsan0-dbg libtsan0-dbg libubsan0-dbg
+    console:   libcilkrts5-dbg libmpx0-dbg libquadmath0-dbg libstdc++-5-doc
+    console: The following NEW packages will be installed:
+    console:   build-essential dpkg-dev g++ g++-5 libalgorithm-diff-perl
+    console:   libalgorithm-diff-xs-perl libalgorithm-merge-perl libstdc++-5-dev
+    console: The following packages will be upgraded:
+    console:   cpp-5 gcc-5 gcc-5-base libasan2 libatomic1 libcc1-0 libcilkrts5 libdpkg-perl
+    console:   libgcc-5-dev libgomp1 libitm1 liblsan0 libmpx0 libquadmath0 libstdc++6
+    console:   libtsan0 libubsan0
+    console: 17 upgraded, 8 newly installed, 0 to remove and 239 not upgraded.
+    console: Need to get 30.4 MB of archives.
+    console: After this operation, 41.2 MB of additional disk space will be used.
+    console: Get:1 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libitm1 amd64 5.4.0-6ubuntu1~16.04.10 [27.4 kB]
+    console: Get:2 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libcc1-0 amd64 5.4.0-6ubuntu1~16.04.10 [38.8 kB]
+    console: Get:3 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libgomp1 amd64 5.4.0-6ubuntu1~16.04.10 [55.1 kB]
+    console: Get:4 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libatomic1 amd64 5.4.0-6ubuntu1~16.04.10 [8,888 B]
+    console: Get:5 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libasan2 amd64 5.4.0-6ubuntu1~16.04.10 [264 kB]
+    console: Get:6 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 liblsan0 amd64 5.4.0-6ubuntu1~16.04.10 [105 kB]
+    console: Get:7 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libtsan0 amd64 5.4.0-6ubuntu1~16.04.10 [244 kB]
+    console: Get:8 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libubsan0 amd64 5.4.0-6ubuntu1~16.04.10 [95.3 kB]
+    console: Get:9 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libcilkrts5 amd64 5.4.0-6ubuntu1~16.04.10 [40.1 kB]
+    console: Get:10 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libmpx0 amd64 5.4.0-6ubuntu1~16.04.10 [9,764 B]
+    console: Get:11 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libquadmath0 amd64 5.4.0-6ubuntu1~16.04.10 [131 kB]
+    console: Get:12 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libgcc-5-dev amd64 5.4.0-6ubuntu1~16.04.10 [2,228 kB]
+    console: Get:13 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 gcc-5 amd64 5.4.0-6ubuntu1~16.04.10 [8,426 kB]
+    console: Get:14 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 cpp-5 amd64 5.4.0-6ubuntu1~16.04.10 [7,671 kB]
+    console: Get:15 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 gcc-5-base amd64 5.4.0-6ubuntu1~16.04.10 [17.3 kB]
+    console: Get:16 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libstdc++6 amd64 5.4.0-6ubuntu1~16.04.10 [393 kB]
+    console: Get:17 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libstdc++-5-dev amd64 5.4.0-6ubuntu1~16.04.10 [1,426 kB]
+    console: Get:18 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 g++-5 amd64 5.4.0-6ubuntu1~16.04.10 [8,319 kB]
+    console: Get:19 http://us.archive.ubuntu.com/ubuntu xenial/main amd64 g++ amd64 4:5.3.1-1ubuntu1 [1,504 B]
+    console: Get:20 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libdpkg-perl all 1.18.4ubuntu1.4 [195 kB]
+    console: Get:21 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 dpkg-dev all 1.18.4ubuntu1.4 [584 kB]
+    console: Get:22 http://us.archive.ubuntu.com/ubuntu xenial/main amd64 build-essential amd64 12.1ubuntu2 [4,758 B]
+    console: Get:23 http://us.archive.ubuntu.com/ubuntu xenial/main amd64 libalgorithm-diff-perl all 1.19.03-1 [47.6 kB]
+    console: Get:24 http://us.archive.ubuntu.com/ubuntu xenial/main amd64 libalgorithm-diff-xs-perl amd64 0.04-4build1 [11.0 kB]
+    console: Get:25 http://us.archive.ubuntu.com/ubuntu xenial/main amd64 libalgorithm-merge-perl all 0.08-3 [12.0 kB]
+    console: dpkg-preconfigure: unable to re-open stdin: No such file or directory
+    console: Fetched 30.4 MB in 6s (4,678 kB/s)
+    console: (Reading database ... 
+    console: (Reading database ... 5%
+    console: (Reading database ... 10%
+    console: (Reading database ... 15%
+    console: (Reading database ... 20%
+    console: (Reading database ... 25%
+    console: (Reading database ... 30%
+    console: (Reading database ... 35%
+    console: (Reading database ... 40%
+    console: (Reading database ... 45%
+    console: (Reading database ... 50%
+    console: (Reading database ... 55%
+    console: (Reading database ... 60%
+    console: (Reading database ... 65%
+    console: (Reading database ... 70%
+    console: (Reading database ... 75%
+    console: (Reading database ... 80%
+    console: (Reading database ... 85%
+    console: (Reading database ... 90%
+    console: (Reading database ... 95%
+    console: (Reading database ... 100%
+    console: (Reading database ... 
+    console: 49059 files and directories currently installed.)
+    console: Preparing to unpack .../libitm1_5.4.0-6ubuntu1~16.04.10_amd64.deb ...
+    console: Unpacking libitm1:amd64 (5.4.0-6ubuntu1~16.04.10) over (5.4.0-6ubuntu1~16.04.2) ...
+    console: Preparing to unpack .../libcc1-0_5.4.0-6ubuntu1~16.04.10_amd64.deb ...
+    console: Unpacking libcc1-0:amd64 (5.4.0-6ubuntu1~16.04.10) over (5.4.0-6ubuntu1~16.04.2) ...
+    console: Preparing to unpack .../libgomp1_5.4.0-6ubuntu1~16.04.10_amd64.deb ...
+    console: Unpacking libgomp1:amd64 (5.4.0-6ubuntu1~16.04.10) over (5.4.0-6ubuntu1~16.04.2) ...
+    console: Preparing to unpack .../libatomic1_5.4.0-6ubuntu1~16.04.10_amd64.deb ...
+    console: Unpacking libatomic1:amd64 (5.4.0-6ubuntu1~16.04.10) over (5.4.0-6ubuntu1~16.04.2) ...
+    console: Preparing to unpack .../libasan2_5.4.0-6ubuntu1~16.04.10_amd64.deb ...
+    console: Unpacking libasan2:amd64 (5.4.0-6ubuntu1~16.04.10) over (5.4.0-6ubuntu1~16.04.2) ...
+    console: Preparing to unpack .../liblsan0_5.4.0-6ubuntu1~16.04.10_amd64.deb ...
+    console: Unpacking liblsan0:amd64 (5.4.0-6ubuntu1~16.04.10) over (5.4.0-6ubuntu1~16.04.2) ...
+    console: Preparing to unpack .../libtsan0_5.4.0-6ubuntu1~16.04.10_amd64.deb ...
+    console: Unpacking libtsan0:amd64 (5.4.0-6ubuntu1~16.04.10) over (5.4.0-6ubuntu1~16.04.2) ...
+    console: Preparing to unpack .../libubsan0_5.4.0-6ubuntu1~16.04.10_amd64.deb ...
+    console: Unpacking libubsan0:amd64 (5.4.0-6ubuntu1~16.04.10) over (5.4.0-6ubuntu1~16.04.2) ...
+    console: Preparing to unpack .../libcilkrts5_5.4.0-6ubuntu1~16.04.10_amd64.deb ...
+    console: Unpacking libcilkrts5:amd64 (5.4.0-6ubuntu1~16.04.10) over (5.4.0-6ubuntu1~16.04.2) ...
+    console: Preparing to unpack .../libmpx0_5.4.0-6ubuntu1~16.04.10_amd64.deb ...
+    console: Unpacking libmpx0:amd64 (5.4.0-6ubuntu1~16.04.10) over (5.4.0-6ubuntu1~16.04.2) ...
+    console: Preparing to unpack .../libquadmath0_5.4.0-6ubuntu1~16.04.10_amd64.deb ...
+    console: Unpacking libquadmath0:amd64 (5.4.0-6ubuntu1~16.04.10) over (5.4.0-6ubuntu1~16.04.2) ...
+    console: Preparing to unpack .../libgcc-5-dev_5.4.0-6ubuntu1~16.04.10_amd64.deb ...
+    console: Unpacking libgcc-5-dev:amd64 (5.4.0-6ubuntu1~16.04.10) over (5.4.0-6ubuntu1~16.04.2) ...
+    console: Preparing to unpack .../gcc-5_5.4.0-6ubuntu1~16.04.10_amd64.deb ...
+    console: Unpacking gcc-5 (5.4.0-6ubuntu1~16.04.10) over (5.4.0-6ubuntu1~16.04.2) ...
+    console: Preparing to unpack .../cpp-5_5.4.0-6ubuntu1~16.04.10_amd64.deb ...
+    console: Unpacking cpp-5 (5.4.0-6ubuntu1~16.04.10) over (5.4.0-6ubuntu1~16.04.2) ...
+    console: Preparing to unpack .../gcc-5-base_5.4.0-6ubuntu1~16.04.10_amd64.deb ...
+    console: Unpacking gcc-5-base:amd64 (5.4.0-6ubuntu1~16.04.10) over (5.4.0-6ubuntu1~16.04.2) ...
+    console: Processing triggers for libc-bin (2.23-0ubuntu3) ...
+    console: Processing triggers for man-db (2.7.5-1) ...
+    console: Setting up gcc-5-base:amd64 (5.4.0-6ubuntu1~16.04.10) ...
+    console: (Reading database ... 
+    console: (Reading database ... 5%
+    console: (Reading database ... 10%
+    console: (Reading database ... 15%
+    console: (Reading database ... 20%
+    console: (Reading database ... 25%
+    console: (Reading database ... 30%
+    console: (Reading database ... 35%
+    console: (Reading database ... 40%
+    console: (Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%
+    console: (Reading database ... 65%
+    console: (Reading database ... 70%
+    console: (Reading database ... 75%
+    console: (Reading database ... 80%
+    console: (Reading database ... 85%
+    console: (Reading database ... 90%
+    console: (Reading database ... 95%
+    console: (Reading database ... 100%
+    console: (Reading database ... 
+    console: 49059 files and directories currently installed.)
+    console: Preparing to unpack .../libstdc++6_5.4.0-6ubuntu1~16.04.10_amd64.deb ...
+    console: Unpacking libstdc++6:amd64 (5.4.0-6ubuntu1~16.04.10) over (5.4.0-6ubuntu1~16.04.2) ...
+    console: Processing triggers for libc-bin (2.23-0ubuntu3) ...
+    console: Setting up libstdc++6:amd64 (5.4.0-6ubuntu1~16.04.10) ...
+    console: Processing triggers for libc-bin (2.23-0ubuntu3) ...
+    console: Selecting previously unselected package libstdc++-5-dev:amd64.
+    console: (Reading database ... 
+    console: (Reading database ... 5%
+    console: (Reading database ... 10%
+    console: (Reading database ... 15%
+    console: (Reading database ... 20%
+    console: (Reading database ... 25%
+    console: (Reading database ... 30%
+    console: (Reading database ... 35%
+    console: (Reading database ... 40%
+    console: (Reading database ... 45%
+    console: (Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%
+    console: (Reading database ... 70%
+    console: (Reading database ... 75%
+    console: (Reading database ... 80%
+    console: (Reading database ... 85%
+    console: (Reading database ... 90%
+    console: (Reading database ... 95%
+    console: (Reading database ... 100%
+    console: (Reading database ... 
+    console: 49059 files and directories currently installed.)
+    console: Preparing to unpack .../libstdc++-5-dev_5.4.0-6ubuntu1~16.04.10_amd64.deb ...
+    console: Unpacking libstdc++-5-dev:amd64 (5.4.0-6ubuntu1~16.04.10) ...
+    console: Selecting previously unselected package g++-5.
+    console: Preparing to unpack .../g++-5_5.4.0-6ubuntu1~16.04.10_amd64.deb ...
+    console: Unpacking g++-5 (5.4.0-6ubuntu1~16.04.10) ...
+    console: Selecting previously unselected package g++.
+    console: Preparing to unpack .../g++_4%3a5.3.1-1ubuntu1_amd64.deb ...
+    console: Unpacking g++ (4:5.3.1-1ubuntu1) ...
+    console: Preparing to unpack .../libdpkg-perl_1.18.4ubuntu1.4_all.deb ...
+    console: Unpacking libdpkg-perl (1.18.4ubuntu1.4) over (1.18.4ubuntu1.1) ...
+    console: Selecting previously unselected package dpkg-dev.
+    console: Preparing to unpack .../dpkg-dev_1.18.4ubuntu1.4_all.deb ...
+    console: Unpacking dpkg-dev (1.18.4ubuntu1.4) ...
+    console: Selecting previously unselected package build-essential.
+    console: Preparing to unpack .../build-essential_12.1ubuntu2_amd64.deb ...
+    console: Unpacking build-essential (12.1ubuntu2) ...
+    console: Selecting previously unselected package libalgorithm-diff-perl.
+    console: Preparing to unpack .../libalgorithm-diff-perl_1.19.03-1_all.deb ...
+    console: Unpacking libalgorithm-diff-perl (1.19.03-1) ...
+    console: Selecting previously unselected package libalgorithm-diff-xs-perl.
+    console: Preparing to unpack .../libalgorithm-diff-xs-perl_0.04-4build1_amd64.deb ...
+    console: Unpacking libalgorithm-diff-xs-perl (0.04-4build1) ...
+    console: Selecting previously unselected package libalgorithm-merge-perl.
+    console: Preparing to unpack .../libalgorithm-merge-perl_0.08-3_all.deb ...
+    console: Unpacking libalgorithm-merge-perl (0.08-3) ...
+    console: Processing triggers for man-db (2.7.5-1) ...
+    console: Setting up libitm1:amd64 (5.4.0-6ubuntu1~16.04.10) ...
+    console: Setting up libcc1-0:amd64 (5.4.0-6ubuntu1~16.04.10) ...
+    console: Setting up libgomp1:amd64 (5.4.0-6ubuntu1~16.04.10) ...
+    console: Setting up libatomic1:amd64 (5.4.0-6ubuntu1~16.04.10) ...
+    console: Setting up libasan2:amd64 (5.4.0-6ubuntu1~16.04.10) ...
+    console: Setting up liblsan0:amd64 (5.4.0-6ubuntu1~16.04.10) ...
+    console: Setting up libtsan0:amd64 (5.4.0-6ubuntu1~16.04.10) ...
+    console: Setting up libubsan0:amd64 (5.4.0-6ubuntu1~16.04.10) ...
+    console: Setting up libcilkrts5:amd64 (5.4.0-6ubuntu1~16.04.10) ...
+    console: Setting up libmpx0:amd64 (5.4.0-6ubuntu1~16.04.10) ...
+    console: Setting up libquadmath0:amd64 (5.4.0-6ubuntu1~16.04.10) ...
+    console: Setting up libgcc-5-dev:amd64 (5.4.0-6ubuntu1~16.04.10) ...
+    console: Setting up cpp-5 (5.4.0-6ubuntu1~16.04.10) ...
+    console: Setting up gcc-5 (5.4.0-6ubuntu1~16.04.10) ...
+    console: Setting up libstdc++-5-dev:amd64 (5.4.0-6ubuntu1~16.04.10) ...
+    console: Setting up g++-5 (5.4.0-6ubuntu1~16.04.10) ...
+    console: Setting up g++ (4:5.3.1-1ubuntu1) ...
+    console: update-alternatives: 
+    console: using /usr/bin/g++ to provide /usr/bin/c++ (c++) in auto mode
+    console: Setting up libdpkg-perl (1.18.4ubuntu1.4) ...
+    console: Setting up dpkg-dev (1.18.4ubuntu1.4) ...
+    console: Setting up build-essential (12.1ubuntu2) ...
+    console: Setting up libalgorithm-diff-perl (1.19.03-1) ...
+    console: Setting up libalgorithm-diff-xs-perl (0.04-4build1) ...
+    console: Setting up libalgorithm-merge-perl (0.08-3) ...
+    console: Processing triggers for libc-bin (2.23-0ubuntu3) ...
+    console: Reading package lists...
+    console: Building dependency tree...
+    console: Reading state information...
+    console: Some packages could not be installed. This may mean that you have
+    console: requested an impossible situation or if you are using the unstable
+    console: distribution that some required packages have not yet been created
+    console: or been moved out of Incoming.
+    console: The following information may help to resolve the situation:
+    console: The following packages have unmet dependencies:
+    console:  npm : Depends: nodejs but it is not going to be installed
+    console:        Depends: node-abbrev (>= 1.0.4) but it is not going to be installed
+    console:        Depends: node-ansi (>= 0.3.0-2) but it is not going to be installed
+    console:        Depends: node-ansi-color-table but it is not going to be installed
+    console:        Depends: node-archy but it is not going to be installed
+    console:        Depends: node-block-stream but it is not going to be installed
+    console:        Depends: node-fstream (>= 0.1.22) but it is not going to be installed
+    console:        Depends: node-fstream-ignore but it is not going to be installed
+    console:        Depends: node-github-url-from-git but it is not going to be installed
+    console:        Depends: node-glob (>= 3.1.21) but it is not going to be installed
+    console:        Depends: node-graceful-fs (>= 2.0.0) but it is not going to be installed
+    console:        Depends: node-inherits but it is not going to be installed
+    console:        Depends: node-ini (>= 1.1.0) but it is not going to be installed
+    console:        Depends: node-lockfile but it is not going to be installed
+    console:        Depends: node-lru-cache (>= 2.3.0) but it is not going to be installed
+    console:        Depends: node-minimatch (>= 0.2.11) but it is not going to be installed
+    console:        Depends: node-mkdirp (>= 0.3.3) but it is not going to be installed
+    console:        Depends: node-gyp (>= 0.10.9) but it is not going to be installed
+    console:        Depends: node-nopt (>= 3.0.1) but it is not going to be installed
+    console:        Depends: node-npmlog but it is not going to be installed
+    console:        Depends: node-once but it is not going to be installed
+    console:        Depends: node-osenv but it is not going to be installed
+    console:        Depends: node-read but it is not going to be installed
+    console:        Depends: node-read-package-json (>= 1.1.0) but it is not going to be installed
+    console:        Depends: node-request (>= 2.25.0) but it is not going to be installed
+    console:        Depends: node-retry but it is not going to be installed
+    console:        Depends: node-rimraf (>= 2.2.2) but it is not going to be installed
+    console:        Depends: node-semver (>= 2.1.0) but it is not going to be installed
+    console:        Depends: node-sha but it is not going to be installed
+    console:        Depends: node-slide but it is not going to be installed
+    console:        Depends: node-tar (>= 0.1.18) but it is not going to be installed
+    console:        Depends: node-underscore but it is not going to be installed
+    console:        Depends: node-which but it is not going to be installed
+    console: E
+    console: : 
+    console: Unable to correct problems, you have held broken packages.
+    console: /usr/bin/npm -> /usr/lib/node_modules/npm/bin/npm-cli.js
+    console: /usr/bin/npx -> /usr/lib/node_modules/npm/bin/npx-cli.js
+    console: + npm@6.4.1
+    console: updated 1 package in 8.32s
+    console: Reading package lists...
+    console: Building dependency tree...
+    console: Reading state information...
+    console: The following NEW packages will be installed:
+    console:   dos2unix
+    console: 0 upgraded, 1 newly installed, 0 to remove and 239 not upgraded.
+    console: Need to get 68.7 kB of archives.
+    console: After this operation, 306 kB of additional disk space will be used.
+    console: Get:1 http://us.archive.ubuntu.com/ubuntu xenial/universe amd64 dos2unix amd64 6.0.4-1 [68.7 kB]
+    console: dpkg-preconfigure: unable to re-open stdin: No such file or directory
+    console: Fetched 68.7 kB in 0s (158 kB/s)
+    console: Selecting previously unselected package dos2unix.
+    console: (Reading database ... 
+    console: (Reading database ... 5%
+    console: (Reading database ... 10%
+    console: (Reading database ... 15%
+    console: (Reading database ... 20%
+    console: (Reading database ... 25%
+    console: (Reading database ... 30%
+    console: (Reading database ... 35%
+    console: (Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%
+    console: (Reading database ... 70%
+    console: (Reading database ... 75%
+    console: (Reading database ... 80%
+    console: (Reading database ... 85%
+    console: (Reading database ... 90%
+    console: (Reading database ... 95%
+    console: (Reading database ... 100%
+    console: (Reading database ... 
+    console: 50094 files and directories currently installed.)
+    console: Preparing to unpack .../dos2unix_6.0.4-1_amd64.deb ...
+    console: Unpacking dos2unix (6.0.4-1) ...
+    console: Processing triggers for man-db (2.7.5-1) ...
+    console: Setting up dos2unix (6.0.4-1) ...
+    console: *********************************************************************
+    console: Use kube.config for configuration
+    console: *********************************************************************
+    console: *********************************************************************
+    console: Install snap and helm
+    console: *********************************************************************
+    console: WARNING: 
+    console: apt
+    console:  
+    console: does not have a stable CLI interface. 
+    console: Use with caution in scripts.
+    console: Reading package lists...
+    console: Building dependency tree...
+    console: Reading state information...
+    console: The following package was automatically installed and is no longer required:
+    console:   snap-confine
+    console: Use 'sudo apt autoremove' to remove it.
+    console: The following additional packages will be installed:
+    console:   snap-confine ubuntu-core-launcher
+    console: Suggested packages:
+    console:   zenity | kdialog
+    console: The following packages will be upgraded:
+    console:   snap-confine snapd ubuntu-core-launcher
+    console: 3 upgraded, 0 newly installed, 0 to remove and 236 not upgraded.
+    console: Need to get 14.2 MB of archives.
+    console: After this operation, 48.9 MB of additional disk space will be used.
+    console: Get:1 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 snap-confine amd64 2.34.2 [1,716 B]
+    console: Get:2 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 ubuntu-core-launcher amd64 2.34.2 [1,560 B]
+    console: Get:3 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 snapd amd64 2.34.2 [14.2 MB]
+    console: dpkg-preconfigure: unable to re-open stdin: No such file or directory
+    console: Fetched 14.2 MB in 3s (3,728 kB/s)
+    console: (Reading database ... 
+    console: (Reading database ... 5%
+    console: (Reading database ... 10%
+    console: (Reading database ... 15%
+    console: (Reading database ... 20%
+    console: (Reading database ... 25%
+    console: (Reading database ... 30%
+    console: (Reading database ... 35%
+    console: (Reading database ... 40%
+    console: (Reading database ... 45%
+    console: (Reading database ... 50%
+    console: (Reading database ... 55%
+    console: (Reading database ... 60%(Reading database ... 65%
+    console: (Reading database ... 70%
+    console: (Reading database ... 75%
+    console: (Reading database ... 80%
+    console: (Reading database ... 85%
+    console: (Reading database ... 90%
+    console: (Reading database ... 95%
+    console: (Reading database ... 100%
+    console: (Reading database ... 
+    console: 50125 files and directories currently installed.)
+    console: Preparing to unpack .../snap-confine_2.34.2_amd64.deb ...
+    console: Unpacking snap-confine (2.34.2) over (1.0.38-0ubuntu0.16.04.10) ...
+    console: Preparing to unpack .../ubuntu-core-launcher_2.34.2_amd64.deb ...
+    console: Unpacking ubuntu-core-launcher (2.34.2) over (1.0.38-0ubuntu0.16.04.10) ...
+    console: Preparing to unpack .../snapd_2.34.2_amd64.deb ...
+    console: Warning: Stopping snapd.service, but it can still be activated by:
+    console:   snapd.socket
+    console: Unpacking snapd (2.34.2) over (2.15.2ubuntu1) ...
+    console: Processing triggers for man-db (2.7.5-1) ...
+    console: Setting up snapd (2.34.2) ...
+    console: Installing new version of config file /etc/profile.d/apps-bin-path.sh ...
+    console: snapd.snap-repair.service is a disabled or a static unit, not starting it.
+    console: Removing obsolete conffile /etc/apparmor.d/usr.lib.snapd.snap-confine ...
+    console: Setting up snap-confine (2.34.2) ...
+    console: Setting up ubuntu-core-launcher (2.34.2) ...
+    console: helm 2.11.0 from 'snapcrafters' installed
+    console: *********************************************************************
+    console: DONE console
+    console: *********************************************************************
+==> node1: Importing base box 'bento/ubuntu-16.04'...
+[KProgress: 10%[KProgress: 20%[KProgress: 30%[KProgress: 40%[KProgress: 60%[KProgress: 70%[KProgress: 80%[KProgress: 90%[K==> node1: Matching MAC address for NAT networking...
+==> node1: Checking if box 'bento/ubuntu-16.04' is up to date...
+==> node1: There was a problem while downloading the metadata for your box
+==> node1: to check for updates. This is not an error, since it is usually due
+==> node1: to temporary network problems. This is just a warning. The problem
+==> node1: encountered was:
+==> node1: 
+==> node1: The requested URL returned error: 404 Not Found
+==> node1: 
+==> node1: If you want to check for box updates, verify your network connection
+==> node1: is valid and try again.
+==> node1: Setting the name of the VM: vagrant_node1_1540460600931_92376
+==> node1: Fixed port collision for 22 => 2222. Now on port 2201.
+==> node1: Clearing any previously set network interfaces...
+==> node1: Preparing network interfaces based on configuration...
+    node1: Adapter 1: nat
+    node1: Adapter 2: hostonly
+==> node1: Forwarding ports...
+    node1: 22 (guest) => 2201 (host) (adapter 1)
+==> node1: Running 'pre-boot' VM customizations...
+==> node1: Booting VM...
+==> node1: Waiting for machine to boot. This may take a few minutes...
+    node1: SSH address: 127.0.0.1:2201
+    node1: SSH username: vagrant
+    node1: SSH auth method: private key
+    node1: Warning: Connection reset. Retrying...
+    node1: 
+    node1: Vagrant insecure key detected. Vagrant will automatically replace
+    node1: this with a newly generated keypair for better security.
+    node1: 
+    node1: Inserting generated public key within guest...
+    node1: Removing insecure key from the guest if it's present...
+    node1: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> node1: Machine booted and ready!
+==> node1: Checking for guest additions in VM...
+    node1: The guest additions on this VM do not match the installed version of
+    node1: VirtualBox! In most cases this is fine, but in rare cases it can
+    node1: prevent things such as shared folders from working properly. If you see
+    node1: shared folder errors, please make sure the guest additions within the
+    node1: virtual machine match the version of VirtualBox you have installed on
+    node1: your host and reload your VM.
+    node1: 
+    node1: Guest Additions Version: 5.1.6
+    node1: VirtualBox Version: 5.2
+==> node1: Setting hostname...
+==> node1: Configuring and enabling network interfaces...
+==> node1: Mounting shared folders...
+    node1: /vagrant => /Volumes/MyData/MyCode/ChimpWizard/playgound/vagrant
+==> node1: Running provisioner: file...
+==> node1: Running provisioner: shell...
+    node1: Running: /var/folders/tw/640sz8rn33q2mgpy1m115fh80000gn/T/vagrant-shell20181025-58246-140n85k.sh
+    node1: ******************
+    node1: MASTER: 172.10.10.20
+    node1: PLATFORM: k8s
+    node1: ******************
+    node1: FOLDER: /home/vagrant
+    node1: total 40
+    node1: drwxr-xr-x 5 vagrant vagrant 4096 Oct 25 09:43 .
+    node1: drwxr-xr-x 3 root    root    4096 Oct  1  2016 ..
+    node1: -rw-r--r-- 1 vagrant vagrant  220 Oct  1  2016 .bash_logout
+    node1: -rw-r--r-- 1 vagrant vagrant 3771 Oct  1  2016 .bashrc
+    node1: drwx------ 2 vagrant vagrant 4096 Oct  1  2016 .cache
+    node1: -rw-r--r-- 1 vagrant vagrant  655 Oct  1  2016 .profile
+    node1: drwxrwxr-x 3 vagrant vagrant 4096 Oct 25 09:43 scripts
+    node1: drwx------ 2 vagrant root    4096 Oct 25 09:43 .ssh
+    node1: -rw-r--r-- 1 vagrant vagrant    0 Oct  1  2016 .sudo_as_admin_successful
+    node1: -rw-r--r-- 1 vagrant vagrant    5 Oct  1  2016 .vbox_version
+    node1: -rw-r--r-- 1 root    root     182 Oct  1  2016 .wget-hsts
+    node1: K8s
+    node1: FOLDER: /home/vagrant
+    node1: total 40
+    node1: drwxr-xr-x 5 vagrant vagrant 4096 Oct 25 09:43 .
+    node1: drwxr-xr-x 3 root    root    4096 Oct  1  2016 ..
+    node1: -rw-r--r-- 1 vagrant vagrant  220 Oct  1  2016 .bash_logout
+    node1: -rw-r--r-- 1 vagrant vagrant 3771 Oct  1  2016 .bashrc
+    node1: drwx------ 2 vagrant vagrant 4096 Oct  1  2016 .cache
+    node1: -rw-r--r-- 1 vagrant vagrant  655 Oct  1  2016 .profile
+    node1: drwxrwxr-x 3 vagrant vagrant 4096 Oct 25 09:43 scripts
+    node1: drwx------ 2 vagrant root    4096 Oct 25 09:43 .ssh
+    node1: -rw-r--r-- 1 vagrant vagrant    0 Oct  1  2016 .sudo_as_admin_successful
+    node1: -rw-r--r-- 1 vagrant vagrant    5 Oct  1  2016 .vbox_version
+    node1: -rw-r--r-- 1 root    root     182 Oct  1  2016 .wget-hsts
+    node1: UBUNTU
+    node1: *********************************************************************
+    node1: PARAMS: 
+    node1:    IP: 172.10.10.20
+    node1: *********************************************************************
+    node1: *********************************************************************
+    node1: Update system
+    node1: *********************************************************************
+    node1: Get:1 http://security.ubuntu.com/ubuntu xenial-security InRelease [107 kB]
+    node1: Hit:2 http://us.archive.ubuntu.com/ubuntu xenial InRelease
+    node1: Get:3 http://us.archive.ubuntu.com/ubuntu xenial-updates InRelease [109 kB]
+    node1: Get:4 http://us.archive.ubuntu.com/ubuntu xenial-backports InRelease [107 kB]
+    node1: Get:5 http://security.ubuntu.com/ubuntu xenial-security/main amd64 Packages [573 kB]
+    node1: Get:6 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 Packages [868 kB]
+    node1: Get:7 http://security.ubuntu.com/ubuntu xenial-security/main i386 Packages [493 kB]
+    node1: Get:8 http://us.archive.ubuntu.com/ubuntu xenial-updates/main i386 Packages [776 kB]
+    node1: Get:9 http://security.ubuntu.com/ubuntu xenial-security/main Translation-en [240 kB]
+    node1: Get:10 http://security.ubuntu.com/ubuntu xenial-security/restricted amd64 Packages [7,204 B]
+    node1: Get:11 http://security.ubuntu.com/ubuntu xenial-security/restricted i386 Packages [7,224 B]
+    node1: Get:12 http://security.ubuntu.com/ubuntu xenial-security/restricted Translation-en [2,152 B]
+    node1: Get:13 http://security.ubuntu.com/ubuntu xenial-security/universe amd64 Packages [392 kB]
+    node1: Get:14 http://security.ubuntu.com/ubuntu xenial-security/universe i386 Packages [340 kB]
+    node1: Get:15 http://us.archive.ubuntu.com/ubuntu xenial-updates/main Translation-en [353 kB]
+    node1: Get:16 http://security.ubuntu.com/ubuntu xenial-security/universe Translation-en [150 kB]
+    node1: Get:17 http://security.ubuntu.com/ubuntu xenial-security/multiverse amd64 Packages [3,460 B]
+    node1: Get:18 http://security.ubuntu.com/ubuntu xenial-security/multiverse i386 Packages [3,632 B]
+    node1: Get:19 http://security.ubuntu.com/ubuntu xenial-security/multiverse Translation-en [1,744 B]
+    node1: Get:20 http://us.archive.ubuntu.com/ubuntu xenial-updates/restricted amd64 Packages [7,556 B]
+    node1: Get:21 http://us.archive.ubuntu.com/ubuntu xenial-updates/restricted i386 Packages [7,524 B]
+    node1: Get:22 http://us.archive.ubuntu.com/ubuntu xenial-updates/restricted Translation-en [2,272 B]
+    node1: Get:23 http://us.archive.ubuntu.com/ubuntu xenial-updates/universe amd64 Packages [697 kB]
+    node1: Get:24 http://us.archive.ubuntu.com/ubuntu xenial-updates/universe i386 Packages [639 kB]
+    node1: Get:25 http://us.archive.ubuntu.com/ubuntu xenial-updates/universe Translation-en [282 kB]
+    node1: Get:26 http://us.archive.ubuntu.com/ubuntu xenial-updates/multiverse amd64 Packages [16.4 kB]
+    node1: Get:27 http://us.archive.ubuntu.com/ubuntu xenial-updates/multiverse i386 Packages [15.5 kB]
+    node1: Get:28 http://us.archive.ubuntu.com/ubuntu xenial-updates/multiverse Translation-en [8,344 B]
+    node1: Get:29 http://us.archive.ubuntu.com/ubuntu xenial-backports/main amd64 Packages [7,304 B]
+    node1: Get:30 http://us.archive.ubuntu.com/ubuntu xenial-backports/main i386 Packages [7,300 B]
+    node1: Get:31 http://us.archive.ubuntu.com/ubuntu xenial-backports/main Translation-en [4,456 B]
+    node1: Get:32 http://us.archive.ubuntu.com/ubuntu xenial-backports/universe amd64 Packages [7,804 B]
+    node1: Get:33 http://us.archive.ubuntu.com/ubuntu xenial-backports/universe i386 Packages [7,488 B]
+    node1: Get:34 http://us.archive.ubuntu.com/ubuntu xenial-backports/universe Translation-en [4,184 B]
+    node1: Fetched 6,247 kB in 3s (1,683 kB/s)
+    node1: Reading package lists...
+    node1: *********************************************************************
+    node1: Installing dependencies
+    node1: *********************************************************************
+    node1: Reading package lists...
+    node1: Building dependency tree...
+    node1: Reading state information...
+    node1: The following additional packages will be installed:
+    node1:   libcurl3-gnutls python3-software-properties
+    node1: The following packages will be upgraded:
+    node1:   apt-transport-https ca-certificates curl libcurl3-gnutls
+    node1:   python3-software-properties software-properties-common
+    node1: 6 upgraded, 0 newly installed, 0 to remove and 254 not upgraded.
+    node1: Need to get 546 kB of archives.
+    node1: After this operation, 48.1 kB disk space will be freed.
+    node1: Get:1 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 curl amd64 7.47.0-1ubuntu2.9 [138 kB]
+    node1: Get:2 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libcurl3-gnutls amd64 7.47.0-1ubuntu2.9 [184 kB]
+    node1: Get:3 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 apt-transport-https amd64 1.2.27 [26.1 kB]
+    node1: Get:4 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 ca-certificates all 20170717~16.04.1 [168 kB]
+    node1: Get:5 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 software-properties-common all 0.96.20.7 [9,452 B]
+    node1: Get:6 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 python3-software-properties all 0.96.20.7 [20.3 kB]
+    node1: dpkg-preconfigure: unable to re-open stdin: No such file or directory
+    node1: Fetched 546 kB in 0s (728 kB/s)
+    node1: (Reading database ... 
+    node1: (Reading database ... 5%
+    node1: (Reading database ... 10%
+    node1: (Reading database ... 15%
+    node1: (Reading database ... 20%
+    node1: (Reading database ... 25%
+    node1: (Reading database ... 30%
+    node1: (Reading database ... 35%
+    node1: (Reading database ... 40%
+    node1: (Reading database ... 45%
+    node1: (Reading database ... 50%
+    node1: (Reading database ... 55%
+    node1: (Reading database ... 60%
+    node1: (Reading database ... 65%
+    node1: (Reading database ... 70%
+    node1: (Reading database ... 75%
+    node1: (Reading database ... 80%
+    node1: (Reading database ... 85%
+    node1: (Reading database ... 90%
+    node1: (Reading database ... 95%
+    node1: (Reading database ... 100%
+    node1: (Reading database ... 
+    node1: 44936 files and directories currently installed.)
+    node1: Preparing to unpack .../curl_7.47.0-1ubuntu2.9_amd64.deb ...
+    node1: Unpacking curl (7.47.0-1ubuntu2.9) over (7.47.0-1ubuntu2.1) ...
+    node1: Preparing to unpack .../libcurl3-gnutls_7.47.0-1ubuntu2.9_amd64.deb ...
+    node1: Unpacking libcurl3-gnutls:amd64 (7.47.0-1ubuntu2.9) over (7.47.0-1ubuntu2.1) ...
+    node1: Preparing to unpack .../apt-transport-https_1.2.27_amd64.deb ...
+    node1: Unpacking apt-transport-https (1.2.27) over (1.2.12~ubuntu16.04.1) ...
+    node1: Preparing to unpack .../ca-certificates_20170717~16.04.1_all.deb ...
+    node1: Unpacking ca-certificates (20170717~16.04.1) over (20160104ubuntu1) ...
+    node1: Preparing to unpack .../software-properties-common_0.96.20.7_all.deb ...
+    node1: Unpacking software-properties-common (0.96.20.7) over (0.96.20.4) ...
+    node1: Preparing to unpack .../python3-software-properties_0.96.20.7_all.deb ...
+    node1: Unpacking python3-software-properties (0.96.20.7) over (0.96.20.4) ...
+    node1: Processing triggers for man-db (2.7.5-1) ...
+    node1: Processing triggers for libc-bin (2.23-0ubuntu3) ...
+    node1: Processing triggers for dbus (1.10.6-1ubuntu3) ...
+    node1: Setting up libcurl3-gnutls:amd64 (7.47.0-1ubuntu2.9) ...
+    node1: Setting up curl (7.47.0-1ubuntu2.9) ...
+    node1: Setting up apt-transport-https (1.2.27) ...
+    node1: Setting up ca-certificates (20170717~16.04.1) ...
+    node1: Setting up python3-software-properties (0.96.20.7) ...
+    node1: Setting up software-properties-common (0.96.20.7) ...
+    node1: Processing triggers for libc-bin (2.23-0ubuntu3) ...
+    node1: Processing triggers for ca-certificates (20170717~16.04.1) ...
+    node1: Updating certificates in /etc/ssl/certs...
+    node1: 17 added, 42 removed; done.
+    node1: 
+    node1: Running hooks in /etc/ca-certificates/update.d...
+    node1: done.
+    node1: *********************************************************************
+    node1: Installing docker
+    node1: *********************************************************************
+    node1: OK
+    node1: pub   4096R/0EBFCD88 2017-02-22
+    node1:       Key fingerprint = 9DC8 5822 9FC7 DD38 854A  E2D8 8D81 803C 0EBF CD88
+    node1: uid                  Docker Release (CE deb) <docker@docker.com>
+    node1: sub   4096R/F273FCD8 2017-02-22
+    node1: Reading package lists...
+    node1: Building dependency tree...
+    node1: Reading state information...
+    node1: The following additional packages will be installed:
+    node1:   bridge-utils cgroupfs-mount ubuntu-fan
+    node1: Suggested packages:
+    node1:   mountall aufs-tools debootstrap docker-doc rinse zfs-fuse | zfsutils
+    node1: The following NEW packages will be installed:
+    node1:   bridge-utils cgroupfs-mount docker.io ubuntu-fan
+    node1: 0 upgraded, 4 newly installed, 0 to remove and 254 not upgraded.
+    node1: Need to get 17.1 MB of archives.
+    node1: After this operation, 90.5 MB of additional disk space will be used.
+    node1: Get:1 http://us.archive.ubuntu.com/ubuntu xenial/main amd64 bridge-utils amd64 1.5-9ubuntu1 [28.6 kB]
+    node1: Get:2 http://us.archive.ubuntu.com/ubuntu xenial/universe amd64 cgroupfs-mount all 1.2 [4,970 B]
+    node1: Get:3 http://us.archive.ubuntu.com/ubuntu xenial-updates/universe amd64 docker.io amd64 17.03.2-0ubuntu2~16.04.1 [17.1 MB]
+    node1: Get:4 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 ubuntu-fan all 0.12.8~16.04.2 [35.6 kB]
+    node1: dpkg-preconfigure: unable to re-open stdin: No such file or directory
+    node1: Fetched 17.1 MB in 4s (4,202 kB/s)
+    node1: Selecting previously unselected package bridge-utils.
+    node1: (Reading database ... 
+    node1: (Reading database ... 5%
+    node1: (Reading database ... 10%
+    node1: (Reading database ... 15%
+    node1: (Reading database ... 20%
+    node1: (Reading database ... 25%
+    node1: (Reading database ... 30%
+    node1: (Reading database ... 35%
+    node1: (Reading database ... 40%
+    node1: (Reading database ... 45%
+    node1: (Reading database ... 50%
+    node1: (Reading database ... 55%
+    node1: (Reading database ... 60%
+    node1: (Reading database ... 65%
+    node1: (Reading database ... 70%
+    node1: (Reading database ... 75%
+    node1: (Reading database ... 80%
+    node1: (Reading database ... 85%
+    node1: (Reading database ... 90%
+    node1: (Reading database ... 95%
+    node1: (Reading database ... 100%
+    node1: (Reading database ... 
+    node1: 44910 files and directories currently installed.)
+    node1: Preparing to unpack .../bridge-utils_1.5-9ubuntu1_amd64.deb ...
+    node1: Unpacking bridge-utils (1.5-9ubuntu1) ...
+    node1: Selecting previously unselected package cgroupfs-mount.
+    node1: Preparing to unpack .../cgroupfs-mount_1.2_all.deb ...
+    node1: Unpacking cgroupfs-mount (1.2) ...
+    node1: Selecting previously unselected package docker.io.
+    node1: Preparing to unpack .../docker.io_17.03.2-0ubuntu2~16.04.1_amd64.deb ...
+    node1: Unpacking docker.io (17.03.2-0ubuntu2~16.04.1) ...
+    node1: Selecting previously unselected package ubuntu-fan.
+    node1: Preparing to unpack .../ubuntu-fan_0.12.8~16.04.2_all.deb ...
+    node1: Unpacking ubuntu-fan (0.12.8~16.04.2) ...
+    node1: Processing triggers for man-db (2.7.5-1) ...
+    node1: Processing triggers for ureadahead (0.100.0-19) ...
+    node1: Processing triggers for systemd (229-4ubuntu10) ...
+    node1: Setting up bridge-utils (1.5-9ubuntu1) ...
+    node1: Setting up cgroupfs-mount (1.2) ...
+    node1: Setting up docker.io (17.03.2-0ubuntu2~16.04.1) ...
+    node1: Adding group `docker' (GID 117) ...
+    node1: Done.
+    node1: Setting up ubuntu-fan (0.12.8~16.04.2) ...
+    node1: Processing triggers for systemd (229-4ubuntu10) ...
+    node1: Processing triggers for ureadahead (0.100.0-19) ...
+    node1: *********************************************************************
+    node1: Give docekr access to vagrant
+    node1: *********************************************************************
+    node1: *********************************************************************
+    node1: Install kubeadmin
+    node1: *********************************************************************
+    node1: OK
+    node1: Hit:1 http://security.ubuntu.com/ubuntu xenial-security InRelease
+    node1: Hit:2 http://us.archive.ubuntu.com/ubuntu xenial InRelease
+    node1: Get:4 https://download.docker.com/linux/ubuntu xenial InRelease [66.2 kB]
+    node1: Hit:5 http://us.archive.ubuntu.com/ubuntu xenial-updates InRelease
+    node1: Hit:6 http://us.archive.ubuntu.com/ubuntu xenial-backports InRelease
+    node1: Get:7 https://download.docker.com/linux/ubuntu xenial/stable amd64 Packages [4,810 B]
+    node1: Get:3 https://packages.cloud.google.com/apt kubernetes-xenial InRelease [8,993 B]
+    node1: Get:8 https://packages.cloud.google.com/apt kubernetes-xenial/main amd64 Packages [20.4 kB]
+    node1: Fetched 100 kB in 1s (98.4 kB/s)
+    node1: Reading package lists...
+    node1: Reading package lists...
+    node1: Building dependency tree...
+    node1: Reading state information...
+    node1: The following additional packages will be installed:
+    node1:   ebtables kubernetes-cni socat
+    node1: The following NEW packages will be installed:
+    node1:   ebtables kubeadm kubectl kubelet kubernetes-cni socat
+    node1: 0 upgraded, 6 newly installed, 0 to remove and 254 not upgraded.
+    node1: Need to get 57.3 MB of archives.
+    node1: After this operation, 413 MB of additional disk space will be used.
+    node1: Get:2 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 ebtables amd64 2.0.10.4-3.4ubuntu2.16.04.2 [79.9 kB]
+    node1: Get:6 http://us.archive.ubuntu.com/ubuntu xenial/universe amd64 socat amd64 1.7.3.1-1 [321 kB]
+    node1: Get:1 https://packages.cloud.google.com/apt kubernetes-xenial/main amd64 kubernetes-cni amd64 0.6.0-00 [5,910 kB]
+    node1: Get:3 https://packages.cloud.google.com/apt kubernetes-xenial/main amd64 kubelet amd64 1.9.0-00 [20.5 MB]
+    node1: Get:4 https://packages.cloud.google.com/apt kubernetes-xenial/main amd64 kubectl amd64 1.9.0-00 [10.5 MB]
+    node1: Get:5 https://packages.cloud.google.com/apt kubernetes-xenial/main amd64 kubeadm amd64 1.9.0-00 [20.0 MB]
+    node1: dpkg-preconfigure: unable to re-open stdin: No such file or directory
+    node1: Fetched 57.3 MB in 12s (4,683 kB/s)
+    node1: Selecting previously unselected package ebtables.
+    node1: (Reading database ... 
+    node1: (Reading database ... 5%
+    node1: (Reading database ... 10%
+    node1: (Reading database ... 15%
+    node1: (Reading database ... 20%
+    node1: (Reading database ... 25%
+    node1: (Reading database ... 30%
+    node1: (Reading database ... 35%
+    node1: (Reading database ... 40%
+    node1: (Reading database ... 45%
+    node1: (Reading database ... 50%
+    node1: (Reading database ... 55%
+    node1: (Reading database ... 60%
+    node1: (Reading database ... 65%
+    node1: (Reading database ... 70%
+    node1: (Reading database ... 75%
+    node1: (Reading database ... 80%
+    node1: (Reading database ... 85%
+    node1: (Reading database ... 90%
+    node1: (Reading database ... 95%
+    node1: (Reading database ... 100%
+    node1: (Reading database ... 
+    node1: 45070 files and directories currently installed.)
+    node1: Preparing to unpack .../ebtables_2.0.10.4-3.4ubuntu2.16.04.2_amd64.deb ...
+    node1: Unpacking ebtables (2.0.10.4-3.4ubuntu2.16.04.2) ...
+    node1: Selecting previously unselected package kubernetes-cni.
+    node1: Preparing to unpack .../kubernetes-cni_0.6.0-00_amd64.deb ...
+    node1: Unpacking kubernetes-cni (0.6.0-00) ...
+    node1: Selecting previously unselected package socat.
+    node1: Preparing to unpack .../socat_1.7.3.1-1_amd64.deb ...
+    node1: Unpacking socat (1.7.3.1-1) ...
+    node1: Selecting previously unselected package kubelet.
+    node1: Preparing to unpack .../kubelet_1.9.0-00_amd64.deb ...
+    node1: Unpacking kubelet (1.9.0-00) ...
+    node1: Selecting previously unselected package kubectl.
+    node1: Preparing to unpack .../kubectl_1.9.0-00_amd64.deb ...
+    node1: Unpacking kubectl (1.9.0-00) ...
+    node1: Selecting previously unselected package kubeadm.
+    node1: Preparing to unpack .../kubeadm_1.9.0-00_amd64.deb ...
+    node1: Unpacking kubeadm (1.9.0-00) ...
+    node1: Processing triggers for man-db (2.7.5-1) ...
+    node1: Processing triggers for systemd (229-4ubuntu10) ...
+    node1: Processing triggers for ureadahead (0.100.0-19) ...
+    node1: Setting up ebtables (2.0.10.4-3.4ubuntu2.16.04.2) ...
+    node1: update-rc.d: warning: start and stop actions are no longer supported; falling back to defaults
+    node1: Setting up kubernetes-cni (0.6.0-00) ...
+    node1: Setting up socat (1.7.3.1-1) ...
+    node1: Setting up kubelet (1.9.0-00) ...
+    node1: Setting up kubectl (1.9.0-00) ...
+    node1: Setting up kubeadm (1.9.0-00) ...
+    node1: Processing triggers for systemd (229-4ubuntu10) ...
+    node1: Processing triggers for ureadahead (0.100.0-19) ...
+    node1: *********************************************************************
+    node1: Set host name resolution
+    node1: *********************************************************************
+    node1: set host name resolution
+    node1: 127.0.0.1	node1	node1
+    node1: 127.0.0.1	localhost
+    node1: 127.0.1.1	vagrant.vm	vagrant
+    node1: 
+    node1: # The following lines are desirable for IPv6 capable hosts
+    node1: ::1     localhost ip6-localhost ip6-loopback
+    node1: ff02::1 ip6-allnodes
+    node1: ff02::2 ip6-allrouters
+    node1: 
+    node1: 172.10.10.20 master1
+    node1: 172.10.10.30 node1
+    node1: 172.10.10.40 node2
+    node1: *********************************************************************
+    node1: Turn Off swap
+    node1: *********************************************************************
+    node1: *********************************************************************
+    node1: Join cluster
+    node1: *********************************************************************
+    node1: [preflight] Running pre-flight checks.
+    node1: 	[WARNING FileExisting-crictl]: crictl not found in system path
+    node1: [discovery] Trying to connect to API Server "172.10.10.20:6443"
+    node1: [discovery] Created cluster-info discovery client, requesting info from "https://172.10.10.20:6443"
+    node1: [discovery] Requesting info from "https://172.10.10.20:6443" again to validate TLS against the pinned public key
+    node1: [discovery] Cluster info signature and contents are valid and TLS certificate validates against pinned roots, will use API Server "172.10.10.20:6443"
+    node1: [discovery] Successfully established connection with API Server "172.10.10.20:6443"
+    node1: 
+    node1: This node has joined the cluster:
+    node1: * Certificate signing request was sent to master and a response
+    node1:   was received.
+    node1: * The Kubelet was informed of the new secure connection details.
+    node1: 
+    node1: Run 'kubectl get nodes' on the master to see this node join the cluster.
+    node1: *********************************************************************
+    node1: DONE node1
+    node1: *********************************************************************
+==> node2: Importing base box 'bento/ubuntu-16.04'...
+[KProgress: 10%[KProgress: 20%[KProgress: 30%[KProgress: 40%[KProgress: 60%[KProgress: 70%[KProgress: 80%[KProgress: 90%[K==> node2: Matching MAC address for NAT networking...
+==> node2: Checking if box 'bento/ubuntu-16.04' is up to date...
+==> node2: There was a problem while downloading the metadata for your box
+==> node2: to check for updates. This is not an error, since it is usually due
+==> node2: to temporary network problems. This is just a warning. The problem
+==> node2: encountered was:
+==> node2: 
+==> node2: The requested URL returned error: 404 Not Found
+==> node2: 
+==> node2: If you want to check for box updates, verify your network connection
+==> node2: is valid and try again.
+==> node2: Setting the name of the VM: vagrant_node2_1540460722357_17959
+==> node2: Fixed port collision for 22 => 2222. Now on port 2202.
+==> node2: Clearing any previously set network interfaces...
+==> node2: Preparing network interfaces based on configuration...
+    node2: Adapter 1: nat
+    node2: Adapter 2: hostonly
+==> node2: Forwarding ports...
+    node2: 22 (guest) => 2202 (host) (adapter 1)
+==> node2: Running 'pre-boot' VM customizations...
+==> node2: Booting VM...
+==> node2: Waiting for machine to boot. This may take a few minutes...
+    node2: SSH address: 127.0.0.1:2202
+    node2: SSH username: vagrant
+    node2: SSH auth method: private key
+    node2: 
+    node2: Vagrant insecure key detected. Vagrant will automatically replace
+    node2: this with a newly generated keypair for better security.
+    node2: 
+    node2: Inserting generated public key within guest...
+    node2: Removing insecure key from the guest if it's present...
+    node2: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> node2: Machine booted and ready!
+==> node2: Checking for guest additions in VM...
+    node2: The guest additions on this VM do not match the installed version of
+    node2: VirtualBox! In most cases this is fine, but in rare cases it can
+    node2: prevent things such as shared folders from working properly. If you see
+    node2: shared folder errors, please make sure the guest additions within the
+    node2: virtual machine match the version of VirtualBox you have installed on
+    node2: your host and reload your VM.
+    node2: 
+    node2: Guest Additions Version: 5.1.6
+    node2: VirtualBox Version: 5.2
+==> node2: Setting hostname...
+==> node2: Configuring and enabling network interfaces...
+==> node2: Mounting shared folders...
+    node2: /vagrant => /Volumes/MyData/MyCode/ChimpWizard/playgound/vagrant
+==> node2: Running provisioner: file...
+==> node2: Running provisioner: shell...
+    node2: Running: /var/folders/tw/640sz8rn33q2mgpy1m115fh80000gn/T/vagrant-shell20181025-58246-x9uj9j.sh
+    node2: ******************
+    node2: MASTER: 172.10.10.20
+    node2: PLATFORM: k8s
+    node2: ******************
+    node2: FOLDER: /home/vagrant
+    node2: total 40
+    node2: drwxr-xr-x 5 vagrant vagrant 4096 Oct 25 09:45 .
+    node2: drwxr-xr-x 3 root    root    4096 Oct  1  2016 ..
+    node2: -rw-r--r-- 1 vagrant vagrant  220 Oct  1  2016 .bash_logout
+    node2: -rw-r--r-- 1 vagrant vagrant 3771 Oct  1  2016 .bashrc
+    node2: drwx------ 2 vagrant vagrant 4096 Oct  1  2016 .cache
+    node2: -rw-r--r-- 1 vagrant vagrant  655 Oct  1  2016 .profile
+    node2: drwxrwxr-x 3 vagrant vagrant 4096 Oct 25 09:45 scripts
+    node2: drwx------ 2 vagrant root    4096 Oct 25 09:45 .ssh
+    node2: -rw-r--r-- 1 vagrant vagrant    0 Oct  1  2016 .sudo_as_admin_successful
+    node2: -rw-r--r-- 1 vagrant vagrant    5 Oct  1  2016 .vbox_version
+    node2: -rw-r--r-- 1 root    root     182 Oct  1  2016 .wget-hsts
+    node2: K8s
+    node2: FOLDER: /home/vagrant
+    node2: total 40
+    node2: drwxr-xr-x 5 vagrant vagrant 4096 Oct 25 09:45 .
+    node2: drwxr-xr-x 3 root    root    4096 Oct  1  2016 ..
+    node2: -rw-r--r-- 1 vagrant vagrant  220 Oct  1  2016 .bash_logout
+    node2: -rw-r--r-- 1 vagrant vagrant 3771 Oct  1  2016 .bashrc
+    node2: drwx------ 2 vagrant vagrant 4096 Oct  1  2016 .cache
+    node2: -rw-r--r-- 1 vagrant vagrant  655 Oct  1  2016 .profile
+    node2: drwxrwxr-x 3 vagrant vagrant 4096 Oct 25 09:45 scripts
+    node2: drwx------ 2 vagrant root    4096 Oct 25 09:45 .ssh
+    node2: -rw-r--r-- 1 vagrant vagrant    0 Oct  1  2016 .sudo_as_admin_successful
+    node2: -rw-r--r-- 1 vagrant vagrant    5 Oct  1  2016 .vbox_version
+    node2: -rw-r--r-- 1 root    root     182 Oct  1  2016 .wget-hsts
+    node2: UBUNTU
+    node2: *********************************************************************
+    node2: PARAMS: 
+    node2:    IP: 172.10.10.20
+    node2: *********************************************************************
+    node2: *********************************************************************
+    node2: Update system
+    node2: *********************************************************************
+    node2: Hit:1 http://us.archive.ubuntu.com/ubuntu xenial InRelease
+    node2: Get:2 http://us.archive.ubuntu.com/ubuntu xenial-updates InRelease [109 kB]
+    node2: Get:3 http://security.ubuntu.com/ubuntu xenial-security InRelease [107 kB]
+    node2: Get:4 http://us.archive.ubuntu.com/ubuntu xenial-backports InRelease [107 kB]
+    node2: Get:5 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 Packages [868 kB]
+    node2: Get:6 http://security.ubuntu.com/ubuntu xenial-security/main amd64 Packages [573 kB]
+    node2: Get:7 http://us.archive.ubuntu.com/ubuntu xenial-updates/main i386 Packages [776 kB]
+    node2: Get:8 http://us.archive.ubuntu.com/ubuntu xenial-updates/main Translation-en [353 kB]
+    node2: Get:9 http://us.archive.ubuntu.com/ubuntu xenial-updates/restricted amd64 Packages [7,556 B]
+    node2: Get:10 http://us.archive.ubuntu.com/ubuntu xenial-updates/restricted i386 Packages [7,524 B]
+    node2: Get:11 http://us.archive.ubuntu.com/ubuntu xenial-updates/restricted Translation-en [2,272 B]
+    node2: Get:12 http://us.archive.ubuntu.com/ubuntu xenial-updates/universe amd64 Packages [697 kB]
+    node2: Get:13 http://us.archive.ubuntu.com/ubuntu xenial-updates/universe i386 Packages [639 kB]
+    node2: Get:14 http://us.archive.ubuntu.com/ubuntu xenial-updates/universe Translation-en [282 kB]
+    node2: Get:15 http://us.archive.ubuntu.com/ubuntu xenial-updates/multiverse amd64 Packages [16.4 kB]
+    node2: Get:16 http://us.archive.ubuntu.com/ubuntu xenial-updates/multiverse i386 Packages [15.5 kB]
+    node2: Get:17 http://us.archive.ubuntu.com/ubuntu xenial-updates/multiverse Translation-en [8,344 B]
+    node2: Get:18 http://us.archive.ubuntu.com/ubuntu xenial-backports/main amd64 Packages [7,304 B]
+    node2: Get:19 http://us.archive.ubuntu.com/ubuntu xenial-backports/main i386 Packages [7,300 B]
+    node2: Get:20 http://us.archive.ubuntu.com/ubuntu xenial-backports/main Translation-en [4,456 B]
+    node2: Get:21 http://us.archive.ubuntu.com/ubuntu xenial-backports/universe amd64 Packages [7,804 B]
+    node2: Get:22 http://us.archive.ubuntu.com/ubuntu xenial-backports/universe i386 Packages [7,488 B]
+    node2: Get:23 http://us.archive.ubuntu.com/ubuntu xenial-backports/universe Translation-en [4,184 B]
+    node2: Get:24 http://security.ubuntu.com/ubuntu xenial-security/main i386 Packages [493 kB]
+    node2: Get:25 http://security.ubuntu.com/ubuntu xenial-security/main Translation-en [240 kB]
+    node2: Get:26 http://security.ubuntu.com/ubuntu xenial-security/restricted amd64 Packages [7,204 B]
+    node2: Get:27 http://security.ubuntu.com/ubuntu xenial-security/restricted i386 Packages [7,224 B]
+    node2: Get:28 http://security.ubuntu.com/ubuntu xenial-security/restricted Translation-en [2,152 B]
+    node2: Get:29 http://security.ubuntu.com/ubuntu xenial-security/universe amd64 Packages [392 kB]
+    node2: Get:30 http://security.ubuntu.com/ubuntu xenial-security/universe i386 Packages [340 kB]
+    node2: Get:31 http://security.ubuntu.com/ubuntu xenial-security/universe Translation-en [150 kB]
+    node2: Get:32 http://security.ubuntu.com/ubuntu xenial-security/multiverse amd64 Packages [3,460 B]
+    node2: Get:33 http://security.ubuntu.com/ubuntu xenial-security/multiverse i386 Packages [3,632 B]
+    node2: Get:34 http://security.ubuntu.com/ubuntu xenial-security/multiverse Translation-en [1,744 B]
+    node2: Fetched 6,247 kB in 3s (1,753 kB/s)
+    node2: Reading package lists...
+    node2: *********************************************************************
+    node2: Installing dependencies
+    node2: *********************************************************************
+    node2: Reading package lists...
+    node2: Building dependency tree...
+    node2: Reading state information...
+    node2: The following additional packages will be installed:
+    node2:   libcurl3-gnutls python3-software-properties
+    node2: The following packages will be upgraded:
+    node2:   apt-transport-https ca-certificates curl libcurl3-gnutls
+    node2:   python3-software-properties software-properties-common
+    node2: 6 upgraded, 0 newly installed, 0 to remove and 254 not upgraded.
+    node2: Need to get 546 kB of archives.
+    node2: After this operation, 48.1 kB disk space will be freed.
+    node2: Get:1 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 curl amd64 7.47.0-1ubuntu2.9 [138 kB]
+    node2: Get:2 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libcurl3-gnutls amd64 7.47.0-1ubuntu2.9 [184 kB]
+    node2: Get:3 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 apt-transport-https amd64 1.2.27 [26.1 kB]
+    node2: Get:4 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 ca-certificates all 20170717~16.04.1 [168 kB]
+    node2: Get:5 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 software-properties-common all 0.96.20.7 [9,452 B]
+    node2: Get:6 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 python3-software-properties all 0.96.20.7 [20.3 kB]
+    node2: dpkg-preconfigure: unable to re-open stdin: No such file or directory
+    node2: Fetched 546 kB in 0s (761 kB/s)
+    node2: (Reading database ... 
+    node2: (Reading database ... 5%
+    node2: (Reading database ... 10%
+    node2: (Reading database ... 15%
+    node2: (Reading database ... 20%
+    node2: (Reading database ... 25%
+    node2: (Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%
+    node2: (Reading database ... 70%
+    node2: (Reading database ... 75%
+    node2: (Reading database ... 80%
+    node2: (Reading database ... 85%
+    node2: (Reading database ... 90%
+    node2: (Reading database ... 95%
+    node2: (Reading database ... 100%
+    node2: (Reading database ... 
+    node2: 44936 files and directories currently installed.)
+    node2: Preparing to unpack .../curl_7.47.0-1ubuntu2.9_amd64.deb ...
+    node2: Unpacking curl (7.47.0-1ubuntu2.9) over (7.47.0-1ubuntu2.1) ...
+    node2: Preparing to unpack .../libcurl3-gnutls_7.47.0-1ubuntu2.9_amd64.deb ...
+    node2: Unpacking libcurl3-gnutls:amd64 (7.47.0-1ubuntu2.9) over (7.47.0-1ubuntu2.1) ...
+    node2: Preparing to unpack .../apt-transport-https_1.2.27_amd64.deb ...
+    node2: Unpacking apt-transport-https (1.2.27) over (1.2.12~ubuntu16.04.1) ...
+    node2: Preparing to unpack .../ca-certificates_20170717~16.04.1_all.deb ...
+    node2: Unpacking ca-certificates (20170717~16.04.1) over (20160104ubuntu1) ...
+    node2: Preparing to unpack .../software-properties-common_0.96.20.7_all.deb ...
+    node2: Unpacking software-properties-common (0.96.20.7) over (0.96.20.4) ...
+    node2: Preparing to unpack .../python3-software-properties_0.96.20.7_all.deb ...
+    node2: Unpacking python3-software-properties (0.96.20.7) over (0.96.20.4) ...
+    node2: Processing triggers for man-db (2.7.5-1) ...
+    node2: Processing triggers for libc-bin (2.23-0ubuntu3) ...
+    node2: Processing triggers for dbus (1.10.6-1ubuntu3) ...
+    node2: Setting up libcurl3-gnutls:amd64 (7.47.0-1ubuntu2.9) ...
+    node2: Setting up curl (7.47.0-1ubuntu2.9) ...
+    node2: Setting up apt-transport-https (1.2.27) ...
+    node2: Setting up ca-certificates (20170717~16.04.1) ...
+    node2: Setting up python3-software-properties (0.96.20.7) ...
+    node2: Setting up software-properties-common (0.96.20.7) ...
+    node2: Processing triggers for libc-bin (2.23-0ubuntu3) ...
+    node2: Processing triggers for ca-certificates (20170717~16.04.1) ...
+    node2: Updating certificates in /etc/ssl/certs...
+    node2: 17 added, 42 removed; done.
+    node2: 
+    node2: Running hooks in /etc/ca-certificates/update.d...
+    node2: done.
+    node2: *********************************************************************
+    node2: Installing docker
+    node2: *********************************************************************
+    node2: OK
+    node2: pub   4096R/0EBFCD88 2017-02-22
+    node2:       Key fingerprint = 9DC8 5822 9FC7 DD38 854A  E2D8 8D81 803C 0EBF CD88
+    node2: uid                  Docker Release (CE deb) <docker@docker.com>
+    node2: sub   4096R/F273FCD8 2017-02-22
+    node2: Reading package lists...
+    node2: Building dependency tree...
+    node2: Reading state information...
+    node2: The following additional packages will be installed:
+    node2:   bridge-utils cgroupfs-mount ubuntu-fan
+    node2: Suggested packages:
+    node2:   mountall aufs-tools debootstrap docker-doc rinse zfs-fuse | zfsutils
+    node2: The following NEW packages will be installed:
+    node2:   bridge-utils cgroupfs-mount docker.io ubuntu-fan
+    node2: 0 upgraded, 4 newly installed, 0 to remove and 254 not upgraded.
+    node2: Need to get 17.1 MB of archives.
+    node2: After this operation, 90.5 MB of additional disk space will be used.
+    node2: Get:1 http://us.archive.ubuntu.com/ubuntu xenial/main amd64 bridge-utils amd64 1.5-9ubuntu1 [28.6 kB]
+    node2: Get:2 http://us.archive.ubuntu.com/ubuntu xenial/universe amd64 cgroupfs-mount all 1.2 [4,970 B]
+    node2: Get:3 http://us.archive.ubuntu.com/ubuntu xenial-updates/universe amd64 docker.io amd64 17.03.2-0ubuntu2~16.04.1 [17.1 MB]
+    node2: Get:4 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 ubuntu-fan all 0.12.8~16.04.2 [35.6 kB]
+    node2: dpkg-preconfigure: unable to re-open stdin: No such file or directory
+    node2: Fetched 17.1 MB in 4s (3,643 kB/s)
+    node2: Selecting previously unselected package bridge-utils.
+    node2: (Reading database ... 
+    node2: (Reading database ... 5%
+    node2: (Reading database ... 10%
+    node2: (Reading database ... 15%
+    node2: (Reading database ... 20%
+    node2: (Reading database ... 25%
+    node2: (Reading database ... 30%
+    node2: (Reading database ... 35%
+    node2: (Reading database ... 40%
+    node2: (Reading database ... 45%
+    node2: (Reading database ... 50%
+    node2: (Reading database ... 55%
+    node2: (Reading database ... 60%
+    node2: (Reading database ... 65%
+    node2: (Reading database ... 70%
+    node2: (Reading database ... 75%
+    node2: (Reading database ... 80%
+    node2: (Reading database ... 85%
+    node2: (Reading database ... 90%
+    node2: (Reading database ... 95%
+    node2: (Reading database ... 100%
+    node2: (Reading database ... 
+    node2: 44910 files and directories currently installed.)
+    node2: Preparing to unpack .../bridge-utils_1.5-9ubuntu1_amd64.deb ...
+    node2: Unpacking bridge-utils (1.5-9ubuntu1) ...
+    node2: Selecting previously unselected package cgroupfs-mount.
+    node2: Preparing to unpack .../cgroupfs-mount_1.2_all.deb ...
+    node2: Unpacking cgroupfs-mount (1.2) ...
+    node2: Selecting previously unselected package docker.io.
+    node2: Preparing to unpack .../docker.io_17.03.2-0ubuntu2~16.04.1_amd64.deb ...
+    node2: Unpacking docker.io (17.03.2-0ubuntu2~16.04.1) ...
+    node2: Selecting previously unselected package ubuntu-fan.
+    node2: Preparing to unpack .../ubuntu-fan_0.12.8~16.04.2_all.deb ...
+    node2: Unpacking ubuntu-fan (0.12.8~16.04.2) ...
+    node2: Processing triggers for man-db (2.7.5-1) ...
+    node2: Processing triggers for ureadahead (0.100.0-19) ...
+    node2: Processing triggers for systemd (229-4ubuntu10) ...
+    node2: Setting up bridge-utils (1.5-9ubuntu1) ...
+    node2: Setting up cgroupfs-mount (1.2) ...
+    node2: Setting up docker.io (17.03.2-0ubuntu2~16.04.1) ...
+    node2: Adding group `docker' (GID 117) ...
+    node2: Done.
+    node2: Setting up ubuntu-fan (0.12.8~16.04.2) ...
+    node2: Processing triggers for systemd (229-4ubuntu10) ...
+    node2: Processing triggers for ureadahead (0.100.0-19) ...
+    node2: *********************************************************************
+    node2: Give docekr access to vagrant
+    node2: *********************************************************************
+    node2: *********************************************************************
+    node2: Install kubeadmin
+    node2: *********************************************************************
+    node2: OK
+    node2: Hit:1 http://us.archive.ubuntu.com/ubuntu xenial InRelease
+    node2: Hit:2 http://security.ubuntu.com/ubuntu xenial-security InRelease
+    node2: Hit:3 http://us.archive.ubuntu.com/ubuntu xenial-updates InRelease
+    node2: Get:4 https://download.docker.com/linux/ubuntu xenial InRelease [66.2 kB]
+    node2: Hit:5 http://us.archive.ubuntu.com/ubuntu xenial-backports InRelease
+    node2: Get:7 https://download.docker.com/linux/ubuntu xenial/stable amd64 Packages [4,810 B]
+    node2: Get:6 https://packages.cloud.google.com/apt kubernetes-xenial InRelease [8,993 B]
+    node2: Get:8 https://packages.cloud.google.com/apt kubernetes-xenial/main amd64 Packages [20.4 kB]
+    node2: Fetched 100 kB in 1s (89.9 kB/s)
+    node2: Reading package lists...
+    node2: Reading package lists...
+    node2: Building dependency tree...
+    node2: Reading state information...
+    node2: The following additional packages will be installed:
+    node2:   ebtables kubernetes-cni socat
+    node2: The following NEW packages will be installed:
+    node2:   ebtables kubeadm kubectl kubelet kubernetes-cni socat
+    node2: 0 upgraded, 6 newly installed, 0 to remove and 254 not upgraded.
+    node2: Need to get 57.3 MB of archives.
+    node2: After this operation, 413 MB of additional disk space will be used.
+    node2: Get:2 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 ebtables amd64 2.0.10.4-3.4ubuntu2.16.04.2 [79.9 kB]
+    node2: Get:6 http://us.archive.ubuntu.com/ubuntu xenial/universe amd64 socat amd64 1.7.3.1-1 [321 kB]
+    node2: Get:1 https://packages.cloud.google.com/apt kubernetes-xenial/main amd64 kubernetes-cni amd64 0.6.0-00 [5,910 kB]
+    node2: Get:3 https://packages.cloud.google.com/apt kubernetes-xenial/main amd64 kubelet amd64 1.9.0-00 [20.5 MB]
+    node2: Get:4 https://packages.cloud.google.com/apt kubernetes-xenial/main amd64 kubectl amd64 1.9.0-00 [10.5 MB]
+    node2: Get:5 https://packages.cloud.google.com/apt kubernetes-xenial/main amd64 kubeadm amd64 1.9.0-00 [20.0 MB]
+    node2: dpkg-preconfigure: unable to re-open stdin: No such file or directory
+    node2: Fetched 57.3 MB in 12s (4,740 kB/s)
+    node2: Selecting previously unselected package ebtables.
+    node2: (Reading database ... 
+    node2: (Reading database ... 5%
+    node2: (Reading database ... 10%
+    node2: (Reading database ... 15%
+    node2: (Reading database ... 20%
+    node2: (Reading database ... 25%
+    node2: (Reading database ... 30%
+    node2: (Reading database ... 35%
+    node2: (Reading database ... 40%
+    node2: (Reading database ... 45%
+    node2: (Reading database ... 50%
+    node2: (Reading database ... 55%
+    node2: (Reading database ... 60%
+    node2: (Reading database ... 65%
+    node2: (Reading database ... 70%
+    node2: (Reading database ... 75%
+    node2: (Reading database ... 80%
+    node2: (Reading database ... 85%
+    node2: (Reading database ... 90%
+    node2: (Reading database ... 95%
+    node2: (Reading database ... 100%
+    node2: (Reading database ... 
+    node2: 45070 files and directories currently installed.)
+    node2: Preparing to unpack .../ebtables_2.0.10.4-3.4ubuntu2.16.04.2_amd64.deb ...
+    node2: Unpacking ebtables (2.0.10.4-3.4ubuntu2.16.04.2) ...
+    node2: Selecting previously unselected package kubernetes-cni.
+    node2: Preparing to unpack .../kubernetes-cni_0.6.0-00_amd64.deb ...
+    node2: Unpacking kubernetes-cni (0.6.0-00) ...
+    node2: Selecting previously unselected package socat.
+    node2: Preparing to unpack .../socat_1.7.3.1-1_amd64.deb ...
+    node2: Unpacking socat (1.7.3.1-1) ...
+    node2: Selecting previously unselected package kubelet.
+    node2: Preparing to unpack .../kubelet_1.9.0-00_amd64.deb ...
+    node2: Unpacking kubelet (1.9.0-00) ...
+    node2: Selecting previously unselected package kubectl.
+    node2: Preparing to unpack .../kubectl_1.9.0-00_amd64.deb ...
+    node2: Unpacking kubectl (1.9.0-00) ...
+    node2: Selecting previously unselected package kubeadm.
+    node2: Preparing to unpack .../kubeadm_1.9.0-00_amd64.deb ...
+    node2: Unpacking kubeadm (1.9.0-00) ...
+    node2: Processing triggers for man-db (2.7.5-1) ...
+    node2: Processing triggers for systemd (229-4ubuntu10) ...
+    node2: Processing triggers for ureadahead (0.100.0-19) ...
+    node2: Setting up ebtables (2.0.10.4-3.4ubuntu2.16.04.2) ...
+    node2: update-rc.d: warning: start and stop actions are no longer supported; falling back to defaults
+    node2: Setting up kubernetes-cni (0.6.0-00) ...
+    node2: Setting up socat (1.7.3.1-1) ...
+    node2: Setting up kubelet (1.9.0-00) ...
+    node2: Setting up kubectl (1.9.0-00) ...
+    node2: Setting up kubeadm (1.9.0-00) ...
+    node2: Processing triggers for systemd (229-4ubuntu10) ...
+    node2: Processing triggers for ureadahead (0.100.0-19) ...
+    node2: *********************************************************************
+    node2: Set host name resolution
+    node2: *********************************************************************
+    node2: set host name resolution
+    node2: 127.0.0.1	node2	node2
+    node2: 127.0.0.1	localhost
+    node2: 127.0.1.1	vagrant.vm	vagrant
+    node2: 
+    node2: # The following lines are desirable for IPv6 capable hosts
+    node2: ::1     localhost ip6-localhost ip6-loopback
+    node2: ff02::1 ip6-allnodes
+    node2: ff02::2 ip6-allrouters
+    node2: 
+    node2: 172.10.10.20 master1
+    node2: 172.10.10.30 node1
+    node2: 172.10.10.40 node2
+    node2: *********************************************************************
+    node2: Turn Off swap
+    node2: *********************************************************************
+    node2: *********************************************************************
+    node2: Join cluster
+    node2: *********************************************************************
+    node2: [preflight] Running pre-flight checks.
+    node2: 	[WARNING FileExisting-crictl]: crictl not found in system path
+    node2: [discovery] Trying to connect to API Server "172.10.10.20:6443"
+    node2: [discovery] Created cluster-info discovery client, requesting info from "https://172.10.10.20:6443"
+    node2: [discovery] Requesting info from "https://172.10.10.20:6443" again to validate TLS against the pinned public key
+    node2: [discovery] Cluster info signature and contents are valid and TLS certificate validates against pinned roots, will use API Server "172.10.10.20:6443"
+    node2: [discovery] Successfully established connection with API Server "172.10.10.20:6443"
+    node2: 
+    node2: This node has joined the cluster:
+    node2: * Certificate signing request was sent to master and a response
+    node2:   was received.
+    node2: * The Kubelet was informed of the new secure connection details.
+    node2: 
+    node2: Run 'kubectl get nodes' on the master to see this node join the cluster.
+    node2: *********************************************************************
+    node2: DONE node2
+    node2: *********************************************************************

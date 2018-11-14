@@ -1,0 +1,25 @@
+{
+    "name": "@chimpwizard/dgraph",
+    "version": "1.0.0",
+    "description": "DGRAPH HA Cluster",
+    "author": "@chimpwizard",
+    "license": "MIT",
+    "private": true,
+    "scripts": {
+      "up": "PLATFORM=swarm vagrant up",
+      "up:swarm": "PLATFORM=swarm vagrant up",
+      "up:k8s": "PLATFORM=k8s vagrant up",
+      "destroy": "vagrant destroy -f",
+      "console": "vagrant ssh console",
+      "build": "docker-compose build",
+      "push": "docker-compose push",
+      "nodes": "vagrant ssh console -c 'docker -H tcp://172.10.10.20:4243 node ls'",
+      "scale": "vagrant ssh console -c 'docker -H tcp://172.10.10.20:4243 service scale dg_zero=3 dg_server=3'",
+      "deploy": "vagrant ssh console -c 'cd /home/app;docker -H tcp://172.10.10.20:4243  stack deploy --compose-file ./docker-compose.yml dg'"
+    },
+    "dependencies": {
+      "vagrant": "git+https://github.com/chimpwizard/playgound.git"
+    }
+    
+  }
+  

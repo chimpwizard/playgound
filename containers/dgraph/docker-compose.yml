@@ -1,0 +1,73 @@
+version: "3.2"
+
+networks:
+  dgraph:
+
+volumes:
+  data-volume:
+
+services:
+
+  redis:
+    image: redis
+    ports:
+      - 6379:6379
+    networks:
+      - dgraph
+
+  zero:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      # labels:
+      #   version: "10.13.2018"
+      #   com.chimpwizard.is-beta: "yes" 
+      #   com.chimpwizard.is-production: "no" 
+    image: chimpwizard/dgraph:latest
+    environment:
+      - 'TASK_SLOT={{.Task.Slot}}'
+    networks:
+      - dgraph
+    deploy:
+      replicas: 3
+    command: --command zero --my $$HOSTNAME:508$$TASK_SLOT --replicas 3 --idx $$TASK_SLOT  -o $$TASK_SLOT --peer zero:5081  -v 2
+
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      # labels:
+      #   version: "10.13.2018"
+      #   com.chimpwizard.is-beta: "yes" 
+      #   com.chimpwizard.is-production: "no" 
+    image: chimpwizard/dgraph:latest
+    ports:
+      - 8080:8080
+      - 9080:9080
+    environment:
+      - 'TASK_SLOT={{.Task.Slot}}'
+    networks:
+      - dgraph
+    deploy:
+      replicas: 3
+    command: --command server --my $$HOSTNAME:7080 --lru_mb 2048 --zero zero:5081  -v 2
+
+  ratel:
+    image: dgraph/dgraph:latest
+    ports:
+      - 8000:8000
+    networks:
+      - dgraph
+    command: dgraph-ratel
+
+  console:
+      image: portainer/portainer
+      volumes:
+          - "/var/run/docker.sock:/var/run/docker.sock"
+      ports:
+          - '9000:9000'
+      networks:
+          - dgraph
+      command: "-H tcp://172.10.10.20:4243 --admin-password '$$2y$$05$$/SVcW3.dRcqFP61JCNgj9.L0BnTre7OnOL3E3dSHIUX0uKLp5aR/e'"
+
+

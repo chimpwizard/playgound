@@ -1,0 +1,16 @@
+{
+    "name": "@chimpwizard/lab",
+    "version": "1.0.0",
+    "description": "Vagrant lab",
+    "author": "@chimpwizard",
+    "license": "MIT",
+    "private": true,
+    "scripts": {
+      "up:swarm": "PLATFORM=swarm vagrant up|tee swarm.install.log",
+      "up:k8s": "PLATFORM=k8s vagrant up|tee k8s.install.log",
+      "destroy": "vagrant destroy -f",
+      "console": "vagrant ssh console",
+      "deploy": "PLATFORM=k8s vagrant ssh console -c 'cd /home/app;./scripts/vagrant/deploy.sh'"
+      }
+  }
+  
