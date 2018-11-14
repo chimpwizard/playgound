@@ -5,17 +5,25 @@ import { {{this.name}} } from '../model/model';
 {{#each model.entities}}
 export const {{this.name}}s: {{this.name}}[] = [
     {{#if this.attributes}}
-    {
-        id: 1,
-        {{#each this.attributes}}
-        {{this.name}}: {{#data-random this.name name=this.name type=this.type }}{{~/data-random}}
-            {{~#if @last}}
-            {{~else}}
+        {{#repeat 10}}
+        {
+            id: {{@index}},
+            {{#each this.attributes}}
+            {{this.name}}: {{#data-random this.name name=this.name type=this.type }}{{~/data-random}}
+                {{~#if @last}}
+                {{~else}}
 ,
-            {{~/if}}
+                {{~/if}}
 
-        {{/each}}
+            {{/each}}
+        }
+        {{~#if @last}}
+        {{~else}}
+,
+        {{~/if}}
+        {{/repeat}}
     {{/if}}
-    }
+
 ];
+
 {{/each}}

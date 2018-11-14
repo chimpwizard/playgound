@@ -274,3 +274,4 @@ export enum Status {
 - Atributes type CUSTOMTYPE
 - Anontations @Required, @Range, @Max, @Min, @Mask
 - Create domain diagrams using a tool like http://www.nomnoml.com and generate code from its language.
+- Improve the data generator using Faker
