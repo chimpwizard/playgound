@@ -20,19 +20,20 @@ Microservices has been very popular, what usually happens is that you have a nic
 
 For the purpose of this POC we will use angular7/elements which is an implementation of webcomponents and nodejs on the back end to build a simple application.
 
-The application mode is represented by the following diagram.
+The application model is represented by the following diagram.
 
 ![""](images/model.png)
 
 ### Challenges
 
-When you break your application in micro elements (services or front end) you are in a different territory, this territory requires other components to be implace b/c as the number of services and front ends components grow you will need other tools/techniques to manage the complexity. Yes it is much more complex working with this approach but what we are looking for while doing this are: (It these are not the goal/requirements you have avoid the use of micro X)
+When you breakdown your application in micro elements (services or front end) you are in a different territory b/c as the number of services and front ends components grow you will need other tools/techniques to manage the complexity. Yes it is much more complex working with this approach but what we are looking for while doing this are: (It these are not the goal/requirements you have avoid the use of micro-x)
 
 - Manageable chuncks of code that can be deployable on regular basis.. close to hours instead of months. Final goal is that every code changes can go to production automatically.
 - Easy to split a work between a diverse team and avoid merge conflicts
 - Take advantage of feature toggling, blue/green deployments and A/B testing in a more manegable way.
+- Addopt an agile methoology.
 
-You will face this challenges while transitioning to micro-x:
+These are some of challenges you will face while transitioning to micro-x:
 
 - Bugs/Issues throubleshooting. The micro-x has a big impact on how the developers and support teams throubleshoot issues.
 - CICD platforms. When dealing with houndresds of micro-x you need additional tools to facilitate the configuration of your CICD stack. It definitelly cannot be a manual process.
