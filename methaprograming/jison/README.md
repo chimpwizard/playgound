@@ -259,7 +259,6 @@ export enum Status {
 }
 ```
 
-
 ## Some references while doing this
 
 - https://github.com/zaach/jison
@@ -282,3 +281,4 @@ export enum Status {
 - Anontations @Required, @Range, @Max, @Min, @Mask
 - Create domain diagrams using a tool like http://www.nomnoml.com and generate code from its language.
 - Improve the data generator using Faker
+- Create independent files per component.
