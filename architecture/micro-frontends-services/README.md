@@ -53,10 +53,15 @@ You will face this challenges while transitioning to micro-x:
   - Caching
   - A lot of automatic testing (unit and functional) is needed
 
-
-
-
 ### Breakingdown the pieces
+
+THe domain model is very simple, We have a collection of Books and the Authors of those Books.
+
+Now lets get more real requirements (we will keep it simple and short):
+
+- Just the author or the publisher can edit the book profile
+- Author need to know the acceptance of the book using a rankins approach.
+- Buyers will be able to search the library based on some criteria.
 
 ### The architecture
 
