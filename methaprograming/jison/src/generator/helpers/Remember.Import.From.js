@@ -16,7 +16,7 @@ var Helper = function (value, options) {
   var buildIn = isBuiltIn(value);
 
   
-  var path = "'../commons'"
+  var path = "'../commons/types'"
   var type = "none"
 
   if( bag[value] && bag[value]["type"] ) {
@@ -27,7 +27,7 @@ var Helper = function (value, options) {
       path = "'../types/enums'";
     }
   } else {
-    path = "'../commons/" + value+ "'";
+    path = "'../commons/types/" + value+ "'";
   }
 
   //console.log("VALUE: %s", JSON.stringify(value));

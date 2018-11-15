@@ -27,3 +27,25 @@ export const {{this.name}}s: {{this.name}}[] = [
 ];
 
 {{/each}}
+
+
+import { InMemoryDbService, ParsedRequestUrl, RequestInfoUtilities } from 'angular-in-memory-web-api';
+import { IEntity } from '../commons/types/IEntity';
+export class InMemoryDB implements InMemoryDbService {
+
+    createDb() {
+        return {
+            {{#each model.entities}}
+            '{{lowercase this.name}}s': {{this.name}}s 
+                {{~#if @last}}
+                {{~else}}
+,
+                {{/if}}
+            {{/each}}
+        };
+    }
+
+    genId(rows: IEntity[]): number {
+        return rows.length > 0 ? Math.max(...rows.map(row => row.id)) + 1 : 11;
+    }
+}

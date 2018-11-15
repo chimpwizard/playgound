@@ -4,7 +4,7 @@ var Helper = function (value, options) {
     
     var type = options.hash.type;
     var name = options.hash.name;
-    console.log("FAKE NAME: %s TYPE: %s", name, type);
+    // console.log("FAKE NAME: %s TYPE: %s", name, type);
  
     var fake = "null";
 

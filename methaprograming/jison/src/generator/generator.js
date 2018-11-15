@@ -46,6 +46,8 @@ Handlebars.registerHelper('remember-import-check', require('./helpers/Remember.I
 Handlebars.registerHelper('data-random', require('./helpers/Data.Random'));
 Handlebars.registerHelper('repeat', require('handlebars-helper-repeat'));
 
+var helpers = require('handlebars-helpers')(['math', 'string']);
+
 var template = Handlebars.compile(source);
 var result = template(context);
 

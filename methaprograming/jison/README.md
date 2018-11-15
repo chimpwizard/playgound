@@ -20,9 +20,9 @@ The domain definition language will allow to define domain entities and its rela
 
 ## The implementation
 
-The implementation will ne in nodejs and as a core dependency we will use [jison](https://github.com/zaach/jison) package a great package created by [Zach Carter](https://github.com/zaach). People who is familiar with linux [lex anc yacc](https://www.epaperpress.com/lexandyacc/) this is the nodejs version of those legacy frameworks used to define lexicons and create code compilers.
+The implementation will be in typescript and as a core dependency we will use [jison](https://github.com/zaach/jison) package a great package created by [Zach Carter](https://github.com/zaach). People who is familiar with linux [lex anc yacc](https://www.epaperpress.com/lexandyacc/) this is the nodejs version of those legacy frameworks used to define lexicons and create code compilers.
 
-The model will be parsered into a YAML document that can be latter easy to use by a generator to create nodejs code.
+The model will be parsered into a YAML document that can be latter easy to use by a generator to create typescript code.
 
 ### The model
 
@@ -267,6 +267,11 @@ export enum Status {
 - https://docs.oracle.com/javase/specs/jls/se7/html/jls-2.html
 - https://www.sitepoint.com/a-beginners-guide-to-handlebars/
 - http://khaidoan.wikidot.com/handlebars-helper-advance
+- https://github.com/helpers/handlebars-helpers
+- https://github.com/angular/in-memory-web-api
+- https://chancejs.com/text/word.html
+- https://www.npmjs.com/package/Faker
+
 
 ## Additional improvements
 
