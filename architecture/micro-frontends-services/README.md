@@ -1,5 +1,5 @@
 
-# Micro Frontends & Services
+# Micro Frontends & Services (micro-x)
 
 ```yaml
 by: иÐгü
@@ -16,7 +16,7 @@ The goal of this POC is create an application using micro front end and micro se
 
 Microservices has been very popular, what usually happens is that you have a nice microservice architecture on the back end unsing technologies like kubernetes or docekr swarm but the front end become a monolithic appproach. The goals of microservices is to faciliate agine development and continuos deployment, the idea is to make sure you can do the same across all the layers on your application.
 
-### The pronblem
+### The problem
 
 For the purpose of this POC we will use angular7/elements which is an implementation of webcomponents and nodejs on the back end to build a simple application.
 
@@ -24,7 +24,38 @@ The application mode is represented by the following diagram.
 
 ![""](images/model.png)
 
-### Breakingdown the pices
+### Challenges
+
+When you break your application in micro elements (services or front end) you are in a different territory, this territory requires other components to be implace b/c as the number of services and front ends components grow you will need other tools/techniques to manage the complexity. Yes it is much more complex working with this approach but what we are looking for while doing this are: (It these are not the goal/requirements you have avoid the use of micro X)
+
+- Manageable chuncks of code that can be deployable on regular basis.. close to hours instead of months. Final goal is that every code changes can go to production automatically.
+- Easy to split a work between a diverse team and avoid merge conflicts
+- Take advantage of feature toggling, blue/green deployments and A/B testing in a more manegable way.
+
+You will face this challenges while transitioning to micro-x:
+
+- Bugs/Issues throubleshooting. The micro-x has a big impact on how the developers and support teams throubleshoot issues.
+- CICD platforms. When dealing with houndresds of micro-x you need additional tools to facilitate the configuration of your CICD stack. It definitelly cannot be a manual process.
+- Holistic view of the system is difficult to follow.
+- Additional extra tools are required.
+- The CICD needs to be part of your design as well new "Actors" like the support team needs to be part of your analisys.
+- Latency and asyncronous processing play a big role on this architecutre.
+- Loggin and Monitoring tools.
+- Several patterns need to be consider:
+  - Circuit break
+  - Service discovery
+  - Web components
+  - Bounded context
+  - Service aggregations
+  - Transactions
+  - Version control
+  - Artifacts control
+  - Caching
+
+
+
+
+### Breakingdown the pieces
 
 ### The architecture
 
