@@ -12,3 +12,11 @@ This repo contains usefull samples to get you started with different technologie
 ### Methaprohgraming
 
 - [Code generation with JISON using DDD techniques](methaprograming/jison/README.md)
+
+<!-- ### DevOps
+
+- [Infrastructure as a code using Terraform](devops/terraform/README.md)
+
+### Architecture
+
+- [Micro Front-End ](architecture/micro-frontends/README.md) -->
