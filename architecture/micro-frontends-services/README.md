@@ -42,15 +42,16 @@ You will face this challenges while transitioning to micro-x:
 - Latency and asyncronous processing play a big role on this architecutre.
 - Loggin and Monitoring tools.
 - Several patterns need to be consider:
-  - Circuit break
+  - Circuit break, what if a service we depend on is not responding
   - Service discovery
   - Web components
   - Bounded context
   - Service aggregations
-  - Transactions
+  - Transactions, how to deal with the asyncronous
   - Version control
   - Artifacts control
   - Caching
+  - A lot of automatic testing (unit and functional) is needed
 
 
 
