@@ -263,6 +263,7 @@ export enum Status {
 ## Some references while doing this
 
 - https://github.com/zaach/jison
+- https://www.npmjs.com/package/syntax-cli
 - https://github.com/antlr/grammars-v4/blob/master/java/Java.g4
 - https://docs.oracle.com/javase/specs/jls/se7/html/jls-2.html
 - https://www.sitepoint.com/a-beginners-guide-to-handlebars/
@@ -271,6 +272,7 @@ export enum Status {
 - https://github.com/angular/in-memory-web-api
 - https://chancejs.com/text/word.html
 - https://www.npmjs.com/package/Faker
+-
 
 
 ## Additional improvements
