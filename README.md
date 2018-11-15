@@ -9,7 +9,7 @@ This repo contains usefull samples to get you started with different technologie
 - [Vagrant cluster lab](commons/lab/README.md)
 - [Provision DGraph database in a cluster for high availability](containers/dgraph/README.md)
 
-### Methaprohgraming
+### Methaprogramming
 
 - [Code generation with JISON using DDD techniques](methaprograming/jison/README.md)
 
