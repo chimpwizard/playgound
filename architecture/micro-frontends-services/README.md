@@ -1,5 +1,5 @@
 
-# Micro Front-Ends
+# Micro Frontends & Services
 
 ```yaml
 by: иÐгü
