@@ -25,13 +25,15 @@ And base o nthat you need to make sure your Dockerfile uses a base image that is
 
 
 ```dockerfile
-FROM arm32v5/python:2.7.13-jessie
+FROM arm32v6/alpine:3.6
 
-# Intall the rpi.gpio python module
-RUN pip install --no-cache-dir rpi.gpio
+RUN apk --no-cache add bash python python-dev py-pip build-base curl
+RUN pip install RPi.GPIO Flask flask_restful
 
 WORKDIR /var/app
+
 COPY app.py .
+
 CMD ["python", "./app.py"]
 ```
 
