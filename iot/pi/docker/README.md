@@ -112,5 +112,7 @@ Images were exiting with code 139. I came  to understand that this issue is usua
 - http://raspberry.io/projects/view/reading-and-writing-from-gpio-ports-from-python/
 - https://www.npmjs.com/package/raspberry
 - https://hub.docker.com/u/arm32v7/
+- https://blog.codybunch.com/2017/07/14/Docker-on-Raspberry-PI-for-Fan-Control/
+- 
 
 
