@@ -20,3 +20,8 @@ This repo contains usefull samples to get you started with different technologie
 ### Architecture
 
 - [Micro Frontends & Services](architecture/micro-frontends-services/README.md)
+
+### IoT
+
+- [Using docker to program the Raspberry Pi](iot/pi/docker/README.md)
+- [Reading stream of data from a sensor using Raspberry Pi](iot/pi/visala/README.md)

@@ -1,0 +1,11 @@
+version: '3'
+services:
+
+    pi:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        image: 'chimpwizard/pi'
+        volumes:
+             - "/var/run/docker.sock:/var/run/docker.sock"
+

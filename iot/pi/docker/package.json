@@ -1,0 +1,16 @@
+{
+  "name": "@chimpwizard/docker",
+  "version": "1.0.0",
+  "description": "```yaml by: иÐгü email: ndru@chimpwizard.com date: 11.21.2018 version: draft ```",
+  "main": "index.js",
+  "scripts": {
+    "hello1": "docker run arm32v5/hello-world",
+    "hello": "docker run arm32v5/hello-world",
+    "start": "docker container run --device /dev/gpiomem -d chimpwizard/pi",
+    "start2": "docker container run --privileged -d chimpwizard/pi",
+
+    "info-pi": "cat /proc/cpuinfo"
+  },
+  "author": "",
+  "license": "ISC"
+}
