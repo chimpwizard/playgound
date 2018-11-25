@@ -82,7 +82,7 @@ ExecStart=/usr/bin/dockerd -H tcp://127.0.0.1:4243 -H unix:///var/run/docker.soc
 I faced an issue while running the image on the Pi, after fixing the TSL error image was downloaded correcly but not oputput was showing, while checking the docker events on other terminal
 
 ```sh
-docekr evens
+docker evens
 ```
 
 Images were exiting with code 139. I came  to understand that this issue is usually a supportability issue on your Pi architecture and the docker image arm version your using.
