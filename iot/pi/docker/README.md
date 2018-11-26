@@ -1,6 +1,5 @@
 
-
-# Using docker to program the Raspberry Pi
+# Using Docker to program the Raspberry Pi
 
 ```yaml
 by: иÐгü
@@ -37,13 +36,17 @@ COPY app.py .
 CMD ["python", "./app.py"]
 ```
 
-To runthe docker image direcly you need to map the rpio device liket his
+To run the docker image direcly you need to map the rpio device liket his
 
-```ah
-docker container run --device /dev/gpiomem -d chimpwizard/pi
+```sh
+docker container run --device /dev/gpiomem -d chimpwizard/pi:python
 ```
 
+or
 
+```sh
+docker container run --device /dev/gpiomem -d chimpwizard/pi:node
+```
 
 ## Prerequisites to run the code
 
@@ -113,6 +116,7 @@ Images were exiting with code 139. I came  to understand that this issue is usua
 - https://www.npmjs.com/package/raspberry
 - https://hub.docker.com/u/arm32v7/
 - https://blog.codybunch.com/2017/07/14/Docker-on-Raspberry-PI-for-Fan-Control/
-- 
-
-
+- https://tutorials-raspberrypi.com/setup-raspberry-pi-node-js-webserver-control-gpios/
+- https://www.npmjs.com/package/rpio
+- https://weworkweplay.com/play/raspberry-pi-nodejs/
+- https://github.com/tutRPi/Raspberry-Pi-Simple-Web-GPIO-GUI

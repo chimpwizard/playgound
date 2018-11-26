@@ -1,0 +1,8 @@
+FROM arm32v6/node:10-alpine
+
+WORKDIR /var/app
+ADD package.json .
+RUN npm install
+ADD app.js .
+
+CMD ["node", "./app.js"]

@@ -1,11 +1,18 @@
 version: '3'
 services:
 
-    pi:
+    python:
         build:
-            context: .
+            context: python/
             dockerfile: Dockerfile
-        image: 'chimpwizard/pi'
+        image: 'chimpwizard/pi:python'
         volumes:
              - "/var/run/docker.sock:/var/run/docker.sock"
 
+    node:
+        build:
+            context: node/
+            dockerfile: Dockerfile
+        image: 'chimpwizard/pi:node'
+        volumes:
+             - "/var/run/docker.sock:/var/run/docker.sock"
