@@ -99,6 +99,12 @@ Images were exiting with code 139. I came  to understand that this issue is usua
 - https://stackoverflow.com/questions/31297616/what-is-the-authoritative-list-of-docker-run-exit-codes
 - https://github.com/docker/for-linux/issues/373
 
+### node JS showing "Unknown host QEMU_IFLA type: 40"
+
+#### References
+
+- https://github.com/nodejs/docker-node/issues/873
+
 ## Additioal references while doing this
 
 - https://iotbytes.wordpress.com/create-your-first-docker-container-for-raspberry-pi-to-blink-an-led/
@@ -120,3 +126,5 @@ Images were exiting with code 139. I came  to understand that this issue is usua
 - https://www.npmjs.com/package/rpio
 - https://weworkweplay.com/play/raspberry-pi-nodejs/
 - https://github.com/tutRPi/Raspberry-Pi-Simple-Web-GPIO-GUI
+- https://github.com/tristanls/qemu-alpine
+- https://www.npmjs.com/package/onoff

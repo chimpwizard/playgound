@@ -4,13 +4,18 @@
   "description": "```yaml by: иÐгü email: ndru@chimpwizard.com date: 11.21.2018 version: draft ```",
   "main": "index.js",
   "scripts": {
+    "up": "PLATFORM=swarm vagrant up|tee swarm.install.log",
+    "ssh": "vagrant sh console",
     "hello1": "docker run arm32v5/hello-world",
     "hello": "docker run arm32v5/hello-world",
-    "start": "docker container run --device /dev/gpiomem -d chimpwizard/pi",
+    "start:python": "docker container run --device /dev/gpiomem -d chimpwizard/pi:python",
+    "start:node": "docker container run --device /dev/gpiomem -d chimpwizard/pi:node",
     "start2": "docker container run --privileged -d chimpwizard/pi",
-
     "info-pi": "cat /proc/cpuinfo"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "rpio": "^0.9.23"
+  }
 }
