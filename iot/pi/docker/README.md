@@ -119,12 +119,13 @@ Images were exiting with code 139. I came  to understand that this issue is usua
 - http://pi4j.com/usage.html
 - http://wiki.mchobby.be/index.php?title=Rasp-Hack-GPIO_Connecteur#Les_broches_27_.C3.A0_40
 - http://raspberry.io/projects/view/reading-and-writing-from-gpio-ports-from-python/
-- https://www.npmjs.com/package/raspberry
+- * https://www.npmjs.com/package/raspberry
 - https://hub.docker.com/u/arm32v7/
 - https://blog.codybunch.com/2017/07/14/Docker-on-Raspberry-PI-for-Fan-Control/
-- https://tutorials-raspberrypi.com/setup-raspberry-pi-node-js-webserver-control-gpios/
+- * https://tutorials-raspberrypi.com/setup-raspberry-pi-node-js-webserver-control-gpios/
 - https://www.npmjs.com/package/rpio
 - https://weworkweplay.com/play/raspberry-pi-nodejs/
-- https://github.com/tutRPi/Raspberry-Pi-Simple-Web-GPIO-GUI
+- * https://github.com/tutRPi/Raspberry-Pi-Simple-Web-GPIO-GUI
 - https://github.com/tristanls/qemu-alpine
 - https://www.npmjs.com/package/onoff
+- * https://gist.github.com/jperkin/e1f0ce996c83ccf2bca9

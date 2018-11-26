@@ -7,7 +7,7 @@ RUN apk add --no-cache shadow sudo
 RUN groupadd -g 997 gpio && usermod -aG gpio root
 
 RUN apk --no-cache add bash python python-dev py-pip build-base curl gcc make
-#RUN pip install RPi.GPIO Flask flask_restful
+RUN pip install RPi.GPIO Flask flask_restful
 RUN apk add --update nodejs nodejs-npm
 
 WORKDIR /var/app
