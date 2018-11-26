@@ -7,7 +7,10 @@ This repo contains usefull samples to get you started with different technologie
 ### Containers
 
 - [Vagrant cluster lab](commons/lab/README.md)
-- [Provision DGraph database in a cluster for high availability](containers/dgraph/README.md)
+
+### Databases
+
+- [Provision DGraph database in a cluster for high availability](databases/dgraph/README.md)
 
 ### Methaprogramming
 
@@ -23,5 +26,5 @@ This repo contains usefull samples to get you started with different technologie
 
 ### IoT
 
-- [Using docker to program the Raspberry Pi](iot/pi/docker/README.md)
+- [Using Docker to program the Raspberry Pi](iot/pi/docker/README.md)
 - [Reading stream of data from a sensor using Raspberry Pi](iot/pi/visala/README.md)
