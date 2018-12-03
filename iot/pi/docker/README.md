@@ -105,6 +105,11 @@ Images were exiting with code 139. I came  to understand that this issue is usua
 
 - https://github.com/nodejs/docker-node/issues/873
 
+### Raspberry Pi GPIO folder readonly issue
+
+This issue wasn't documetned anywere as far as I know. I fixed adding the volume on the host that links the GPIO PINS.
+
+
 ## Additioal references while doing this
 
 - https://iotbytes.wordpress.com/create-your-first-docker-container-for-raspberry-pi-to-blink-an-led/
