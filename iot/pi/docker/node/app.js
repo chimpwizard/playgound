@@ -1,24 +1,25 @@
-var rpio = require('rpio');
-
-/*
- * Set the initial state to low.  The state is set prior to the pin
- * being actived, so is safe for devices which require a stable setup.
- */
-rpio.open(18, rpio.OUTPUT, rpio.LOW);
- 
-/*
- * The sleep functions block, but rarely in these simple programs does
- * one care about that.  Use a setInterval()/setTimeout() loop instead
- * if it matters.
- */
-for (var i = 0; i < 5; i++) {
-        /* On for 1 second */
-        console.log("ON")
-        rpio.write(18, rpio.HIGH);
-        rpio.sleep(1);
- 
-        /* Off for half a second (500ms) */
-        console.log("OFF")
-        rpio.write(18, rpio.LOW);
-        rpio.msleep(500);
+//
+// https://www.npmjs.com/package/onoff
+// https://www.npmjs.com/package/onoff/v/0.2.1
+//
+var Gpio = require('onoff').Gpio; //include onoff to interact with the GPIO
+var LED = new Gpio(18, 'out'); //use GPIO pin 4, and specify that it is output
+function blinkLED() { //function to start blinking
+  if (LED.readSync() === 0) { //check the pin state, if the state is 0 (or off)
+    LED.writeSync(1); //set pin state to 1 (turn LED on)
+  } else {
+    LED.writeSync(0); //set pin state to 0 (turn LED off)
+  }
 }
+
+function endBlink() { //function to stop blinking
+  clearInterval(blinkInterval); // Stop blink intervals
+  LED.writeSync(0); // Turn LED off
+  LED.unexport(); // Unexport GPIO to free resources
+}
+
+var blinkInterval = setInterval(blinkLED, 250); //run the blinkLED function every 250ms
+
+
+
+setTimeout(endBlink, 5000); //stop blinking after 5 seconds
