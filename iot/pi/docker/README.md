@@ -42,7 +42,7 @@ To run the docker image direcly you need to map the rpio device liket his
 docker container run --device /dev/gpiomem -d chimpwizard/pi:python
 ```
 
-or this for node. The volume might be different found out this by throubleshooting a Read-Only error.
+or this for node. The volume might be differen. Found out this by throubleshooting a Read-Only error.
 
 ```sh
 docker container run --device /dev/gpiomem -d -v /sys/devices/platform/soc/20200000.gpio/gpiochip0/gpio:/sys/devices/platform/soc/20200000.gpio/gpiochip0/gpio chimpwizard/pi:node
