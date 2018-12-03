@@ -1,18 +1,26 @@
 version: '3'
 services:
 
-    python:
+    blink:
         build:
-            context: python/
+            context: python/blink/
             dockerfile: Dockerfile
-        image: 'chimpwizard/pi:python'
+        image: 'chimpwizard/pi-blink:python'
         volumes:
              - "/var/run/docker.sock:/var/run/docker.sock"
 
-    node:
+    button:
+        build:
+            context: python/button/
+            dockerfile: Dockerfile
+        image: 'chimpwizard/pi-button:python'
+        volumes:
+             - "/var/run/docker.sock:/var/run/docker.sock"
+
+    blink-node:
         build:
             context: node/
             dockerfile: Dockerfile
-        image: 'chimpwizard/pi:node'
+        image: 'chimpwizard/pi-blink:node'
         volumes:
              - "/var/run/docker.sock:/var/run/docker.sock"

@@ -10,9 +10,23 @@ RUN apk --no-cache add bash python python-dev py-pip build-base curl gcc make
 RUN pip install RPi.GPIO Flask flask_restful
 RUN apk add --update nodejs nodejs-npm
 
-WORKDIR /var/app
+
+ARG user=pi
+ARG group=pi
+ARG uid=1000
+ARG gid=1000
+ENV HOME /var/app
+RUN groupadd -g ${gid} ${group}
+RUN useradd -c "pi user" -d $HOME -u ${uid} -G users,gpio -g ${gid} -m ${user}
+
+WORKDIR ${HOME}
+
+RUN chown -R ${user}:${group} ${HOME}
+
 ADD package.json .
-RUN npm install
+#RUN npm install
 ADD app.js .
 
-CMD ["node", "./app.js"]
+USER ${user}
+
+#CMD ["node", "./app.js"]

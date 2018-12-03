@@ -42,10 +42,10 @@ To run the docker image direcly you need to map the rpio device liket his
 docker container run --device /dev/gpiomem -d chimpwizard/pi:python
 ```
 
-or
+or this for node. The volume might be different found out this by throubleshooting a Read-Only error.
 
 ```sh
-docker container run --device /dev/gpiomem -d chimpwizard/pi:node
+docker container run --device /dev/gpiomem -d -v /sys/devices/platform/soc/20200000.gpio/gpiochip0/gpio:/sys/devices/platform/soc/20200000.gpio/gpiochip0/gpio chimpwizard/pi:node
 ```
 
 ## Prerequisites to run the code
@@ -129,3 +129,5 @@ Images were exiting with code 139. I came  to understand that this issue is usua
 - https://github.com/tristanls/qemu-alpine
 - https://www.npmjs.com/package/onoff
 - * https://gist.github.com/jperkin/e1f0ce996c83ccf2bca9
+- * https://www.elecrow.com/download/Starter%20Kit%20for%20Arduino(user%20manual).pdf
+- http://razzpisampler.oreilly.com/ch07.html
