@@ -7,7 +7,7 @@ This repo contains usefull samples to get you started with different technologie
 ### Containers
 
 - [Vagrant cluster lab](commons/lab/README.md)
-- [Build he smallest docker image](containers/smallest-container/README.md)
+- [Build the smallest docker image](containers/smallest-container/README.md)
 
 ### Databases
 

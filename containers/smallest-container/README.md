@@ -1,5 +1,5 @@
 
-# Build he smallest docker image
+# Build the smallest docker image
 
 ```yaml
 by: иÐгü
