@@ -1,0 +1,15 @@
+version: '3'
+services:
+
+    app:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        image: 'chimpwizard/smallest'
+
+
+    test:
+        build:
+            context: .
+            dockerfile: Dockerfile.test
+        image: 'chimpwizard/smallest:test'
