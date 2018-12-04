@@ -25,8 +25,11 @@ RUN chown -R ${user}:${group} ${HOME}
 
 ADD package.json .
 #RUN npm install
+ADD run.sh .
+RUN chmod 777 run.sh
+
 ADD app.js .
 
 USER ${user}
 
-#CMD ["node", "./app.js"]
+CMD ["./run.sh"]

@@ -19,8 +19,16 @@ services:
 
     blink-node:
         build:
-            context: node/
+            context: node/blink
             dockerfile: Dockerfile
         image: 'chimpwizard/pi-blink:node'
+        volumes:
+             - "/var/run/docker.sock:/var/run/docker.sock"
+
+    button-node:
+        build:
+            context: node/button
+            dockerfile: Dockerfile
+        image: 'chimpwizard/pi-button:node'
         volumes:
              - "/var/run/docker.sock:/var/run/docker.sock"
