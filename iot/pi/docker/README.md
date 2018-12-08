@@ -20,7 +20,7 @@ To be sure docker images run on your Pi you need to verify tyour Pi architecture
 cat /proc/cpuinfo
 ```
 
-And base o nthat you need to make sure your Dockerfile uses a base image that is compatible. eg if your Pi is ARM v6 the list of compatible images are listed here [https://hub.docker.com/u/arm32v6/](https://hub.docker.com/u/arm32v6/).
+And base on that you need to make sure your Dockerfile uses a base image that is compatible. eg if your Pi is ARM v6 the list of compatible images are listed here [https://hub.docker.com/u/arm32v6/](https://hub.docker.com/u/arm32v6/).
 
 
 ```dockerfile
@@ -59,6 +59,14 @@ docker container run --device /dev/gpiomem -d -v /sys/class/gpio/export:/sys/cla
 ```shell
 npm run start
 ```
+
+## Additional samples
+
+This POC also contains several samples in python and node.
+
+- blink: This turns ON and OFF a lead on port 18
+- button: This turns ON and OFF a lead on port 18 based on a button configured as input on port 26.
+
 
 
 ## Throubleshooting
