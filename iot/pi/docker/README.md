@@ -175,6 +175,7 @@ sudo reboot
 - https://www.npmjs.com/package/rpio
 - https://weworkweplay.com/play/raspberry-pi-nodejs/
 - * https://github.com/tutRPi/Raspberry-Pi-Simple-Web-GPIO-GUI
+- https://tutorials-raspberrypi.com/setup-raspberry-pi-node-js-webserver-control-gpios/
 - https://github.com/tristanls/qemu-alpine
 - https://www.npmjs.com/package/onoff
 - * https://gist.github.com/jperkin/e1f0ce996c83ccf2bca9
