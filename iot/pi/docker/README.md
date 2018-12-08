@@ -39,7 +39,7 @@ CMD ["python", "./app.py"]
 To run the docker image direcly you need to map the rpio device liket his
 
 ```sh
-docker container run --device /dev/gpiomem -d chimpwizard/pi:python
+docker container run --device /dev/gpiomem -d chimpwizard/pi-blink:python
 ```
 
 or this for node. The volume might be differen. Found out this by throubleshooting a Read-Only error.
