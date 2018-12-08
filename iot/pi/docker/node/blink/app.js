@@ -22,4 +22,5 @@ var blinkInterval = setInterval(blinkLED, 250); //run the blinkLED function ever
 
 
 
-setTimeout(endBlink, 5000); //stop blinking after 5 seconds
+//setTimeout(endBlink, 5000); //stop blinking after 5 seconds
+setTimeout(endBlink, 3600000); //stop blinking after 1 minute
