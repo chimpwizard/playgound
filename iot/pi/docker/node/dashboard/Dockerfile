@@ -24,14 +24,13 @@ WORKDIR ${HOME}
 RUN chown -R ${user}:${group} ${HOME}
 
 ADD package.json .
-RUN npm install
-ADD run.sh .
-RUN chmod 777 run.sh
 
-ADD app.js .
+RUN git clone https://github.com/tutRPi/Raspberry-Pi-Simple-Web-GPIO-GUI ${HOME}
+
+RUN npm install
+
+#ADD app.js .
 
 USER ${user}
 
-#CMD ["./run.sh"]
-
-CMD ["node", "./app.js"]
+CMD ["npm", "start"]
