@@ -58,6 +58,20 @@ services:
              - "/sys/class/gpio/export:/sys/class/gpio/export"
              - "/sys/devices/platform/soc/20200000.gpio/gpiochip0:/sys/devices/platform/soc/20200000.gpio/gpiochip0"
 
+    helloworld:
+        build:
+            context: node/helloworld
+            dockerfile: Dockerfile
+        image: 'chimpwizard/pi-helloworld:node'
+        devices: 
+            - /dev/gpiomem
+        ports:
+            - 8000:8000
+        volumes:
+             - "/var/run/docker.sock:/var/run/docker.sock"
+             - "/sys/class/gpio/export:/sys/class/gpio/export"
+             - "/sys/devices/platform/soc/20200000.gpio/gpiochip0:/sys/devices/platform/soc/20200000.gpio/gpiochip0"
+
     dashboard:
         build:
             context: node/button
@@ -65,6 +79,8 @@ services:
         image: 'chimpwizard/pi-dashboard:node'
         devices: 
             - /dev/gpiomem
+        ports:
+            - 8000:8000
         volumes:
              - "/var/run/docker.sock:/var/run/docker.sock"
              - "/sys/class/gpio/export:/sys/class/gpio/export"
