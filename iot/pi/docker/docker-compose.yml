@@ -79,6 +79,8 @@ services:
         image: 'chimpwizard/pi-dashboard:node'
         devices: 
             - /dev/gpiomem
+        environment:
+            - 'port=8000'
         ports:
             - 8000:8000
         volumes:
