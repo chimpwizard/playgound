@@ -21,6 +21,18 @@ services:
         volumes:
              - "/var/run/docker.sock:/var/run/docker.sock"
 
+    node:
+        build:
+            context: node/blink
+            dockerfile: Dockerfile
+        image: 'chimpwizard/pi-blink:node'
+        devices: 
+            - /dev/gpiomem
+        entrypoint: sh
+        volumes:
+             - "/var/run/docker.sock:/var/run/docker.sock"
+             - "/sys/devices/platform/soc/20200000.gpio/gpiochip0:/sys/devices/platform/soc/20200000.gpio/gpiochip0"
+
     blink-node:
         build:
             context: node/blink
