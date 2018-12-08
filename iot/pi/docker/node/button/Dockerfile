@@ -24,7 +24,7 @@ WORKDIR ${HOME}
 RUN chown -R ${user}:${group} ${HOME}
 
 ADD package.json .
-#RUN npm install
+RUN npm install
 ADD run.sh .
 RUN chmod 777 run.sh
 
@@ -32,4 +32,6 @@ ADD app.js .
 
 USER ${user}
 
-CMD ["./run.sh"]
+#CMD ["./run.sh"]
+
+CMD ["node", "./app.js"]
