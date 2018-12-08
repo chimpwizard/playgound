@@ -43,6 +43,7 @@ services:
             - /dev/gpiomem
         volumes:
              - "/var/run/docker.sock:/var/run/docker.sock"
+             - "/sys/class/gpio/export:/sys/class/gpio/export"
              - "/sys/devices/platform/soc/20200000.gpio/gpiochip0:/sys/devices/platform/soc/20200000.gpio/gpiochip0"
 
     button-node:
@@ -54,4 +55,5 @@ services:
             - /dev/gpiomem
         volumes:
              - "/var/run/docker.sock:/var/run/docker.sock"
+             - "/sys/class/gpio/export:/sys/class/gpio/export"
              - "/sys/devices/platform/soc/20200000.gpio/gpiochip0:/sys/devices/platform/soc/20200000.gpio/gpiochip0"

@@ -45,7 +45,7 @@ docker container run --device /dev/gpiomem -d chimpwizard/pi-blink:python
 or this for node. The volume might be differen. Found out this by throubleshooting a Read-Only error.
 
 ```sh
-docker container run --device /dev/gpiomem -d -v /sys/devices/platform/soc/20200000.gpio/gpiochip0/gpio:/sys/devices/platform/soc/20200000.gpio/gpiochip0/gpio chimpwizard/pi:node
+docker container run --device /dev/gpiomem -d -v /sys/class/gpio/export:/sys/class/gpio/export -v /sys/devices/platform/soc/20200000.gpio/gpiochip0/gpio:/sys/devices/platform/soc/20200000.gpio/gpiochip0/gpio chimpwizard/pi:node
 ```
 
 ## Prerequisites to run the code
@@ -116,7 +116,7 @@ So the lesson learn here is you need to have a pi as part of yoru CICD workflow.
 This issue wasn't documented anywere as far as I know. I fixed adding the volume on the host that links the GPIO PINS.
 
 ```
-docker run .... -v /sys/devices/platform/soc/20200000.gpio/gpiochip0/gpio:/sys/devices/platform/soc/20200000.gpio/gpiochip0/gpio
+docker run .... -v /sys/class/gpio/export:/sys/class/gpio/export -v /sys/devices/platform/soc/20200000.gpio/gpiochip0/gpio:/sys/devices/platform/soc/20200000.gpio/gpiochip0/gpio 
 ```
 
 ### Not able to access raspberry pi docker instance using remote api calls
