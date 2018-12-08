@@ -74,7 +74,7 @@ services:
 
     dashboard:
         build:
-            context: node/button
+            context: node/dashboard
             dockerfile: Dockerfile
         image: 'chimpwizard/pi-dashboard:node'
         devices: 
