@@ -58,4 +58,5 @@ docker-compose run app
 
 ## Additioal references while doing this
 
+- https://blog.iron.io/microcontainers-tiny-portable-containers/
 - https://blog.codeship.com/building-minimal-docker-containers-for-go-applications/
