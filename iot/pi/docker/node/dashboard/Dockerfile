@@ -25,7 +25,7 @@ RUN chown -R ${user}:${group} ${HOME}
 
 ENV PORT 8000
 
-ADD package.json .
+# ADD package.json .
 
 RUN git clone https://github.com/tutRPi/Raspberry-Pi-Simple-Web-GPIO-GUI ${HOME}
 
