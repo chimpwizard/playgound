@@ -24,7 +24,7 @@ services:
         image: 'chimpwizard/pi-blink:node'
         volumes:
              - "/var/run/docker.sock:/var/run/docker.sock"
-             - "/sys/devices/platform/soc/20200000.gpio/gpiochip0/gpio:/sys/devices/platform/soc/20200000.gpio/gpiochip0/gpio"
+             - "/sys/devices/platform/soc/20200000.gpio/gpiochip0:/sys/devices/platform/soc/20200000.gpio/gpiochip0"
 
     button-node:
         build:
@@ -33,4 +33,4 @@ services:
         image: 'chimpwizard/pi-button:node'
         volumes:
              - "/var/run/docker.sock:/var/run/docker.sock"
-             - "/sys/devices/platform/soc/20200000.gpio/gpiochip0/gpio:/sys/devices/platform/soc/20200000.gpio/gpiochip0/gpio"
+             - "/sys/devices/platform/soc/20200000.gpio/gpiochip0:/sys/devices/platform/soc/20200000.gpio/gpiochip0"
