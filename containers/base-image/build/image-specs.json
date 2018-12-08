@@ -1,0 +1,50 @@
+{
+    "builders": [
+      {
+        "type": "virtualbox-iso",
+        "communicator": "ssh",
+        "iso_url": "{{user `iso_url`}}",
+        "iso_checksum": "",
+        "iso_checksum_type": "none",
+        "guest_os_type": "RedHat_64",
+        "shutdown_command": "echo 'vagrant'|sudo -S /sbin/halt -h -p",
+        "disk_size": 5000,
+        "http_directory": "http",
+        "http_port_min": 10082,
+        "http_port_max": 10089,
+        "ssh_host_port_min": 2222,
+        "ssh_host_port_max": 2229,
+        "ssh_username": "vagrant",
+        "ssh_password": "vagrant",
+        "ssh_port": 22,
+        "ssh_wait_timeout": "90m",
+        "vm_name": "rhel5-image",
+        "boot_wait": "5s",
+		"boot_command": [
+			"<esc><wait>",
+			"vmlinuz initrd=initrd.img net.ifnames=0 biosdevname=0 ",
+			"ks=http://{{.HTTPIP}}:{{.HTTPPort}}/ks.cfg",
+			"<enter><wait>"
+		]
+      }
+    ],
+    "provisioners": [{
+		"type": "shell",
+		"execute_command": "echo 'vagrant' | {{.Vars}} sudo -S -E bash '{{.Path}}'",
+		"scripts": [
+			"scripts/vagrant.sh",
+            "scripts/sshd.sh",
+            "scripts/virtualbox.sh"
+		]
+	}],
+
+	"post-processors": [{
+		"type": "vagrant",
+        "output": "./image/rhel5-image.box",
+        "keep_input_artifact": false
+    }],
+    "variables": {
+      "iso_url": "./rhel-server-5.9-x86_64-dvd.iso"
+    }
+  }
+  
