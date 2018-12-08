@@ -101,13 +101,45 @@ Images were exiting with code 139. I came  to understand that this issue is usua
 
 ### node JS showing "Unknown host QEMU_IFLA type: 40"
 
+TWhat I found about this was if you are building your image that does npm install for node modules on a non raspberry pi it will failt which is a bummer but if you build it on a pi then push the image to your repo it will work just fine.
+
+So the lesson learn here is you need to have a pi as part of yoru CICD workflow.
+
+
+
 #### References
 
 - https://github.com/nodejs/docker-node/issues/873
 
 ### Raspberry Pi GPIO folder readonly issue
 
-This issue wasn't documetned anywere as far as I know. I fixed adding the volume on the host that links the GPIO PINS.
+This issue wasn't documented anywere as far as I know. I fixed adding the volume on the host that links the GPIO PINS.
+
+```
+docker run .... -v /sys/devices/platform/soc/20200000.gpio/gpiochip0/gpio:/sys/devices/platform/soc/20200000.gpio/gpiochip0/gpio
+```
+
+### Not able to access raspberry pi docker instance using remote api calls
+
+This is usually becase the port is closed. To test use npam
+
+```sh
+nmap -p [PORT] [IP]
+```
+
+TO fix it run 
+
+```sh
+sudo apt-get install ufw
+sudo ufw allow 22
+sudo ufw allow [PORT]
+sudo ufw enable
+sudo reboot
+```
+
+#### References
+
+- https://raspberrypi.stackexchange.com/questions/79434/edit-iptables-to-open-a-port-the-safest-and-easiest-way-nano
 
 
 ## Additioal references while doing this
@@ -136,3 +168,5 @@ This issue wasn't documetned anywere as far as I know. I fixed adding the volume
 - * https://gist.github.com/jperkin/e1f0ce996c83ccf2bca9
 - * https://www.elecrow.com/download/Starter%20Kit%20for%20Arduino(user%20manual).pdf
 - http://razzpisampler.oreilly.com/ch07.html
+
+

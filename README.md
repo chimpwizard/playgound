@@ -7,11 +7,13 @@ This repo contains usefull samples to get you started with different technologie
 ### Containers
 
 - [Vagrant cluster lab](commons/lab/README.md)
-- [Build the smallest docker image](containers/smallest-container/README.md)
+- [Build the smallest docker image](containers/micro-container/README.md)
+- [Create a base image](containers/base-image/README.md)
 
-### Databases
+### Datastores
 
 - [Provision DGraph database in a cluster for high availability](databases/dgraph/README.md)
+- [Provision Kafka  in a cluster for high availability](databases/kafka/README.md)
 
 ### Methaprogramming
 
