@@ -6,7 +6,8 @@ services:
             context: python/blink/
             dockerfile: Dockerfile
         image: 'chimpwizard/pi-blink:python'
-        devices: /dev/gpiomem
+        devices: 
+            - /dev/gpiomem
         volumes:
              - "/var/run/docker.sock:/var/run/docker.sock"
 
@@ -15,7 +16,8 @@ services:
             context: python/button/
             dockerfile: Dockerfile
         image: 'chimpwizard/pi-button:python'
-        devices: /dev/gpiomem
+        devices: 
+            - /dev/gpiomem
         volumes:
              - "/var/run/docker.sock:/var/run/docker.sock"
 
@@ -24,7 +26,8 @@ services:
             context: node/blink
             dockerfile: Dockerfile
         image: 'chimpwizard/pi-blink:node'
-        devices: /dev/gpiomem
+        devices: 
+            - /dev/gpiomem
         volumes:
              - "/var/run/docker.sock:/var/run/docker.sock"
              - "/sys/devices/platform/soc/20200000.gpio/gpiochip0:/sys/devices/platform/soc/20200000.gpio/gpiochip0"
@@ -34,7 +37,8 @@ services:
             context: node/button
             dockerfile: Dockerfile
         image: 'chimpwizard/pi-button:node'
-        devices: /dev/gpiomem
+        devices: 
+            - /dev/gpiomem
         volumes:
              - "/var/run/docker.sock:/var/run/docker.sock"
              - "/sys/devices/platform/soc/20200000.gpio/gpiochip0:/sys/devices/platform/soc/20200000.gpio/gpiochip0"
