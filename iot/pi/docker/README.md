@@ -121,7 +121,17 @@ docker run .... -v /sys/devices/platform/soc/20200000.gpio/gpiochip0/gpio:/sys/d
 
 ### Not able to access raspberry pi docker instance using remote api calls
 
-This is usually becase the port is closed. To test use npam
+This is usually because the port is closed. 
+
+Check what is running on the port
+
+```sh
+sudo netstat -tln
+sudo netstat -lptu
+```
+
+
+Check if port is open to the outside
 
 ```sh
 nmap -p [PORT] [IP]
@@ -140,6 +150,8 @@ sudo reboot
 #### References
 
 - https://raspberrypi.stackexchange.com/questions/79434/edit-iptables-to-open-a-port-the-safest-and-easiest-way-nano
+- https://www.raspberrypi.org/forums/viewtopic.php?t=104728
+- https://raspberrypi.stackexchange.com/questions/69123/how-to-open-a-port
 
 
 ## Additioal references while doing this
