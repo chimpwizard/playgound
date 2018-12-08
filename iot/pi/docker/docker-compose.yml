@@ -57,3 +57,15 @@ services:
              - "/var/run/docker.sock:/var/run/docker.sock"
              - "/sys/class/gpio/export:/sys/class/gpio/export"
              - "/sys/devices/platform/soc/20200000.gpio/gpiochip0:/sys/devices/platform/soc/20200000.gpio/gpiochip0"
+
+    dashboard:
+        build:
+            context: node/button
+            dockerfile: Dockerfile
+        image: 'chimpwizard/pi-dashboard:node'
+        devices: 
+            - /dev/gpiomem
+        volumes:
+             - "/var/run/docker.sock:/var/run/docker.sock"
+             - "/sys/class/gpio/export:/sys/class/gpio/export"
+             - "/sys/devices/platform/soc/20200000.gpio/gpiochip0:/sys/devices/platform/soc/20200000.gpio/gpiochip0"
