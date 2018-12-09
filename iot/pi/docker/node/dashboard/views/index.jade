@@ -1,0 +1,286 @@
+extends layout
+
+block content
+    script(type='text/javascript' src='/javascripts/client.js')
+    div.container
+        div.row
+            div.col-xs-6.col-sm-5.col-md-5.col-lg-5
+                span 3.3V
+            div.col-sm-1.hidden-xs.pin
+                div.text-center
+                    span.pin.power3v.first 01
+            div.col-sm-1.hidden-xs.pin
+                div.text-center
+                    span.pin.power5v 02
+            div.col-xs-6.col-sm-5.col-md-5.col-lg-5
+                div.pull-right 
+                    span 5V
+        div.row
+            div.col-xs-6.col-sm-5.col-md-5.col-lg-5
+                span GPIO 2 (SDA)
+                div.pull-right
+                    input(data-toggle="toggle" data-onstyle="success" data-offstyle="danger" type="checkbox" data-gpio="2").gpio-checkbox
+            div.col-sm-1.hidden-xs.pin
+                div.text-center
+                    span.pin.gpio 03
+            div.col-sm-1.hidden-xs.pin
+                div.text-center
+                    span.pin.power5v 04
+            div.col-xs-6.col-sm-5.col-md-5.col-lg-5
+                div.pull-right 
+                    span 5V
+        div.row
+            div.col-xs-6.col-sm-5.col-md-5.col-lg-5
+                span GPIO 3 (SCL)
+                div.pull-right
+                    input(data-toggle="toggle" data-onstyle="success" data-offstyle="danger" type="checkbox" data-gpio="3").gpio-checkbox
+            div.col-sm-1.hidden-xs.pin
+                div.text-center
+                    span.pin.gpio 05
+            div.col-sm-1.hidden-xs.pin
+                div.text-center
+                    span.pin.gnd 06
+            div.col-xs-6.col-sm-5.col-md-5.col-lg-5
+                div.pull-right 
+                    span Ground
+        div.row
+            div.col-xs-6.col-sm-5.col-md-5.col-lg-5
+                span GPIO 4 (GPCLK0)
+                div.pull-right
+                    input(data-toggle="toggle" data-onstyle="success" data-offstyle="danger" type="checkbox" data-gpio="4").gpio-checkbox
+            div.col-sm-1.hidden-xs.pin
+                div.text-center
+                    span.pin.gpio 07
+            div.col-sm-1.hidden-xs.pin
+                div.text-center
+                    span.pin.gpio 08
+            div.col-xs-6.col-sm-5.col-md-5.col-lg-5
+                input(data-toggle="toggle" data-onstyle="success" data-offstyle="danger" type="checkbox" data-gpio="14").gpio-checkbox
+                div.pull-right 
+                    span GPIO 14 (TXD)
+        div.row
+            div.col-xs-6.col-sm-5.col-md-5.col-lg-5
+                span Ground
+            div.col-sm-1.hidden-xs.pin
+                div.text-center
+                    span.pin.gnd 09
+            div.col-sm-1.hidden-xs.pin
+                div.text-center
+                    span.pin.gpio 10
+            div.col-xs-6.col-sm-5.col-md-5.col-lg-5
+                input(data-toggle="toggle" data-onstyle="success" data-offstyle="danger" type="checkbox" data-gpio="15").gpio-checkbox
+                div.pull-right 
+                    span GPIO 15 (RXD)
+        div.row
+            div.col-xs-6.col-sm-5.col-md-5.col-lg-5
+                span GPIO 17
+                div.pull-right
+                    input(data-toggle="toggle" data-onstyle="success" data-offstyle="danger" type="checkbox" data-gpio="17").gpio-checkbox
+            div.col-sm-1.hidden-xs.pin
+                div.text-center
+                    span.pin.gpio 11
+            div.col-sm-1.hidden-xs.pin
+                div.text-center
+                    span.pin.gpio 12
+            div.col-xs-6.col-sm-5.col-md-5.col-lg-5
+                input(data-toggle="toggle" data-onstyle="success" data-offstyle="danger" type="checkbox" data-gpio="18").gpio-checkbox
+                div.pull-right 
+                    span GPIO 18 (PCM_C)
+        div.row
+            div.col-xs-6.col-sm-5.col-md-5.col-lg-5
+                span GPIO 27 (PCM_D)
+                div.pull-right
+                    input(data-toggle="toggle" data-onstyle="success" data-offstyle="danger" type="checkbox" data-gpio="27").gpio-checkbox
+            div.col-sm-1.hidden-xs.pin
+                div.text-center
+                    span.pin.gpio 13
+            div.col-sm-1.hidden-xs.pin
+                div.text-center
+                    span.pin.gnd 14
+            div.col-xs-6.col-sm-5.col-md-5.col-lg-5
+                div.pull-right 
+                    span Ground
+        div.row
+            div.col-xs-6.col-sm-5.col-md-5.col-lg-5
+                span GPIO 22
+                div.pull-right
+                    input(data-toggle="toggle" data-onstyle="success" data-offstyle="danger" type="checkbox" data-gpio="22").gpio-checkbox
+            div.col-sm-1.hidden-xs.pin
+                div.text-center
+                    span.pin.gpio 15
+            div.col-sm-1.hidden-xs.pin
+                div.text-center
+                    span.pin.gpio 16
+            div.col-xs-6.col-sm-5.col-md-5.col-lg-5
+                input(data-toggle="toggle" data-onstyle="success" data-offstyle="danger" type="checkbox" data-gpio="23").gpio-checkbox
+                div.pull-right 
+                    span GPIO 23
+        div.row
+            div.col-xs-6.col-sm-5.col-md-5.col-lg-5
+                span 3.3V
+            div.col-sm-1.hidden-xs.pin
+                div.text-center
+                    span.pin.power3v 17
+            div.col-sm-1.hidden-xs.pin
+                div.text-center
+                    span.pin.gpio 18
+            div.col-xs-6.col-sm-5.col-md-5.col-lg-5
+                input(data-toggle="toggle" data-onstyle="success" data-offstyle="danger" type="checkbox" data-gpio="24").gpio-checkbox
+                div.pull-right 
+                    span GPIO 24
+        div.row
+            div.col-xs-6.col-sm-5.col-md-5.col-lg-5
+                span GPIO 10 (MOSI)
+                div.pull-right
+                    input(data-toggle="toggle" data-onstyle="success" data-offstyle="danger" type="checkbox" data-gpio="10").gpio-checkbox
+            div.col-sm-1.hidden-xs.pin
+                div.text-center
+                    span.pin.gpio 19
+            div.col-sm-1.hidden-xs.pin
+                div.text-center
+                    span.pin.gnd 20
+            div.col-xs-6.col-sm-5.col-md-5.col-lg-5
+                div.pull-right
+                    span Ground
+        div.row
+            div.col-xs-6.col-sm-5.col-md-5.col-lg-5
+                span GPIO 9 (MISO)
+                div.pull-right
+                    input(data-toggle="toggle" data-onstyle="success" data-offstyle="danger" type="checkbox" data-gpio="9").gpio-checkbox
+            div.col-sm-1.hidden-xs.pin
+                div.text-center
+                    span.pin.gpio 21
+            div.col-sm-1.hidden-xs.pin
+                div.text-center
+                    span.pin.gpio 22
+            div.col-xs-6.col-sm-5.col-md-5.col-lg-5
+                input(data-toggle="toggle" data-onstyle="success" data-offstyle="danger" type="checkbox" data-gpio="25").gpio-checkbox
+                div.pull-right 
+                    span GPIO 25
+        div.row
+            div.col-xs-6.col-sm-5.col-md-5.col-lg-5
+                span GPIO 11 (SCKL)
+                div.pull-right
+                    input(data-toggle="toggle" data-onstyle="success" data-offstyle="danger" type="checkbox" data-gpio="11").gpio-checkbox
+            div.col-sm-1.hidden-xs.pin
+                div.text-center
+                    span.pin.gpio 23
+            div.col-sm-1.hidden-xs.pin
+                div.text-center
+                    span.pin.gpio 24
+            div.col-xs-6.col-sm-5.col-md-5.col-lg-5
+                input(data-toggle="toggle" data-onstyle="success" data-offstyle="danger" type="checkbox" data-gpio="8").gpio-checkbox
+                div.pull-right 
+                    span GPIO 8 (CE0)
+        div.row
+            div.col-xs-6.col-sm-5.col-md-5.col-lg-5
+                span Ground
+            div.col-sm-1.hidden-xs.pin
+                div.text-center
+                    span.pin.gnd 25
+            div.col-sm-1.hidden-xs.pin
+                div.text-center
+                    span.pin.gpio 26
+            div.col-xs-6.col-sm-5.col-md-5.col-lg-5
+                input(data-toggle="toggle" data-onstyle="success" data-offstyle="danger" type="checkbox" data-gpio="7").gpio-checkbox
+                div.pull-right 
+                    span GPIO 7 (CE1)
+        div.row
+            div.col-xs-6.col-sm-5.col-md-5.col-lg-5
+                span ID_SD
+            div.col-sm-1.hidden-xs.pin
+                div.text-center
+                    span.pin.i2c 27
+            div.col-sm-1.hidden-xs.pin
+                div.text-center
+                    span.pin.i2c 28
+            div.col-xs-6.col-sm-5.col-md-5.col-lg-5 
+                div.pull-right 
+                    span ID_SC
+        div.row
+            div.col-xs-6.col-sm-5.col-md-5.col-lg-5
+                span GPIO 5
+                div.pull-right
+                    input(data-toggle="toggle" data-onstyle="success" data-offstyle="danger" type="checkbox" data-gpio="5").gpio-checkbox
+            div.col-sm-1.hidden-xs.pin
+                div.text-center
+                    span.pin.gpio 29
+            div.col-sm-1.hidden-xs.pin
+                div.text-center
+                    span.pin.gnd 30
+            div.col-xs-6.col-sm-5.col-md-5.col-lg-5
+                div.pull-right 
+                    span Ground
+        div.row
+            div.col-xs-6.col-sm-5.col-md-5.col-lg-5
+                span GPIO 6
+                div.pull-right
+                    input(data-toggle="toggle" data-onstyle="success" data-offstyle="danger" type="checkbox" data-gpio="6").gpio-checkbox
+            div.col-sm-1.hidden-xs.pin
+                div.text-center
+                    span.pin.gpio 31
+            div.col-sm-1.hidden-xs.pin
+                div.text-center
+                    span.pin.gpio 32
+            div.col-xs-6.col-sm-5.col-md-5.col-lg-5
+                input(data-toggle="toggle" data-onstyle="success" data-offstyle="danger" type="checkbox" data-gpio="12").gpio-checkbox
+                div.pull-right 
+                    span GPIO 12
+        div.row
+            div.col-xs-6.col-sm-5.col-md-5.col-lg-5
+                span GPIO 13
+                div.pull-right
+                    input(data-toggle="toggle" data-onstyle="success" data-offstyle="danger" type="checkbox" data-gpio="13").gpio-checkbox
+            div.col-sm-1.hidden-xs.pin
+                div.text-center
+                    span.pin.gpio 33
+            div.col-sm-1.hidden-xs.pin
+                div.text-center
+                    span.pin.gnd 34
+            div.col-xs-6.col-sm-5.col-md-5.col-lg-5
+                div.pull-right 
+                    span Ground
+        div.row
+            div.col-xs-6.col-sm-5.col-md-5.col-lg-5
+                span GPIO 19 (MISO)
+                div.pull-right
+                    input(data-toggle="toggle" data-onstyle="success" data-offstyle="danger" type="checkbox" data-gpio="19").gpio-checkbox
+            div.col-sm-1.hidden-xs.pin
+                div.text-center
+                    span.pin.gpio 35
+            div.col-sm-1.hidden-xs.pin
+                div.text-center
+                    span.pin.gpio 36
+            div.col-xs-6.col-sm-5.col-md-5.col-lg-5
+                input(data-toggle="toggle" data-onstyle="success" data-offstyle="danger" type="checkbox" data-gpio="16").gpio-checkbox
+                div.pull-right 
+                    span GPIO 16
+        div.row
+            div.col-xs-6.col-sm-5.col-md-5.col-lg-5
+                span GPIO 26
+                div.pull-right
+                    input(data-toggle="toggle" data-onstyle="success" data-offstyle="danger" type="checkbox" data-gpio="26").gpio-checkbox
+            div.col-sm-1.hidden-xs.pin
+                div.text-center
+                    span.pin.gpio 37
+            div.col-sm-1.hidden-xs.pin
+                div.text-center
+                    span.pin.gpio 38
+            div.col-xs-6.col-sm-5.col-md-5.col-lg-5
+                input(data-toggle="toggle" data-onstyle="success" data-offstyle="danger" type="checkbox" data-gpio="20").gpio-checkbox
+                div.pull-right 
+                    span GPIO 20 (MOSI)
+        div.row
+            div.col-xs-6.col-sm-5.col-md-5.col-lg-5
+                span Ground
+            div.col-sm-1.hidden-xs.pin
+                div.text-center
+                    span.pin.gnd 39
+            div.col-sm-1.hidden-xs.pin
+                div.text-center
+                    span.pin.gpio 40
+            div.col-xs-6.col-sm-5.col-md-5.col-lg-5
+                input(data-toggle="toggle" data-onstyle="success" data-offstyle="danger" type="checkbox" data-gpio="21").gpio-checkbox
+                div.pull-right 
+                    span GPIO 21 (SCKL)
+            

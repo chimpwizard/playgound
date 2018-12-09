@@ -1,0 +1,68 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+@media (max-width: 718px) {
+    body {
+        padding: 0px;
+    }
+}
+
+a {
+  color: #00B7FF;
+}
+
+.container {
+    max-width: 768px;
+}
+
+div[class^="col-"] {
+    padding: 4px 8px;
+    background-color: #5F8645;
+    color: #E9E5D2;
+    line-height: 34px;
+    margin-bottom: 2px;
+    height: 43px;
+}
+div.row > div[class^="col-"]:nth-child(odd) {
+    border-right: 1px solid white;
+}
+div.row > div[class^="col-"]:nth-child(even) {
+    border-left: 1px solid white;
+}
+
+div.row > div.pin {
+    background-color: #000;
+    color: #FFF;
+}
+
+div.row > div.pin span.pin {
+    border: 5px solid white;
+    border-radius: 50px;
+    padding: 4px;
+}
+
+div.row > div.pin span.pin.first {
+    border-radius: 0px;
+}
+
+div.row > div.pin span.pin.gnd {
+    border-color: gray;
+}
+
+div.row > div.pin span.pin.power3v {
+    border-color: darkred;
+}
+
+div.row > div.pin span.pin.power5v {
+    border-color: red;
+}
+
+div.row > div.pin span.pin.gpio {
+    border-color: green;
+}
+
+div.row > div.pin span.pin.i2c {
+    border-color: yellow;
+}
