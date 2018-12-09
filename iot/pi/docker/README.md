@@ -73,6 +73,19 @@ This POC also contains several samples in python and node.
 
 Few issues I encounter when working on this POC.
 
+### Turning a LED from command line
+
+I found usieful this command to test the Pi is able to turn ON/OFF a lead
+
+```sh
+echo "4" > /sys/class/gpio/export
+echo "out" > /sys/class/gpio/gpio4/direction
+echo "1" > /sys/class/gpio/gpio4/value
+sleep 1
+echo "4" > /sys/class/gpio/unexport
+```
+
+
 ### TSL timeout
 
 While trying to run a docker image. the download if the download process gives timeout, follow this link [https://stackoverflow.com/questions/41303784/how-to-pull-layers-one-by-one-in-docker](https://stackoverflow.com/questions/41303784/how-to-pull-layers-one-by-one-in-docker) which basically mention to set the download thread to 1.
@@ -189,5 +202,5 @@ sudo reboot
 - * https://gist.github.com/jperkin/e1f0ce996c83ccf2bca9
 - * https://www.elecrow.com/download/Starter%20Kit%20for%20Arduino(user%20manual).pdf
 - http://razzpisampler.oreilly.com/ch07.html
-
+- https://www.raspberrypi.org/forums/viewtopic.php?t=99113
 
