@@ -29,6 +29,8 @@ ENV PORT 8000
 RUN apk add --update git
 RUN git clone https://github.com/tutRPi/Raspberry-Pi-Simple-Web-GPIO-GUI ${HOME}
 
+RUN chown -R ${user}:${group} ${HOME}
+
 RUN npm install
 
 #ADD app.js .
