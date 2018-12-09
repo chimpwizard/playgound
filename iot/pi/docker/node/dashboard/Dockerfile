@@ -25,6 +25,8 @@ RUN chown -R ${user}:${group} ${HOME}
 
 ENV PORT 8000
 
+USER ${user}
+
 ADD package.json .
 
 #RUN apk add --update git
@@ -33,6 +35,5 @@ RUN npm install
 
 ADD . .
 
-USER ${user}
 
 CMD ["npm", "start"]
