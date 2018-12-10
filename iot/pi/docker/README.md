@@ -64,11 +64,19 @@ npm run start
 
 This POC also contains several samples in python and node.
 
-- blink: This turns ON and OFF a lead on port 18
-- button: This turns ON and OFF a lead on port 18 based on a button configured as input on port 26.
-- dashboard: This is forked from [Simple Web GPIO](https://github.com/tutRPi/Raspberry-Pi-Simple-Web-GPIO-GUI), there is a small bug ont he code tht is fixed.
-- red: THis is a nodered sample running inside docker on the Pi.
+### python
 
+- [blink](python/blink/README.md): This turns ON and OFF a lead on port 18
+- [button](python/button/README.md): This turns ON and OFF a lead on port 18 based on a button configured as input on port 26.
+- [mqtt](python/mqtt/README.md): Client/Subcribe using mqtt protocol
+
+### nodejs
+
+- [blink](node/blink/README.md): This turns ON and OFF a lead on port 18
+- [button](node/button/README.md): This turns ON and OFF a lead on port 18 based on a button configured as input on port 26.
+- [dashboard](node/dashboard/README.md): This is forked from [Simple Web GPIO](https://github.com/tutRPi/Raspberry-Pi-Simple-Web-GPIO-GUI), there is a small bug ont he code tht is fixed.
+- [mqtt](node/mqtt/README.md): Client/Subcribe using mqtt protocol
+- [red](node/red/README.md): THis is a nodered sample running inside docker on the Pi.
 
 
 ## Throubleshooting
@@ -197,12 +205,3 @@ sudo reboot
 - * https://tutorials-raspberrypi.com/setup-raspberry-pi-node-js-webserver-control-gpios/
 - https://www.npmjs.com/package/rpio
 - https://weworkweplay.com/play/raspberry-pi-nodejs/
-- * https://github.com/tutRPi/Raspberry-Pi-Simple-Web-GPIO-GUI
-- https://tutorials-raspberrypi.com/setup-raspberry-pi-node-js-webserver-control-gpios/
-- https://github.com/tristanls/qemu-alpine
-- https://www.npmjs.com/package/onoff
-- * https://gist.github.com/jperkin/e1f0ce996c83ccf2bca9
-- * https://www.elecrow.com/download/Starter%20Kit%20for%20Arduino(user%20manual).pdf
-- http://razzpisampler.oreilly.com/ch07.html
-- https://www.raspberrypi.org/forums/viewtopic.php?t=99113
-
