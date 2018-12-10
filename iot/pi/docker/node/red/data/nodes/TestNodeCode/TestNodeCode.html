@@ -1,0 +1,29 @@
+<!-- Test Node Code -->
+
+<script type="text/javascript">
+    RED.nodes.registerType('test', {
+        name: 'Test',
+        category: 'Albatross',
+        color: '#FDD0A2',
+        defaults: {
+            name: { value:"Test" }
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: "bridge.png",
+        label: function() {
+            return "Test Node Code";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="test">
+    <div class="form-row">
+      <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+      <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="test">
+    <p>This node is only for testing new node code before moving to an actual node.</p>
+</script>

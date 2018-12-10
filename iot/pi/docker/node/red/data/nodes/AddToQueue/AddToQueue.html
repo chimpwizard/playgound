@@ -1,0 +1,33 @@
+<!-- Test Node Code -->
+
+<script type="text/javascript">
+    RED.nodes.registerType('toQueue', {
+        name: 'ToQueue',
+        category: 'Albatross',
+        color: '#FDD0A2',
+        defaults: {
+            name: { value:"reports" },
+            callback: { value:"" }
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: "envelope.png",
+        label: function() {
+            return this.name||"toQueue";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="toQueue">
+    <div class="form-row">
+      <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+      <label for="node-input-callback"><i class="icon-tag"></i> Callback</label>
+
+      <input type="text" id="node-input-name" placeholder="Here the name of this node">
+      <input type="text" id="node-input-callback" placeholder="Here callback URL">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="toQueue">
+    <p>This send a request for execution to 0MQ queue</p>
+</script>

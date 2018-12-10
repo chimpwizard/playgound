@@ -79,12 +79,24 @@ services:
         image: 'chimpwizard/pi-dashboard:node'
         devices: 
             - /dev/gpiomem
-        # environment:
-        #     - 'port=8000'
-        #entrypoint: sh
         ports:
             - 8000:8000
         volumes:
              - "/var/run/docker.sock:/var/run/docker.sock"
              - "/sys/class/gpio/export:/sys/class/gpio/export"
              - "/sys/devices/platform/soc/20200000.gpio/gpiochip0:/sys/devices/platform/soc/20200000.gpio/gpiochip0"
+    red:
+        build:
+            context: node/red
+            dockerfile: Dockerfile
+        image: 'chimpwizard/pi-red:node'
+        # devices: 
+        #     - /dev/gpiomem
+        #entrypoint: bash
+        ports:
+            - 1880:1880
+        volumes:
+             - ./node/red/data/flows.json:/data/flows.json #Comment this for development purposes. Uncommend when deploying on the Pi
+             - "/var/run/docker.sock:/var/run/docker.sock"
+             #- "/sys/class/gpio/export:/sys/class/gpio/export"
+             #- "/sys/devices/platform/soc/20200000.gpio/gpiochip0:/sys/devices/platform/soc/20200000.gpio/gpiochip0"

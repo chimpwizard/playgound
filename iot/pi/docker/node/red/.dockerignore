@@ -1,0 +1,4 @@
+data/lib
+data/.config.json
+data/.sessions.json
+data/package.json

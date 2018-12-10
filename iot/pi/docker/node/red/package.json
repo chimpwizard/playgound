@@ -1,0 +1,30 @@
+{
+  "name": "@chimpwizard/pi",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node $NODE_OPTIONS node_modules/node-red/red.js -v $FLOWS",
+    "build": "docker build -t chimpwizard/pi:red ."
+  },
+  "dependencies": {
+    "cron": "^1.2.1",
+    "jsonwebtoken": "^8.1.1",
+    "node-red": "0.17.4",
+    "node-red-contrib-flow-dispatcher": "^0.0.3",
+    "node-red-contrib-mic": "^0.0.1",
+    "node-red-contrib-mongodb2": "^0.5.6",
+    "node-red-dashboard": "^2.3.5",
+    "node-red-node-base64": "*",
+    "node-red-node-ping": "^0.0.13",
+    "node-red-node-random": "*",
+    "node-red-node-suncalc": "*",
+    "node-red-node-swagger": "^0.1.8",
+    "yamljs": "^0.3.0",
+    "debug": "~2.2.0",
+    "dotenv": "^6.0.0",
+    "morgan": "~1.7.0",
+    "rpio": "^0.9.12",
+    "onoff": "^3.2.2",
+    "serve-favicon": "~2.3.0"
+  }
+}

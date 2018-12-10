@@ -66,6 +66,8 @@ This POC also contains several samples in python and node.
 
 - blink: This turns ON and OFF a lead on port 18
 - button: This turns ON and OFF a lead on port 18 based on a button configured as input on port 26.
+- dashboard: This is forked from [Simple Web GPIO](https://github.com/tutRPi/Raspberry-Pi-Simple-Web-GPIO-GUI), there is a small bug ont he code tht is fixed.
+- red: THis is a nodered sample running inside docker on the Pi.
 
 
 
