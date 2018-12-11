@@ -53,6 +53,7 @@ docker container run --device /dev/gpiomem -d -v /sys/class/gpio/export:/sys/cla
 - [Raspberry Pi](http://www.raspberry-projects.com/pi/pi-hardware/raspberry-pi-model-b/model-b-io-pins)
 - install [npm](https://www.npmjs.com/package/raspberry) on the Pi
 - install [docker](https://iotbytes.wordpress.com/setting-up-docker-on-raspberry-pi-and-running-hello-world-container) on the Pi
+- install [docker-compose](https://docs.docker.com/compose/install/)
 
 ### to run
 

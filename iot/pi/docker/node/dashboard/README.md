@@ -12,12 +12,6 @@ version: draft
 
 The goal of this POC is have a WebUI interface to manipulate the RPi.
 
-## Prerequisites to run the code
-
-- [Raspberry Pi](http://www.raspberry-projects.com/pi/pi-hardware/raspberry-pi-model-b/model-b-io-pins)
-- install [npm](https://www.npmjs.com/package/raspberry) on the Pi
-- install [docker](https://iotbytes.wordpress.com/setting-up-docker-on-raspberry-pi-and-running-hello-world-container) on the Pi
-
 ### to run
 
 ```shell
