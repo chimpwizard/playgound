@@ -21,7 +21,7 @@ The goal of this POC is have te RPi to blink a led using python inside docker co
 ### to run
 
 ```shell
-npm run start
+npm run start:blink:python
 ```
 
 ## Additioal references while doing this

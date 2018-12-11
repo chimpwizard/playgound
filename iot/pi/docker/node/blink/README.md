@@ -21,7 +21,7 @@ The goal of this POC is have te RPi to blink a led using nodejs inside docker co
 ### to run
 
 ```shell
-npm run start
+npm run start:blink:node
 ```
 
 ## Additioal references while doing this

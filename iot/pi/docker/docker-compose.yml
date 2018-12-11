@@ -1,7 +1,7 @@
 version: '2'
 services:
 
-    blink:
+    blink-python:
         build:
             context: python/blink/
             dockerfile: Dockerfile
@@ -11,7 +11,7 @@ services:
         volumes:
              - "/var/run/docker.sock:/var/run/docker.sock"
 
-    button:
+    button-python:
         build:
             context: python/button/
             dockerfile: Dockerfile

@@ -6,12 +6,16 @@
   "scripts": {
     "up": "PLATFORM=swarm vagrant up|tee swarm.install.log",
     "ssh": "vagrant sh console",
+    "info-pi": "cat /proc/cpuinfo",
     "hello1": "docker run arm32v5/hello-world",
     "hello": "docker run arm32v5/hello-world",
-    "start:python": "docker container run --device /dev/gpiomem -d chimpwizard/pi:python",
-    "start:node": "docker container run --device /dev/gpiomem -d chimpwizard/pi:node",
-    "start2": "docker container run --privileged -d chimpwizard/pi",
-    "info-pi": "cat /proc/cpuinfo"
+
+    "start:blink:python" : "docker-compose run blink-python",
+    "start:blink:node"   : "docker-compose run blink-node",
+    "start:button:python": "docker-compose run button-python",
+    "start:button:node"  : "docker-compose run button-node",
+    "start:dashboard"    : "docker-compose up dashboard",
+    "start:red"          : "docker-compose up red"
   },
   "author": "",
   "license": "ISC",

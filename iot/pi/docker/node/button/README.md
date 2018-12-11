@@ -21,7 +21,7 @@ The goal of this POC is have te RPi to blink a led using a button using nodejs i
 ### to run
 
 ```shell
-npm run start
+npm run start:button:node
 ```
 
 ## Additioal references while doing this

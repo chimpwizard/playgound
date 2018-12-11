@@ -21,7 +21,7 @@ The goal of this POC is have a WebUI interface to manipulate the RPi.
 ### to run
 
 ```shell
-npm run start
+npm run start:dashboard
 ```
 
 ## Additioal references while doing this

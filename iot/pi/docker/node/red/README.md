@@ -21,7 +21,7 @@ The goal of this POC is have a REST api impelemted using nodered to expose the R
 ### to run
 
 ```shell
-npm run start
+npm run start:red
 ```
 
 ## Additioal references while doing this
