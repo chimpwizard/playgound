@@ -1,5 +1,5 @@
 
-# Micro Frontends & Services (micro-x)
+# micro-Frontends, micro-Services & micro-Container (micro-x)
 
 ```yaml
 by: иÐгü
@@ -10,7 +10,7 @@ version: conception
 
 ****
 
-The goal of this POC is create an application using micro front end and micro services using containers.
+The goal of this POC is create an application using micro front end and micro services on the smallest possible container.
 
 ## Proposed Design
 

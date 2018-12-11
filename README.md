@@ -25,7 +25,7 @@ This repo contains usefull samples to get you started with different technologie
 
 ### Architecture
 
-- [Micro Frontends & Services](architecture/micro-frontends-services/README.md)
+- [micro-Frontends, micro-Services & micro-Container](architecture/micro/README.md)
 
 ### IoT
 
