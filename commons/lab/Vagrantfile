@@ -34,7 +34,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       node.vm.hostname = machine[:hostname]
       node.vm.network "private_network", ip:machine[:ip]
 
-      #Use this to make it part of the mac/pwc network
+      #Use this to make it part of the mac network
       #node.vm.network "private_network", type: "dhcp"
       
       #node.vm.box_version = "201801.02.0"
