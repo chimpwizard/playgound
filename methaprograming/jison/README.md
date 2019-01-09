@@ -10,7 +10,9 @@ version: draft
 
 ****
 
-The goal of this POC is to define a grammar to create a model definition language that will allow latter on to generate code.
+Methaproghraming is for lazy coders, as a great coders the goal is to produce the best functionality with less typing, so if you have the same opinion methaprograming is  dedicated to achieve that.
+
+This POC goal is to define a grammar to create a model definition language that will allow latter on to generate code.
 
 ## Proposed Design
 
