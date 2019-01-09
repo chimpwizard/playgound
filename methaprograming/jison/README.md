@@ -35,7 +35,7 @@ We well use this model as a sample:
 
 Here we degine that an **Author** can have several **Books**, both are defined  as **Entity** which is an abstract that define the basic functionality of every **Entity** and a **Book** can also has an **Status** defined by the Book creation lifecycle.
 
-This conceptual model is represented in a languaged that we defined which is the purpose of the parser to translate into a YAML/data that can be understud easily by a generator as well as for a human.
+This conceptual model is represented in a language that we defined which is the purpose of the parser to translate into a YAML/data that can be understud easily by a generator as well as for a human.
 
 In the language we can enrish the model adding annotations that will be helful to define what things we would like to generate. For example we want that the two entities expose a REST API as well define some role base authorization to define who and how the entities can be used.
 
@@ -258,6 +258,8 @@ export enum Status {
     PUBLISHED
 }
 ```
+Try it out, The full code is on this [repo](https://github.com/chimpwizard/playgound/tree/master/methaprograming/jison) 
+
 
 ## Some references while doing this
 
