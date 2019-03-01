@@ -17,6 +17,9 @@ I want to present an alternative that is more flexible, dynamic and easirer to s
 
 I want to be able to scale the number of master and worker nodes using the swarm or kubernetes capabilities and make the cluster to addapt to that instead of reconfiguring the YAML files to achieve that. I hope the DGraph core team include something like this its core components.
 
+The source code can be found [here](https://github.com/chimpwizard/playgound/tree/master/databases/dgraph).
+
+
 ## Proposed Architecture
 
 Assuming you already read [DGraph Get Started Guide](https://docs.dgraph.io/get-started/).
