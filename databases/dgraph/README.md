@@ -276,5 +276,5 @@ npm run destroy
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('dgraph', 'UA-43465642-1');
+  gtag('config', 'UA-43465642-1');
 </script>
