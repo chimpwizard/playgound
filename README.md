@@ -18,7 +18,6 @@ This repo contains usefull samples to get you started with different technologie
 
 - [Code generation with JISON using DDD techniques](methaprograming/jison/README.md)
 
-
 ### IoT
 
 - [Using Docker to program the Raspberry Pi](iot/pi/docker/README.md)
