@@ -269,6 +269,10 @@ npm run destroy
 - Cover what would be the code to support a kubernetes cluster.
 
 
+
+
+
+
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-43465642-1"></script>
 <script>

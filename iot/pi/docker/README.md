@@ -209,3 +209,17 @@ sudo reboot
 - * https://tutorials-raspberrypi.com/setup-raspberry-pi-node-js-webserver-control-gpios/
 - https://www.npmjs.com/package/rpio
 - https://weworkweplay.com/play/raspberry-pi-nodejs/
+
+
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-43465642-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-43465642-1');
+</script>

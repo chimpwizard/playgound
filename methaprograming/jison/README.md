@@ -286,3 +286,16 @@ Try it out, The full code is on this [repo](https://github.com/chimpwizard/playg
 - Create domain diagrams using a tool like http://www.nomnoml.com and generate code from its language.
 - Improve the data generator using Faker
 - Create independent files per component.
+
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-43465642-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-43465642-1');
+</script>
