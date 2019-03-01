@@ -267,3 +267,14 @@ npm run destroy
 ## Additional improvements
 
 - Cover what would be the code to support a kubernetes cluster.
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-43465642-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('dgraph', 'UA-43465642-1');
+</script>
