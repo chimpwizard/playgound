@@ -8,7 +8,6 @@ This repo contains usefull samples to get you started with different technologie
 
 - [Vagrant cluster lab](commons/lab/README.md)
 - [Build the smallest docker image](containers/micro-container/README.md)
-- [Create a base image](containers/base-image/README.md)
 
 ### Datastores
 
