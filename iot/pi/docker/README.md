@@ -10,18 +10,21 @@ version: draft
 
 ****
 
-The goal of this POC is to have a base  setup to program the raspberry pi but using docker.
+The goal of this POC is to have a base  setup to program the raspberry pi but using docker. This is very useful to facilitate the update of a new version of your code running on a ARM device.
+
+The source code can be found [here](https://github.com/chimpwizard/playgound/tree/master/iot/pi/docker)
 
 ## Create a base image
 
-To be sure docker images run on your Pi you need to verify tyour Pi architecture version running:
+To be sure docker images run on your Pi you need to verify the Pi architecture version.
+Run this command to check:
 
 ```sh
 cat /proc/cpuinfo
 ```
 
-And base on that you need to make sure your Dockerfile uses a base image that is compatible. eg if your Pi is ARM v6 the list of compatible images are listed here [https://hub.docker.com/u/arm32v6/](https://hub.docker.com/u/arm32v6/).
-
+And base on that you need to make sure your Dockerfile uses a base image that is compatible. 
+For example  if your Pi is ARM v6 the list of compatible images are listed here [https://hub.docker.com/u/arm32v6/](https://hub.docker.com/u/arm32v6/).
 
 ```dockerfile
 FROM arm32v6/alpine:3.6
@@ -36,13 +39,14 @@ COPY app.py .
 CMD ["python", "./app.py"]
 ```
 
-To run the docker image direcly you need to map the rpio device liket his
+To run the docker image direcly you need to map the rpio device like this
 
 ```sh
 docker container run --device /dev/gpiomem -d chimpwizard/pi-blink:python
 ```
 
-or this for node. The volume might be differen. Found out this by throubleshooting a Read-Only error.
+or this for node. 
+>NOTE: The volume might be differen. I found out this by throubleshooting a Read-Only error.
 
 ```sh
 docker container run --device /dev/gpiomem -d -v /sys/class/gpio/export:/sys/class/gpio/export -v /sys/devices/platform/soc/20200000.gpio/gpiochip0/gpio:/sys/devices/platform/soc/20200000.gpio/gpiochip0/gpio chimpwizard/pi:node
@@ -78,7 +82,6 @@ This POC also contains several samples in python and node.
 - [dashboard](node/dashboard/README.md): This is forked from [Simple Web GPIO](https://github.com/tutRPi/Raspberry-Pi-Simple-Web-GPIO-GUI), there is a small bug ont he code tht is fixed.
 - [mqtt](node/mqtt/README.md): Client/Subcribe using mqtt protocol
 - [red](node/red/README.md): THis is a nodered sample running inside docker on the Pi.
-
 
 ## Throubleshooting
 
