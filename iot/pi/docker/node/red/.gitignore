@@ -1,6 +1,0 @@
-data/lib
-data/*.backup
-data/.sessions.json
-data/package.json
-node_modules
-docker-compose-*
