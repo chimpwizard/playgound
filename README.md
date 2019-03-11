@@ -6,17 +6,17 @@ This repo contains usefull samples to get you started with different technologie
 
 ### Containers
 
-- [Vagrant cluster lab](https://github.com/chimpwizard-playground/vagrant-lab/README.md)
-- [Build the smallest docker image](https://github.com/chimpwizard-playground/containers-micro-container/README.md)
+- [Vagrant cluster lab](https://github.com/chimpwizard-playground/vagrant-lab/blob/master/README.md)
+- [Build the smallest docker image](https://github.com/chimpwizard-playground/containers-micro-container/blob/master/README.md)
 
 ### Datastores
 
-- [Provision DGraph database in a cluster for high availability](https://github.com/chimpwizard-playground/databases-dgraph/README.md)
+- [Provision DGraph database in a cluster for high availability](https://github.com/chimpwizard-playground/databases-dgraph/blob/master/README.md)
 
 ### Methaprogramming
 
-- [Code generation with JISON using DDD techniques](https://github.com/chimpwizard-playground/methaprograming-jison/README.md)
+- [Code generation with JISON using DDD techniques](https://github.com/chimpwizard-playground/methaprograming-jison/blob/master/README.md)
 
 ### IoT
 
-- [Using Docker to program the Raspberry Pi](https://github.com/chimpwizard-playground/iot-rpi-docker/README.md)
+- [Using Docker to program the Raspberry Pi](https://github.com/chimpwizard-playground/iot-rpi-docker/blob/master/README.md)
