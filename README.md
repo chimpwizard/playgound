@@ -17,6 +17,8 @@ This repo contains usefull samples to get you started with different technologie
 
 - [Code generation with JISON using DDD techniques](https://github.com/chimpwizard-playground/methaprograming-jison/blob/master/README.md)
 
+- [Microservices multi vs mono repositories](https://github.com/chimpwizard-playground/methaprograming-meta/blob/master/README.md)
+
 ### IoT
 
 - [Using Docker to program the Raspberry Pi](https://github.com/chimpwizard-playground/iot-rpi-docker/blob/master/README.md)
